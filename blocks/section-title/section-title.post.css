@@ -1,0 +1,13 @@
+.section-title {
+    display: flex;
+    align-items: center;
+    border-bottom: 4px solid #f2f2f2;
+    width: 100%;
+    padding-bottom: 3px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+
+    &__title {
+        display : inline-block;
+    }
+}

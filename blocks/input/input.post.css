@@ -1,0 +1,73 @@
+.input {
+    border-bottom: 1px solid black;
+    font-size: 18px;
+    line-height: 22px;
+    display: inline-block;
+    width: 100%;
+
+    &__box {
+        display: inline-block;
+    }
+
+    &__control {
+        display: inline-block;
+        font: inherit;
+        line-height: inherit;
+
+        position: relative;
+
+        display: inline-block;
+
+        box-sizing: border-box;
+        padding: 0;
+        width: 100%;
+
+        border: 0;
+        outline: none;
+        background: none;
+
+        height: 55px;
+
+
+        -webkit-appearance: none;
+
+        // лишние отступы у текста
+        &::-webkit-search-decoration
+        {
+            -webkit-appearance: none;
+        }
+
+        // нативный крестик
+        &::-webkit-search-cancel-button
+        {
+            display: none;
+        }
+
+        &::-webkit-input-placeholder
+        {
+            color: #999;
+            text-indent: 0;
+        }
+
+        &::-moz-placeholder
+        {
+            opacity: 1;
+            color: #999;
+        }
+
+        &::-ms-clear
+        {
+            display: none;
+        }
+
+        &::-webkit-autofill {
+            border: 1px solid transparent;
+            background-clip: padding-box;
+        }
+
+        &::placeholder {
+            color: black;
+        }
+    }
+}
+

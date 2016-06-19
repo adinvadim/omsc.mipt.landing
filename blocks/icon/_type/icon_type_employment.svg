@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="56px" height="56px" viewBox="0 0 56 56" enable-background="new 0 0 56 56" xml:space="preserve">
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="56" height="56"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+	
+		<path clip-path="url(#SVGID_2_)" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M28,1C13.088,1,1,13.088,1,28s12.088,27,27,27s27-12.088,27-27"/>
+</g>
+<g>
+	<defs>
+		<path id="SVGID_3_" d="M24.669,9c-3.618,0-6.551,2.936-6.551,6.559v2.642C16.914,18.372,16,19.405,16,20.653v0.693
+			c0,1.251,0.934,2.295,2.145,2.456C18.523,28.936,22.817,33,28.058,33c5.25,0,9.549-4.065,9.917-9.216
+			C39.133,23.575,40,22.563,40,21.346v-0.693c0-1.2-0.861-2.21-2-2.431V9H24.669z"/>
+	</defs>
+	<clipPath id="SVGID_4_">
+		<use xlink:href="#SVGID_3_"  overflow="visible"/>
+	</clipPath>
+	<rect x="11" y="4" clip-path="url(#SVGID_4_)" fill="#D8D8D8" width="34" height="34"/>
+</g>
+<g>
+	<defs>
+		<rect id="SVGID_5_" width="56" height="56"/>
+	</defs>
+	<clipPath id="SVGID_6_">
+		<use xlink:href="#SVGID_5_"  overflow="visible"/>
+	</clipPath>
+	
+		<path clip-path="url(#SVGID_6_)" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M18.118,18.201v-2.643c0-3.622,2.934-6.558,6.552-6.558H38v9.221c1.14,0.222,2,1.231,2,2.432v0.693
+		c0,1.217-0.867,2.229-2.025,2.438C37.605,28.936,33.309,33,28.059,33c-5.242,0-9.536-4.063-9.914-9.198
+		C16.935,23.641,16,22.597,16,21.346v-0.693C16,19.405,16.914,18.372,18.118,18.201z"/>
+	
+		<path clip-path="url(#SVGID_6_)" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+		M46,48v-5.114c0-2.817-2.311-5.112-5.162-5.112h-6.255L32.245,33 M23.304,33l-2.338,4.773h-5.567C12.542,37.773,10,40.176,10,43
+		v5.114"/>
+	
+		<polyline clip-path="url(#SVGID_6_)" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" points="
+		54,5 49.5,14 44.5,11 	"/>
+</g>
+</svg>

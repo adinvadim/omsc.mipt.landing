@@ -1,0 +1,19 @@
+.section_type_main {
+    padding-top: 0px;
+    background: url(./images/header-bg.jpg) no-repeat center;
+    background-color: var(--color-main);
+    background-size: cover;
+    position: relative;
+    /*height: 832px;*/
+    z-index: 1;
+
+    .section__overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: -1;
+        background-color: rgba(var(--color-main), .85);
+    }
+}

@@ -1,0 +1,19 @@
+.quote-card {
+    padding: 60px 40px;
+    box-sizing: border-box;
+    background-color: var(--color-grey);
+
+    &__content {
+        font-size: 30px;
+        line-height: 40px;
+        font-style: italic;
+    }
+
+    &__footer {
+        margin-top: 40px;
+    }
+
+    &__author {
+        font-weight: bold
+    }
+}

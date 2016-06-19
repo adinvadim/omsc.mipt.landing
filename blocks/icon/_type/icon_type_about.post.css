@@ -1,0 +1,5 @@
+.icon_type_about {
+    background-image: svg-load('icon_type_about.svg');
+    width: 61px;
+    height: 51px;
+}

@@ -1,0 +1,5 @@
+.tabs__box
+{
+    display: none;
+    flex-flow: row wrap;
+}

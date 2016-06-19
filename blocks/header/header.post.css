@@ -1,0 +1,42 @@
+.header {
+    color: white;
+
+    &__logo {
+        margin-top: 120px;
+    }
+
+    &__title {
+        margin-top: 100px;
+    }
+
+    &__menu {
+        display: flex;
+    }
+
+    &__menu-item {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+    &__menu-item {
+        display: inline-block;
+        padding-top: 72px;
+        text-transform: uppercase;
+        border-top: 3px solid transparent;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--color-second);
+            border-top: 3px solid var(--color-second);
+        }
+    }
+
+    .sections-menu__menu-item_active {
+        color: var(--color-second);
+        border-top: 3px solid var(--color-second);
+    }
+
+    &__button {
+        margin-top: 100px;
+    }
+}

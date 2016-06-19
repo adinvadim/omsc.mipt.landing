@@ -1,0 +1,18 @@
+.form-main {
+    &__form-field {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    &__combo {
+        display: flex;
+
+        .form-main__form-field {
+            margin-right: 18px;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+}

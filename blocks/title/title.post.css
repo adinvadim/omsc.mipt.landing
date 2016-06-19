@@ -1,0 +1,15 @@
+.title {
+
+    font-weight: bold;
+
+    &_level_1 {
+        font-size: 55px;
+        line-height: 65px;
+        text-transform: uppercase;
+    }
+    &_level_2 {
+        font-size: 25px;
+        line-height: 35px;
+        text-transform: uppercase;
+    }
+}

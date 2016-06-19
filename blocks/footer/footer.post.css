@@ -1,0 +1,33 @@
+.footer {
+    color: white;
+    font-size: 13px;
+    line-height: 36px;
+
+
+    &__menu {
+        display: flex;
+    }
+
+    &__menu-item {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    &__menu-item {
+        display: inline-block;
+        text-transform: uppercase;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+            color: var(--color-second);
+        }
+    }
+
+    &__copyright {
+        margin-top: 60px;
+    }
+
+    .sections-menu__menu-item_active {
+        color: var(--color-second);
+    }
+}
