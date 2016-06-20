@@ -1,5 +1,7 @@
 var data = {
     teachers : require('./data/techers.js'),
+    faq : require('./data/faq.js'),
+    partners : require('./data/partners.js')
 }
 
 module.exports = {
@@ -11,7 +13,10 @@ module.exports = {
          { elem : 'meta', attrs : { name : 'viewport', content : 'width=device-width, initial-scale=1' } },
          { elem : 'css', url : 'index.min.css' }
      ],
-     scripts: [{ elem : 'js', url : 'index.min.js' }],
+     scripts: [
+         { elem : 'js', url : 'index.min.js' },
+         { elem : 'js', url : 'http://maps.googleapis.com/maps/api/js?key=AIzaSyAcN-J2m9WVmklUP39w67o7tcHHRltlh3k'}
+     ],
      content : [
         {
             block : 'section',
@@ -490,8 +495,8 @@ module.exports = {
                                                     content : [
                                                         {
                                                             block : 'form-field',
-                                                            mix : { block : 'form-main', elem : 'form-field' },
-                                                            mods : { type : 'input' },
+                                                            mix : { block : 'form-main', elem : 'form-field'},
+                                                            mods : { type : 'input', required : true },
                                                             name : 'lastName',
                                                             content : {
                                                                 block : 'input',
@@ -501,7 +506,7 @@ module.exports = {
                                                         {
                                                             block : 'form-field',
                                                             mix : { block : 'form-main', elem : 'form-field' },
-                                                            mods : { type : 'input' },
+                                                            mods : { type : 'input', required : true },
                                                             name : 'firstName',
                                                             content : {
                                                                 block : 'input',
@@ -525,7 +530,7 @@ module.exports = {
                                                                 block : 'form-field',
                                                                 mix : { block : 'form-main', elem : 'form-field' },
                                                                 name : 'date',
-                                                                mods : { type : 'input' },
+                                                                mods : { type : 'input', required : true },
                                                                 content : {
                                                                     block : 'input',
                                                                     placeholder : 'Дата рождения'
@@ -543,13 +548,47 @@ module.exports = {
                                                                 block : 'form-field',
                                                                 mix : { block : 'form-main', elem : 'form-field' },
                                                                 name : 'email',
-                                                                mods : { type : 'input' },
+                                                                mods : { type : 'input', required : true },
                                                                 content : {
                                                                     block : 'input',
                                                                     placeholder : "E-mail"
                                                                 }
                                                             }]
                                                         },
+                                                        {
+                                                            block : 'form-main',
+                                                            elem : 'attach',
+                                                            content : {
+                                                                block : 'form-field',
+                                                                mods : { type : 'attach'},
+                                                                name : 'file',
+                                                                content : [
+                                                                    'Эссе на  тему: «Зачем я хочу обучаться по этой программе».',
+                                                                    {
+                                                                        tag: 'br'
+                                                                    },
+                                                                    'Не более 1-й страницы А4.',
+                                                                    {
+                                                                        block : 'attach',
+                                                                        button :{
+                                                                            block : 'button',
+                                                                            mods : { view : 'plain', size : 's' },
+                                                                            content : [
+                                                                                {
+                                                                                    block : 'icon',
+                                                                                    type : 'attach'
+                                                                                },
+                                                                                {
+                                                                                    tag: 'span',
+                                                                                    content: 'Загрузить файл'
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        },
+
                                                         {
                                                             block : 'steps',
                                                             elem : 'footer',
@@ -566,6 +605,7 @@ module.exports = {
                                                                         view : 'main',
                                                                         size : 'm',
                                                                         type : 'submit',
+                                                                        disabled : true
                                                                     },
                                                                     mix : [
                                                                         { block : 'steps', elem : 'next-button' },
@@ -587,7 +627,12 @@ module.exports = {
                                     content : [{
                                         block : 'steps',
                                         elem : 'content',
-                                        content : ''
+                                        content : [
+                                            'Сдать вступительные испытания по математике и информатике.\n',
+                                            'Вступительные испытания по математике во вторник, по информатике – в четверг, согласно ',
+                                            { block : 'link', url : '/', content : 'графику' },
+                                            '. Формат вступительных испытаний – собеседование.'
+                                        ]
                                     }, {
                                         block : 'steps',
                                         elem : 'footer',
@@ -630,35 +675,8 @@ module.exports = {
                     elem : 'col',
                     elemMods : { sw : 7 },
                     content : {
-                        tag : 'p',
-                        content : {
-                            block : 'accrodion',
-                            options : [
-                                {
-                                    title : 'Как происходит пересдача?',
-                                    content : 'пересдача происходит в стандартном режиме '
-                                },
-                                {
-                                    title : 'Как выполняется научная работа и будет ли она?',
-                                    content : 'Да, будет, как обычно - вы работаете под руководством научного руководителя и пишете научную работу '
-                                },
-                                {
-                                    title : 'А это не противоречит законам об учебной деятельности (в МФТИ ведь нет заочки)?',
-                                    content : 'Нет, не противоречит.'
-                                },
-                                {
-                                    title : 'Не будут ли меня считать читером, получившим диплом физтеха дистанционно (в сравнении с людьми, которые “обычный” диплом получат)?',
-                                    content : 'Это всего лишь другая форма получения знаний. Как человеку обучаться - оффлайн или онлайн - вопрос предпочтений. МФТИ дает возможность выбора.  '
-                                },
-                                {
-                                    title : 'Есть ли бюджетные места на программу?',
-                                    content : 'Нет, только платные. Но возможно получение гранта (Financisal aid) на обучение '
-                                },
-                                {
-                                    title : 'Что мне необходимо, чтобы учиться (ноутбук там, интернет)?'
-                                }
-                            ]
-                        }
+                        block : 'accordion',
+                        options : data.faq
                     }
                 }]
             }
@@ -679,9 +697,30 @@ module.exports = {
                             mix : { block : 'section', elem : 'title' },
                             content : 'Партнеры программы'
                         }
-                    }
+                    },
+                    data.partners.map(item => {
+                        return {
+                            elem : 'col',
+                            elemMods : { sw : 3 },
+                            content : {
+                                block : 'partner-card',
+                                title : item.title,
+                                imgUrl : item.imgUrl
+                            }
+                        }
+                    })
                 ]
             }
+        }, /* section  partners end */
+        {
+            block : 'section',
+            mods : { type : 'maps' },
+            content : [
+                {
+                    block : 'google-maps-bg',
+                    js : true
+                }
+            ]
         },
         {
             block : 'section',

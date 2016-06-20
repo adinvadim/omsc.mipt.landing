@@ -1,0 +1,30 @@
+.accordion {
+    &__title {
+        font-size: 25px;
+        color: var(--color-main);
+        cursor: pointer;
+        margin-bottom: 10px;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    &__content {
+        display: none;
+    }
+
+    &__item {
+        margin-top: 20px;
+        margin-bottom: 20px;
+
+        &:first-of-type {
+            margin-top: 0;
+        }
+
+        &_active {
+            .accordion__content {
+                display: block;
+            }
+        }
+    }
+}

@@ -41,9 +41,9 @@ var techs = {
         }),
         require('postcss-calc')(),
         require('postcss-flexbugs-fixes'),
-        require('postcss-inline-svg')(),
         require('postcss-initial')(),
         require('precss')(),
+        require('postcss-inline-svg')(),
         require('postcss-hexrgba')(),
         require('autoprefixer')(),
     ];

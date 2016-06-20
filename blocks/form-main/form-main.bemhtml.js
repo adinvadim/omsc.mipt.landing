@@ -1,1 +1,1 @@
-block('from-main').js()(true);
+block('form-main').js()(true);

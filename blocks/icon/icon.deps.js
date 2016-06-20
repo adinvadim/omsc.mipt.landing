@@ -2,7 +2,7 @@
     shouldDeps : [
         {
             block : 'icon',
-            mods : { type : ['about', 'diplom', 'originality', 'employment', 'how-to'] }
+            mods : { type : ['attach', 'about', 'diplom', 'originality', 'employment', 'how-to'] }
         }
     ]
 })

@@ -5,6 +5,14 @@
     display: inline-block;
     width: 100%;
 
+    &_invalid {
+        border-color : red;
+        color : red;
+
+        &::placeholder {
+            color: red;
+        }
+    }
     &__box {
         display: inline-block;
     }
@@ -45,7 +53,6 @@
 
         &::-webkit-input-placeholder
         {
-            color: #999;
             text-indent: 0;
         }
 

@@ -264,6 +264,11 @@ exports.deps = [
     {
         "block": "icon",
         "mod": "type",
+        "val": "about"
+    },
+    {
+        "block": "icon",
+        "mod": "type",
         "val": "diplom"
     },
     {
@@ -555,12 +560,71 @@ exports.deps = [
         "mod": "dirty"
     },
     {
+        "block": "form-field",
+        "mod": "required"
+    },
+    {
+        "block": "validation",
+        "mod": "required"
+    },
+    {
+        "block": "form-field",
+        "mod": "required",
+        "val": true
+    },
+    {
         "block": "form-main",
         "elem": "form-field"
     },
     {
         "block": "form-main",
         "elem": "combo"
+    },
+    {
+        "block": "form-main",
+        "elem": "attach"
+    },
+    {
+        "block": "form-field",
+        "mod": "type",
+        "val": "attach"
+    },
+    {
+        "block": "i-bem",
+        "elem": "i18n"
+    },
+    {
+        "block": "attach",
+        "elem": "button"
+    },
+    {
+        "block": "attach",
+        "elem": "control"
+    },
+    {
+        "block": "attach",
+        "elem": "no-file"
+    },
+    {
+        "block": "attach",
+        "elem": "file"
+    },
+    {
+        "block": "attach",
+        "elem": "text"
+    },
+    {
+        "block": "attach",
+        "elem": "clear"
+    },
+    {
+        "block": "strings",
+        "elem": "escape"
+    },
+    {
+        "block": "button",
+        "mod": "size",
+        "val": "s"
     },
     {
         "block": "button",
@@ -581,7 +645,18 @@ exports.deps = [
         "val": "faq"
     },
     {
-        "block": "accrodion"
+        "block": "accordion"
+    },
+    {
+        "block": "partner-card"
+    },
+    {
+        "block": "section",
+        "mod": "type",
+        "val": "maps"
+    },
+    {
+        "block": "google-maps-bg"
     },
     {
         "block": "section",
@@ -666,7 +741,7 @@ exports.deps = [
     {
         "block": "icon",
         "mod": "type",
-        "val": "about"
+        "val": "attach"
     },
     {
         "block": "row",
@@ -735,6 +810,32 @@ exports.deps = [
     },
     {
         "block": "input",
+        "mod": "dirty",
+        "val": true
+    },
+    {
+        "block": "validation",
+        "mod": "required",
+        "val": true
+    },
+    {
+        "block": "attach"
+    },
+    {
+        "block": "attach",
+        "mod": "invalid"
+    },
+    {
+        "block": "attach",
+        "mod": "dirty"
+    },
+    {
+        "block": "attach",
+        "mod": "invalid",
+        "val": true
+    },
+    {
+        "block": "attach",
         "mod": "dirty",
         "val": true
     }

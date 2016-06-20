@@ -574,6 +574,19 @@ exports.blocks = [
         ]
     },
     {
+        "name": "form-field",
+        "mods": [
+            {
+                "name": "required",
+                "vals": [
+                    {
+                        "name": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "form-main",
         "elems": [
             {
@@ -591,6 +604,46 @@ exports.blocks = [
                 "name": "combo"
             }
         ]
+    },
+    {
+        "name": "form-main",
+        "elems": [
+            {
+                "name": "attach"
+            }
+        ]
+    },
+    {
+        "name": "form-field",
+        "mods": [
+            {
+                "name": "type",
+                "vals": [
+                    {
+                        "name": "attach"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "attach"
+    },
+    {
+        "name": "button",
+        "mods": [
+            {
+                "name": "size",
+                "vals": [
+                    {
+                        "name": "s"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "icon"
     },
     {
         "name": "button",
@@ -627,7 +680,26 @@ exports.blocks = [
         ]
     },
     {
-        "name": "accrodion"
+        "name": "accordion"
+    },
+    {
+        "name": "partner-card"
+    },
+    {
+        "name": "section",
+        "mods": [
+            {
+                "name": "type",
+                "vals": [
+                    {
+                        "name": "maps"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "google-maps-bg"
     },
     {
         "name": "section",

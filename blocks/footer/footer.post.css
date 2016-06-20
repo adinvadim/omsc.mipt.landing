@@ -11,6 +11,10 @@
     &__menu-item {
         margin-left: 15px;
         margin-right: 15px;
+
+        &:first-of-type {
+            margin-left: 0;
+        }
     }
     &__menu-item {
         display: inline-block;

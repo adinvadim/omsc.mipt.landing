@@ -15363,11 +15363,22 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
     onSetMod : {
         'js' : {
             'inited' : function() {
+                var self = this;
                 this._form = this.findBlockInside('form');
 
                 this._form.on('submit', this._onSubmit.bind(this));
+                this._form.on('change', this._onChange.bind(this));
 
                 this._button = this.findBlockOn(this.elem('button'), 'button');
+
+                this._form.validate()
+                    .then(function(st) {
+                        if (self._form.checkFields(st)) {
+                            self._button.delMod('disabled')
+                        } else {
+                            self._button.setMod('disabled')
+                        }
+                    })
 
                 //this._form.getFields()[1].setValidationMessage('required', 'Ololo!');
                 //this._form.getFields()[0].setValidationMessages({
@@ -15378,17 +15389,6 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                 //this._form.getFields()[0].setStatus('invalid');
 
                 // You can bind to other form events
-                 this._form.on('change', function(e, data) {
-                     console.log(data)
-                     this._form.validate()
-                         .then(function(statuses) {
-                            if (this._form.checkFields(statuses)) {
-                                this._button.delMod('disabled');
-                            } else {
-                                this._button.setMod('disabled');
-                            }
-                         })
-                 });
 
                 // this._form.on('focus', function(e, data) {
                 //     console.log('focused form', data);
@@ -15398,11 +15398,23 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
     },
 
     _onSubmit: function(e, val) {
-        console.log('submit');
+        console.log('form submit');
         //this._form.validate()
             //.then(function(status) {
                 //console.log(status)
             //});
+    },
+
+    _onChange: function(e, val) {
+        var self = this;
+        this._form.validate()
+            .then(function(st) {
+                if (self._form.checkFields(st)) {
+                    self._button.delMod('disabled');
+                } else {
+                    self._button.setMod('disabled');
+                }
+            })
     }
 
 }));
@@ -17578,6 +17590,247 @@ provide(
 });
 
 /* end: ../../libs/bem-core/common.blocks/idle/idle.js */
+/* begin: ../../libs/bem-forms/common.blocks/form-field/_required/form-field_required.browser.js */
+/**
+ * @module form-field
+ */
+modules.define('form-field',
+    ['validation_required'],
+    function(provide, validation_required, FormField) {
+/**
+ * Required form-field
+ * @exports
+ * @class form-field
+ * @bem
+ */
+FormField.decl({ modName : 'required', modVal : true }, /** @lends form-field.prototype */{
+
+    onSetMod : {
+        'js' : {
+            'inited' : function() {
+                this.__base.apply(this, arguments);
+
+                this.params.required && this.setValidationMessages({
+                    required : this.params.required.message
+                });
+
+                this.getValidator().push(validation_required(this));
+            }
+        }
+    }
+
+});
+
+provide(FormField);
+
+});
+
+/* end: ../../libs/bem-forms/common.blocks/form-field/_required/form-field_required.browser.js */
+/* begin: ../../libs/bem-forms/common.blocks/validation/_required/validation_required.browser.js */
+/**
+ * @module validation_required
+ */
+modules.define('validation_required',
+    function(provide) {
+
+var DEFAULT_MESSAGE = 'Required field';
+provide(function(field) {
+    return function(val) {
+        return val? null : {
+            field : field.getName() || field.getId(),
+            message : field.getValidationMessage('required') || DEFAULT_MESSAGE
+        };
+    };
+});
+
+});
+
+/* end: ../../libs/bem-forms/common.blocks/validation/_required/validation_required.browser.js */
+/* begin: ../../libs/bem-forms/common.blocks/form-field/_type/form-field_type_attach.browser.js */
+/**
+ * @module form-field
+ */
+modules.define('form-field',
+    function(provide, FormField) {
+/**
+ * Attach field
+ *
+ * @exports
+ * @class form-field
+ * @bem
+ */
+FormField.decl({ block : this.name, modName : 'type', modVal : 'attach' }, {}, /** @lends form-field_type_attach */{
+
+    live : function() {
+        var ptp = this.prototype;
+
+        this.__base();
+        this
+            .liveInitOnBlockInsideEvent('change', 'attach', ptp._onControlChange)
+            .liveInitOnBlockInsideEvent({ modName : 'focused', modVal : true }, 'attach', ptp._onControlFocus)
+            .liveInitOnBlockInsideEvent({ modName : 'focused', modVal : '' }, 'attach', ptp._onControlBlur);
+    }
+});
+
+provide(FormField);
+
+});
+
+/* end: ../../libs/bem-forms/common.blocks/form-field/_type/form-field_type_attach.browser.js */
+/* begin: ../../libs/bem-core/common.blocks/strings/__escape/strings__escape.vanilla.js */
+/**
+ * @module strings__escape
+ * @description A set of string escaping functions
+ */
+
+modules.define('strings__escape', function(provide) {
+
+var symbols = {
+        '"' : '&quot;',
+        '\'' : '&apos;',
+        '&' : '&amp;',
+        '<' : '&lt;',
+        '>' : '&gt;'
+    },
+    mapSymbol = function(s) {
+        return symbols[s] || s;
+    },
+    buildEscape = function(regexp) {
+        regexp = new RegExp(regexp, 'g');
+        return function(str) {
+            return ('' + str).replace(regexp, mapSymbol);
+        };
+    };
+
+provide(/** @exports */{
+    /**
+     * Escape string to use in XML
+     * @type Function
+     * @param {String} str
+     * @returns {String}
+     */
+    xml : buildEscape('[&<>]'),
+
+    /**
+     * Escape string to use in HTML
+     * @type Function
+     * @param {String} str
+     * @returns {String}
+     */
+    html : buildEscape('[&<>]'),
+
+    /**
+     * Escape string to use in attributes
+     * @type Function
+     * @param {String} str
+     * @returns {String}
+     */
+    attr : buildEscape('["\'&<>]')
+});
+
+});
+
+/* end: ../../libs/bem-core/common.blocks/strings/__escape/strings__escape.vanilla.js */
+/* begin: ../../blocks/accordion/accordion.browser.js */
+
+modules.define('accordion', ['i-bem__dom', 'jquery'], function(provide, BEMDOM, $) {
+
+provide(BEMDOM.decl(this.name, {
+    beforeElemSetMod: {
+        'item' : {
+            'active' : {
+                'true' : function(elem) {
+                    return !this.hasMod(elem, 'disabled');
+                }
+            }
+        }
+    },
+    onSetMod: {
+        'js' : {
+            'inited' : function() {
+                this._current = this.findElem('item', 'active', true);
+                this.bindTo('title', 'click', function(e) {
+                    console.log('click on title');
+                    var item = $(e.currentTarget).parents(this.buildSelector('item'));
+                    this.setMod(item, 'active', true);
+                }, this);
+            }
+        }
+    },
+    onElemSetMod: {
+        'item' : {
+            'active' : {
+                'true' : function(elem) {
+                    this.delMod(this._current, 'active');
+                    this._current = elem;
+                    elem.closest('content').slideDown('normal');
+                },
+                '' : function (elem) {
+                    elem.closest('content').slideUp('normal');
+                }
+            }
+        }
+    }
+}));
+
+});
+
+/* end: ../../blocks/accordion/accordion.browser.js */
+/* begin: ../../blocks/google-maps-bg/google-maps-bg.browser.js */
+modules.define(
+    'google-maps-bg',
+    ['i-bem__dom', 'jquery'],
+    function(provide, BEMDOM, $) {
+
+
+
+//google.maps.event.addDomListener(window, 'load', showGoogleMaps);
+
+provide(BEMDOM.decl(this.name, {
+    onSetMod: {
+        'js' : {
+            'inited' : function() {
+                var position = [55.930220, 37.518203];
+                this.showGoogleMaps(this.domElem, position);
+            }
+        }
+    },
+
+    showGoogleMaps : function (domElem, position) {
+        'use strict';
+
+        var _map, marker;
+
+        var latLng = new google.maps.LatLng(position[0], position[1]);
+
+        var mapOptions = {
+            zoom: 16, // initialize zoom level - the max value is 21
+            streetViewControl: false, // hide the yellow Street View pegman
+            scrollwheel: false,
+            navigationControl: false,
+            mapTypeControl: false,
+            scaleControl: false,
+            draggable: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            center: latLng
+        };
+
+
+        // Show the default red marker at the location
+        marker = new google.maps.Marker({
+            position: latLng,
+            map: _map,
+            draggable: false,
+            animation: google.maps.Animation.DROP
+        });
+
+        _map = new google.maps.Map(domElem[0], mapOptions);
+    }
+
+}));
+});
+
+/* end: ../../blocks/google-maps-bg/google-maps-bg.browser.js */
 /* begin: ../../libs/bem-core/common.blocks/i-bem/__dom/_init/i-bem__dom_init_auto.js */
 /**
  * Auto initialization on DOM ready
@@ -17800,3 +18053,116 @@ provide(BEMDOM.decl(this.name,
 });
 
 /* end: ../../blocks/slider/slider.browser.js */
+/* begin: ../../libs/bem-components/common.blocks/attach/attach.js */
+/**
+ * @module attach
+ */
+
+modules.define(
+    'attach',
+    ['i-bem__dom', 'i-bem__internal', 'control', 'jquery', 'strings__escape'],
+    function(provide, BEMDOM, INTERNAL, Control, $, escape) {
+
+/**
+ * @exports
+ * @class attach
+ * @augments control
+ * @bem
+ */
+provide(BEMDOM.decl({ block : this.name, baseBlock : Control }, /** @lends attach.prototype */{
+    onSetMod : {
+        'disabled' : function(modName, modVal) {
+            this.__base.apply(this, arguments);
+            this._getButton().setMod(modName, modVal);
+        }
+    },
+
+    /**
+     * Clear control value
+     * @param {Object} [data] additional data
+     * @returns {attach} this
+     */
+    clear : function(data) {
+        if(!this.getVal()) return this;
+        return this._clear(data);
+    },
+
+    _clear : function(data) {
+        var control = this.elem('control'),
+            name = control.attr('name'),
+            tabIndex = control.attr('tabindex');
+
+        BEMDOM.replace(
+            control,
+            '<input' +
+                ' class="' + control.attr('class') + '"' +
+                ' type="file"' +
+                (name? ' name="' + name + '"' : '') +
+                (tabIndex? ' tabindex="' + tabIndex + '"' : '') +
+            '/>');
+
+        BEMDOM.destruct(this.elem('file'));
+
+        this.domElem.append(this.elem('no-file')); // use append because only detached before
+
+        return this
+            .dropElemCache('control file')
+            ._emitChange(data);
+    },
+
+    _onClearClick : function() {
+        this.clear({ source : 'clear' });
+    },
+
+    _onChange : function() {
+        this.elem('no-file').detach();
+        this.getVal()?
+            this
+                ._updateFileElem()
+                ._emitChange() :
+            this._clear();
+    },
+
+    _emitChange : function(data) {
+        return this.emit('change', data);
+    },
+
+    _updateFileElem : function() {
+        var fileName = extractFileNameFromPath(this.getVal());
+
+        this.elem('file').length && BEMDOM.destruct(this.elem('file'));
+
+        BEMDOM.append(
+            this.domElem,
+            '<span class="' +
+                this.__self.buildClass('file') + '">' +
+                '<span class="' +
+                    this.__self.buildClass('text') + '">' +
+                    escape.html(fileName) +
+                '</span>' +
+                '<span class="' + this.__self.buildClass('clear') + '"/>' +
+            '</span>');
+
+        return this.dropElemCache('file');
+    },
+
+    _getButton : function() {
+        return this.findBlockInside('button');
+    }
+}, /** @lends attach */{
+    live : function() {
+        this
+            .liveBindTo('clear', 'pointerclick', this.prototype._onClearClick)
+            .liveBindTo('control', 'change', this.prototype._onChange);
+
+        return this.__base.apply(this, arguments);
+    }
+}));
+
+function extractFileNameFromPath(path) {
+    return path.split('\\').pop(); // we need this only in windows
+}
+
+});
+
+/* end: ../../libs/bem-components/common.blocks/attach/attach.js */

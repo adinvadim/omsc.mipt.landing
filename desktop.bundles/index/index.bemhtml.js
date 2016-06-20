@@ -2779,7 +2779,7 @@ block('steps').js()(true);
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/steps/steps.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/form-main/form-main.bemhtml.js */
-block('from-main').js()(true);
+block('form-main').js()(true);
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/form-main/form-main.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/form/form.bemhtml.js */
@@ -2888,6 +2888,106 @@ block('input').elem('control')(
 );
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/input/__control/input__control.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/attach/__button/attach__button.bemhtml.js */
+block('button').match(function() { return this._attach; })(
+    tag()('span'),
+    content()(function() {
+        return [
+            { block : 'attach', elem : 'control' },
+            applyNext()
+        ];
+    })
+);
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/attach/__button/attach__button.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/attach/__control/attach__control.bemhtml.js */
+block('attach').elem('control')(
+
+    tag()('input'),
+
+    attrs()(function() {
+        var attrs = { type : 'file' },
+            attach = this._attach;
+
+        // в js генерим html для attach__control без самого attach
+        if(attach) {
+            attrs.name = attach.name;
+            attach.mods && attach.mods.disabled && (attrs.disabled = 'disabled');
+            attach.tabIndex && (attrs.tabindex = attach.tabIndex);
+        }
+
+        return attrs;
+    })
+
+);
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/attach/__control/attach__control.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/attach/__no-file/attach__no-file.bemhtml.js */
+block('attach').elem('no-file').tag()('span');
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/attach/__no-file/attach__no-file.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/attach/__file/attach__file.bemhtml.js */
+block('attach').elem('file').tag()('span');
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/attach/__file/attach__file.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/attach/__text/attach__text.bemhtml.js */
+block('attach').elem('text').tag()('span');
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/attach/__text/attach__text.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/attach/__clear/attach__clear.bemhtml.js */
+block('attach').elem('clear').tag()('span');
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/attach/__clear/attach__clear.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/accordion/accordion.bemhtml.js */
+block('accordion')(
+    js()(true),
+
+    content()(function() {
+        var ctx = this.ctx;
+        console.log(ctx);
+        return ctx.options.map(item => {
+            return {
+                elem : 'item',
+                content : [
+                    {
+                        elem : 'title',
+                        content : item.title
+                    },
+                    {
+                        elem : 'content',
+                        content : item.content
+                    }
+                ]
+            }
+        })
+    })
+)
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/accordion/accordion.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/partner-card/partner-card.bemhtml.js */
+block('partner-card')(
+
+    content()(function() {
+        var ctx = this.ctx;
+        return [
+            {
+                elem : 'title',
+                content : ctx.title
+            },
+            {
+                elem : 'img-wrapper',
+                content : {
+                    block : 'image',
+                    url : ctx.imgUrl,
+                    mix : { block : 'partner-card', elem : 'image' }
+                }
+            }
+        ];
+    })
+
+)
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/partner-card/partner-card.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/radio/_type/radio_type_button.bemhtml.js */
 block('radio').mod('type', 'button')(
     content()(function() {
@@ -2978,6 +3078,43 @@ block('slider')(
 );
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/slider/slider.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/attach/attach.bemhtml.js */
+block('attach')(
+    def()(function() { return applyNext({ _attach : this.ctx }); }),
+
+    tag()('span'),
+
+    js()(true),
+
+    content()(
+        function() {
+            var ctx = this.ctx,
+                button = ctx.button;
+
+            this.isSimple(button) && (button = {
+                block : 'button',
+                tag : 'span',
+                text : button
+            });
+
+            var attachMods = this.mods,
+                buttonMods = button.mods || (button.mods = {});
+            ['size', 'theme', 'disabled', 'focused'].forEach(function(mod) {
+                buttonMods[mod] || (buttonMods[mod] = attachMods[mod]);
+            });
+
+            return [
+                button,
+                {
+                    elem : 'no-file',
+                    content : this.ctx.noFileText
+                }
+            ];
+        }
+    )
+);
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/attach/attach.bemhtml.js */
 oninit(function(exports, context) {
     var BEMContext = exports.BEMContext || context.BEMContext;
     // Provides third-party libraries from different modular systems

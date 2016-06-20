@@ -1,0 +1,8 @@
+.icon_type_attach {
+    background-image: svg-load('icon_type_attach.svg', fill=#0b6bb2);
+    width: 1em;
+    height: 1em;
+    margin-right: 3px;
+    line-height: 1em;
+    background-size: 1em 1em;
+}
