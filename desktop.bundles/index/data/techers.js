@@ -1,7 +1,7 @@
 module.exports = [
     {
         person : {
-            imgUrl : '/',
+            imgUrl : './images/teachers/raygorod.jpg',
             name : 'Райгородский Андрей Михайлович',
             about : 'Заведующий кафедрой Дискретной математики'
         },
@@ -12,7 +12,7 @@ module.exports = [
     },
     {
         person : {
-            imgUrl : '/',
+            imgUrl : './images/teachers/savvataev.jpg',
             name : 'Савватеев Алексей Владимирович',
             about : 'Декан Озерной школы Университета Дмитрия Пожарского'
         },
@@ -23,7 +23,7 @@ module.exports = [
     },
     {
         person : {
-            imgUrl : '/',
+            imgUrl : './images/teachers/daynyak.jpg',
             name : 'Дайняк Александр Борисович',
             about : 'Доцент кафедры дискретной математики МФТИ, кандидат физико-математических наук'
         },
@@ -32,7 +32,7 @@ module.exports = [
     },
     {
         person : {
-            imgUrl : '/',
+            imgUrl : './images/teachers/shukovskiy.jpg',
             name : 'Жуковский Максим Евгеньевич',
             about : 'Доцент кафедры дискретной математики МФТИ',
         },
@@ -42,7 +42,7 @@ module.exports = [
     },
     {
         person : {
-            imgUrl : '/',
+            imgUrl : './images/teachers/lastone.jpeg',
             name : 'Ильинский Дмитрий Геннадьевич',
             about : 'Доцент кафедры дискретной математики МФТИ'
         },

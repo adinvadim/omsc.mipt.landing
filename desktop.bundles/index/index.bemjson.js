@@ -1,4 +1,6 @@
 var data = {
+    menu : require('./data/menu'),
+    originality : require('./data/originality'),
     teachers : require('./data/techers.js'),
     faq : require('./data/faq.js'),
     partners : require('./data/partners.js')
@@ -26,75 +28,36 @@ module.exports = {
                 content : [
                     {
                         block : 'row',
-                        mix : { block : 'header', elem : 'menu-row'},
-                        content : [
-                            {
-                                block : 'sections-menu',
-                                mix : { block : 'header', elem : 'menu' },
-                                content : [{
-                                    name : 'О магистратуре',
-                                    sectionId : 1,
-                                    active : true
-                                }, {
-                                    name : 'Программа',
-                                    sectionId : 2
-                                }, {
-                                    name : 'Преподователи',
-                                    sectionId : 3
-                                }, {
-                                    name : 'Как поступить',
-                                    sectionId : 4
-                                }, {
-                                    name : 'FAQ',
-                                    sectionId : 5
-                                }, {
-                                    name : 'Контакты',
-                                }].map(item => {
-                                    return {
-                                        elem : 'menu-item',
-                                        content : item.name,
-                                        elemMods : { active : item.active },
-                                        js : {
-                                            sectionId : item.sectionId
-                                        },
-                                        mix : [
-                                            { block : 'menu-item', js : true },
-                                            { block : 'header', elem : 'menu-item'},
-                                        ]
-                                    }
-                                })
-                            },
-                            {
-                                block : 'social',
-                                socials : [{
-                                    name : 'twitter',
-                                    url : '/'
-                                }, {
-                                    name : 'facebook',
-                                    url : '/'
-                                }, {
-                                    name : 'vk',
-                                    url : '/'
-                                }]
-                            }
-                        ]
-                    }, /* row end */
-                    {
-                        block : 'row',
-                        content : {
-                            block : 'logo',
-                            mix : {
-                                block : 'header',
-                                elem : 'logo'
-                            }
-                        }
-                    },
-                    {
-                        block : 'row',
                         content : {
                             elem : 'col',
                             elemMods : { sw : 10 },
+                            mix : { block : 'header', elem : 'content' },
                             content : [
+                                {
+                                    block : 'sections-menu',
+                                    mix : { block : 'header', elem : 'menu' },
+                                    content : data.menu.map(item => {
+                                        return {
+                                            elem : 'menu-item',
+                                            content : item.name,
+                                            elemMods : { active : item.active },
+                                            js : {
+                                                sectionId : item.sectionId
+                                            },
+                                            mix : [
+                                                { block : 'menu-item', js : true },
+                                                { block : 'header', elem : 'menu-item'},
+                                            ]
+                                        }
+                                    })
+                                },
+                                {
+                                    block : 'logo',
+                                    mix : {
+                                        block : 'header',
+                                        elem : 'logo'
+                                    }
+                                },
                                 {
                                     block : 'title',
                                     level : 1,
@@ -104,17 +67,44 @@ module.exports = {
                                 {
                                     block : 'text',
                                     mix : { block : 'header', elem : 'text' },
-                                    content : 'Первый в России образовательный онлайн-проект с получением диплома государственного образца'
+                                    content : [
+                                        `Первый в России образовательный онлайн-проект
+                                        с получением диплома государственного образца от лучшего технического ВУЗа страны `,
+                                        {
+                                            tag : 'sup',
+                                            content : '*'
+                                        }
+                                    ]
                                 },
                                 {
                                     block : 'button',
                                     mods : { view : 'second', size : 'l' },
                                     mix : { block : 'header', elem : 'button' },
                                     content : 'Подать документы'
-                                }
+                                },
+
                             ]
                         }
-                    } /* row end */
+                    }, /* row end */
+                    {
+                        block : 'row',
+                        mods : { sar : true },
+                        content : {
+                            elem : 'col',
+                            elemMods : { sw : 12 },
+                            content : {
+                                block : 'header',
+                                elem : 'note',
+                                content : [
+                                    {
+                                        tag : 'sup',
+                                        content : '*'
+                                    },
+                                     '- по версии RAEX (Эксперт РА)'
+                                ]
+                            }
+                        }
+                    }
                 ],
 
             }
@@ -130,7 +120,7 @@ module.exports = {
                         icon : 'about'
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 4, so : 1 },
+                        elemMods : { sw : 12 , lw : 4, lo : 1 },
                         content : {
                             block : 'quote-card',
                             content : `«Сейчас — как раз
@@ -143,7 +133,7 @@ module.exports = {
 
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 7 },
+                        elemMods : { sw: 12, lw : 7 },
                         content : [
                             {
                                 tag : 'p',
@@ -167,19 +157,19 @@ module.exports = {
                         icon : 'originality'
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 4, so : 1}
+                        elemMods : { sw : 12, lw : 4, lo : 1}
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 7 },
+                        elemMods : { sw : 12, lw : 7 },
                         content : [
                             {
-                                tag : 'p',
-                                content : `Первая в России онлайн-магистратутра. Студент сможет осваивать магистерскую программу из любой точки мира, придерживаясь индивидуального плана обучения. При этом, если студент хочет приехать на Физтех и хочет участвовать в жизни Вуза, он имеет все те же права и возможности, что и  обычные студенты.
-                                    `
-                            },
-                            {
-                                tag : 'p',
-                                content : `Персонализированный подход. Каждому студенту, помимо обязательных предметов, преподаватели помогают сформировать дополнительную программу с учетом его личных особенностей и предпочтений и сопровождают его в процессе всего обучения.`
+                                block : 'list',
+                                content : data.originality.map(item => {
+                                    return {
+                                        elem : 'item',
+                                        content : item
+                                    }
+                                })
                             }
                         ]
                     }]
@@ -192,10 +182,10 @@ module.exports = {
                         icon : 'diplom'
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 4, so : 1}
+                        elemMods : { sw : 12, lw : 4, lo : 1}
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 7 },
+                        elemMods : { sw : 12, lw : 7 },
                         content : {
                             tag : 'p',
                             content : [
@@ -217,10 +207,10 @@ module.exports = {
                         icon : 'employment'
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 4, so : 1}
+                        elemMods : { sw : 12, lw : 4, lo : 1}
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 7 },
+                        elemMods : { sw : 12, lw : 7 },
                         content : {
                             tag : 'p',
                             content : `Студенты МФТИ, чаще всего, трудоустраиваются уже в процессе обучения.
@@ -268,7 +258,7 @@ module.exports = {
                                     return {
                                         block : 'row',
                                         elem : 'col',
-                                        elemMods : { sw : 3 },
+                                        elemMods : { sw : 12, mw : 6, lw : 3 },
                                         content : {
                                             block : 'course-card',
                                             title : item.title,
@@ -290,7 +280,7 @@ module.exports = {
                                     return {
                                         block : 'row',
                                         elem : 'col',
-                                        elemMods : { sw : 3 },
+                                        elemMods : { sw : 12, mw : 6, lw : 3 },
                                         content : {
                                             block : 'course-card',
                                             title : item.title,
@@ -318,7 +308,7 @@ module.exports = {
                                     return {
                                         block : 'row',
                                         elem : 'col',
-                                        elemMods : { sw : 3 },
+                                        elemMods : { sw : 12, mw : 6, lw : 3 },
                                         content : {
                                             block : 'course-card',
                                             imgUrl : item.imgUrl,
@@ -345,7 +335,7 @@ module.exports = {
                                     return {
                                         block : 'row',
                                         elem : 'col',
-                                        elemMods : { sw : 3 },
+                                        elemMods : { sw : 12, mw : 6, lw : 3 },
                                         content : {
                                             block : 'course-card',
                                             title : item.title,
@@ -392,13 +382,13 @@ module.exports = {
                                             block : 'slider',
                                             elem : 'person',
                                             person : item.person,
-                                            mix : { block : 'row', elem : 'col', elemMods :  { sw : 4, so : 1} }
+                                            mix : { block : 'row', elem : 'col', elemMods :  { sw : 12, mw : 5, lw : 4, lo : 1} }
                                         },
                                         {
                                             block : 'slider',
                                             elem : 'content',
                                             content : item.text,
-                                            mix : { block : 'row', elem : 'col', elemMods : { sw : 7 } }
+                                            mix : { block : 'row', elem : 'col', elemMods : { sw : 12, mw : 7 } }
                                         }
                                     ]
                                 }
@@ -431,10 +421,10 @@ module.exports = {
                         icon : 'how-to'
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 4, so : 1 }
+                        elemMods : { sw : 12, lw : 4, lo : 1 }
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 7 },
+                        elemMods : { sw : 12, lw : 7 },
                         content : [{
                             tag : 'p',
                             content : `Подача документов осуществляется с 20 июня 2016 по 10 августа 2016. По итогам собеседований будут отобраны 10 человек для обучения. Магистратура является платной, стоимость обучения — 150 000 рублей в год, однако, есть возможность получить финансовую помощь, на которую также необходимо подать заявку.
@@ -454,11 +444,11 @@ module.exports = {
                                         content : {
                                             tag : 'p',
                                             content : [
-                                                'Подать документы ',
+                                                'Подать документы в ',
                                                 {
                                                     block : 'link',
-                                                    url : '/',
-                                                    content : 'неготовая ссылка'
+                                                    url : 'https://pk.mipt.ru/apply/',
+                                                    content : 'магистратуру МФТИ.'
                                                 }
                                             ]
                                         }
@@ -497,7 +487,7 @@ module.exports = {
                                                             block : 'form-field',
                                                             mix : { block : 'form-main', elem : 'form-field'},
                                                             mods : { type : 'input', required : true },
-                                                            name : 'lastName',
+                                                            name : 'lastname',
                                                             content : {
                                                                 block : 'input',
                                                                 placeholder : 'Фамилия'
@@ -507,7 +497,7 @@ module.exports = {
                                                             block : 'form-field',
                                                             mix : { block : 'form-main', elem : 'form-field' },
                                                             mods : { type : 'input', required : true },
-                                                            name : 'firstName',
+                                                            name : 'firstname',
                                                             content : {
                                                                 block : 'input',
                                                                 placeholder : 'Имя'
@@ -517,7 +507,7 @@ module.exports = {
                                                             block : 'form-field',
                                                             mix : { block : 'form-main', elem : 'form-field' },
                                                             mods : { type : 'input' },
-                                                            name : 'secondName',
+                                                            name : 'secondname',
                                                             content : {
                                                                 block : 'input',
                                                                 placeholder : 'Отечество'
@@ -529,7 +519,7 @@ module.exports = {
                                                             content : [{
                                                                 block : 'form-field',
                                                                 mix : { block : 'form-main', elem : 'form-field' },
-                                                                name : 'date',
+                                                                name : 'birthdate',
                                                                 mods : { type : 'input', required : true },
                                                                 content : {
                                                                     block : 'input',
@@ -636,20 +626,12 @@ module.exports = {
                                     }, {
                                         block : 'steps',
                                         elem : 'footer',
-                                        content : [
-                                            {
-                                                block : 'button',
-                                                mods : { view : 'plain', size : 'm'},
-                                                mix : { block : 'steps', elem : 'prev-button' },
-                                                content : 'Назад'
-                                            },
-                                            {
-                                                block : 'button',
-                                                mods : { view : 'main', size : 'm', disabled : true },
-                                                mix : { block : 'steps', elem : 'next-button' },
-                                                content : 'Далее'
-                                            }
-                                        ]
+                                        content : {
+                                            block : 'button',
+                                            mods : { view : 'plain', size : 'm'},
+                                            mix : { block : 'steps', elem : 'prev-button' },
+                                            content : 'Назад'
+                                        }
                                     }]
                                 }
                                 ]
@@ -670,10 +652,10 @@ module.exports = {
                     icon : 'employment'
                 }, {
                     elem : 'col',
-                    elemMods : { sw : 4, so : 1}
+                    elemMods : { sw : 12, lw : 4, lo : 1}
                 }, {
                     elem : 'col',
-                    elemMods : { sw : 7 },
+                    elemMods : { sw : 12, lw : 7 },
                     content : {
                         block : 'accordion',
                         options : data.faq
@@ -701,7 +683,7 @@ module.exports = {
                     data.partners.map(item => {
                         return {
                             elem : 'col',
-                            elemMods : { sw : 3 },
+                            elemMods : { sw : 12, mw : 4, lw : 3 },
                             content : {
                                 block : 'partner-card',
                                 title : item.title,
@@ -719,7 +701,64 @@ module.exports = {
                 {
                     block : 'google-maps-bg',
                     js : true
+                },
+                {
+                    block : 'form-feedback',
+                    content : {
+                        elem : 'inner',
+                        content : {
+                            block : 'form',
+                            content : [
+                                {
+                                    block : 'form-feedback',
+                                    elem : 'header',
+                                    content : 'Если у Вас появился вопрос или пожелание, напишите нам.'
+                                },
+                                {
+                                    block : 'form-field',
+                                    mods : { type : 'input' },
+                                    name : 'name',
+                                    content : { block : 'input', placeholder : 'Имя' }
+                                },
+                                {
+                                    block : 'form-filed',
+                                    mods : { type : 'input' },
+                                    name : 'email',
+                                    content : { block : 'input', placeholder : 'E-mail' },
+                                },
+                                {
+                                    block : 'form-field',
+                                    mods : { type : 'input' },
+                                    name : 'message',
+                                    content : { block : 'input', placeholder : 'Сообщение'}
+                                },
+                                {
+                                    block : 'form-feedback',
+                                    elem : 'footer',
+                                    content : [{
+                                        block : 'button',
+                                        mods : { view : 'second', size : 'm', type : 'submit' },
+                                        content : 'Отправить'
+                                    }, {
+                                        block : 'form-feedback',
+                                        elem : 'info',
+                                        info : [{
+                                            title : 'Адрес:',
+                                            content : '141701, Московская облаcть, г. Долгопрудный, Институтский пер., 9',
+                                        }, {
+                                            title : 'Телефон:',
+                                            content : '+7 (495) 408-45-54 '
+                                        }, {
+                                            title : 'E-mail:',
+                                            content : 'omsc@phystech.edu'
+                                        }]
+                                    }]
+                                }
+                            ]
+                        }
+                    }
                 }
+
             ]
         },
         {
@@ -735,25 +774,7 @@ module.exports = {
                             { block : 'footer', elem : 'menu' },
                             { block : 'row', elem : 'col', elemMods : { sw : 12 } }
                         ],
-                        content : [{
-                            name : 'О магистратуре',
-                            sectionId : 1,
-                            active : true
-                        }, {
-                            name : 'Программа',
-                            sectionId : 2
-                        }, {
-                            name : 'Преподователи',
-                            sectionId : 3
-                        }, {
-                            name : 'Как поступить',
-                            sectionId : 4
-                        }, {
-                            name : 'FAQ',
-                            sectionId : 5
-                        }, {
-                            name : 'Контакты',
-                        }].map(item => {
+                        content : data.menu.map(item => {
                             return {
                                 elem : 'menu-item',
                                 content : item.name,

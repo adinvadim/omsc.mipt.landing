@@ -49,10 +49,36 @@ exports.blocks = [
         "name": "row"
     },
     {
+        "name": "row",
+        "elems": [
+            {
+                "name": "col"
+            }
+        ]
+    },
+    {
+        "name": "row",
+        "elems": [
+            {
+                "name": "col",
+                "mods": [
+                    {
+                        "name": "sw",
+                        "vals": [
+                            {
+                                "name": 10
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "header",
         "elems": [
             {
-                "name": "menu-row"
+                "name": "content"
             }
         ]
     },
@@ -118,9 +144,6 @@ exports.blocks = [
         ]
     },
     {
-        "name": "social"
-    },
-    {
         "name": "logo"
     },
     {
@@ -128,32 +151,6 @@ exports.blocks = [
         "elems": [
             {
                 "name": "logo"
-            }
-        ]
-    },
-    {
-        "name": "row",
-        "elems": [
-            {
-                "name": "col"
-            }
-        ]
-    },
-    {
-        "name": "row",
-        "elems": [
-            {
-                "name": "col",
-                "mods": [
-                    {
-                        "name": "sw",
-                        "vals": [
-                            {
-                                "name": 10
-                            }
-                        ]
-                    }
-                ]
             }
         ]
     },
@@ -217,7 +214,17 @@ exports.blocks = [
         ]
     },
     {
-        "name": "section-title"
+        "name": "row",
+        "mods": [
+            {
+                "name": "sar",
+                "vals": [
+                    {
+                        "name": true
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "row",
@@ -227,6 +234,35 @@ exports.blocks = [
                 "mods": [
                     {
                         "name": "sw",
+                        "vals": [
+                            {
+                                "name": 12
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "header",
+        "elems": [
+            {
+                "name": "note"
+            }
+        ]
+    },
+    {
+        "name": "section-title"
+    },
+    {
+        "name": "row",
+        "elems": [
+            {
+                "name": "col",
+                "mods": [
+                    {
+                        "name": "lw",
                         "vals": [
                             {
                                 "name": 4
@@ -244,7 +280,7 @@ exports.blocks = [
                 "name": "col",
                 "mods": [
                     {
-                        "name": "so",
+                        "name": "lo",
                         "vals": [
                             {
                                 "name": 1
@@ -265,7 +301,7 @@ exports.blocks = [
                 "name": "col",
                 "mods": [
                     {
-                        "name": "sw",
+                        "name": "lw",
                         "vals": [
                             {
                                 "name": 7
@@ -273,6 +309,17 @@ exports.blocks = [
                         ]
                     }
                 ]
+            }
+        ]
+    },
+    {
+        "name": "list"
+    },
+    {
+        "name": "list",
+        "elems": [
+            {
+                "name": "item"
             }
         ]
     },
@@ -300,24 +347,6 @@ exports.blocks = [
                 "vals": [
                     {
                         "name": true
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "row",
-        "elems": [
-            {
-                "name": "col",
-                "mods": [
-                    {
-                        "name": "sw",
-                        "vals": [
-                            {
-                                "name": 12
-                            }
-                        ]
                     }
                 ]
             }
@@ -354,7 +383,25 @@ exports.blocks = [
                 "name": "col",
                 "mods": [
                     {
-                        "name": "sw",
+                        "name": "mw",
+                        "vals": [
+                            {
+                                "name": 6
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "row",
+        "elems": [
+            {
+                "name": "col",
+                "mods": [
+                    {
+                        "name": "lw",
                         "vals": [
                             {
                                 "name": 3
@@ -417,10 +464,46 @@ exports.blocks = [
         ]
     },
     {
+        "name": "row",
+        "elems": [
+            {
+                "name": "col",
+                "mods": [
+                    {
+                        "name": "mw",
+                        "vals": [
+                            {
+                                "name": 5
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "slider",
         "elems": [
             {
                 "name": "content"
+            }
+        ]
+    },
+    {
+        "name": "row",
+        "elems": [
+            {
+                "name": "col",
+                "mods": [
+                    {
+                        "name": "mw",
+                        "vals": [
+                            {
+                                "name": 7
+                            }
+                        ]
+                    }
+                ]
             }
         ]
     },
@@ -683,6 +766,24 @@ exports.blocks = [
         "name": "accordion"
     },
     {
+        "name": "row",
+        "elems": [
+            {
+                "name": "col",
+                "mods": [
+                    {
+                        "name": "mw",
+                        "vals": [
+                            {
+                                "name": 4
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "partner-card"
     },
     {
@@ -700,6 +801,57 @@ exports.blocks = [
     },
     {
         "name": "google-maps-bg"
+    },
+    {
+        "name": "form-feedback"
+    },
+    {
+        "name": "form-feedback",
+        "elems": [
+            {
+                "name": "inner"
+            }
+        ]
+    },
+    {
+        "name": "form-feedback",
+        "elems": [
+            {
+                "name": "header"
+            }
+        ]
+    },
+    {
+        "name": "form-filed"
+    },
+    {
+        "name": "form-filed",
+        "mods": [
+            {
+                "name": "type",
+                "vals": [
+                    {
+                        "name": "input"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "form-feedback",
+        "elems": [
+            {
+                "name": "footer"
+            }
+        ]
+    },
+    {
+        "name": "form-feedback",
+        "elems": [
+            {
+                "name": "info"
+            }
+        ]
     },
     {
         "name": "section",

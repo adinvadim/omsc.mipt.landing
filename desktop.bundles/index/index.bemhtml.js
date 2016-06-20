@@ -1977,80 +1977,6 @@ var api = new BEMHTML({});
 /// ------ BEM-XJST User-code Start -----
 /// -------------------------------------
 api.compile(function(match, once, wrap, block, elem, mode, mod, elemMod, def, tag, attrs, cls, js, bem, mix, content, replace, extend, oninit, xjstOptions, local, applyCtx, applyNext, apply) {
-/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/common.blocks/page/page.bemhtml.js */
-block('page')(
-
-    wrap()(function() {
-        var ctx = this.ctx;
-        this._nonceCsp = ctx.nonce;
-
-        return [
-            ctx.doctype || '<!DOCTYPE html>',
-            {
-                tag : 'html',
-                cls : 'ua_js_no',
-                content : [
-                    {
-                        elem : 'head',
-                        content : [
-                            { tag : 'meta', attrs : { charset : 'utf-8' } },
-                            ctx.uaCompatible === false? '' : {
-                                tag : 'meta',
-                                attrs : {
-                                    'http-equiv' : 'X-UA-Compatible',
-                                    content : ctx.uaCompatible || 'IE=edge'
-                                }
-                            },
-                            { tag : 'title', content : ctx.title },
-                            { block : 'ua', attrs : { nonce : ctx.nonce } },
-                            ctx.head,
-                            ctx.styles,
-                            ctx.favicon? { elem : 'favicon', url : ctx.favicon } : ''
-                        ]
-                    },
-                    ctx
-                ]
-            }
-        ];
-    }),
-
-    tag()('body'),
-
-    content()(function() {
-        return [
-            applyNext(),
-            this.ctx.scripts
-        ];
-    }),
-
-    elem('head')(
-        bem()(false),
-        tag()('head')
-    ),
-
-    elem('meta')(
-        bem()(false),
-        tag()('meta')
-    ),
-
-    elem('link')(
-        bem()(false),
-        tag()('link')
-    ),
-
-    elem('favicon')(
-        bem()(false),
-        tag()('link'),
-        attrs()(function() { return { rel : 'shortcut icon', href : this.ctx.url }; })
-    )
-
-);
-
-/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/common.blocks/page/page.bemhtml.js */
-/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/page/page.bemhtml.js */
-block('page').js()(true)
-
-/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/page/page.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/common.blocks/ua/ua.bemhtml.js */
 block('ua')(
     tag()('script'),
@@ -2323,9 +2249,6 @@ block('link')(
 );
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/link/link.bemhtml.js */
-/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/social/social.bemhtml.js */
-
-/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/social/social.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/logo/logo.bemhtml.js */
 block('logo')(
     content()(function(){
@@ -2529,6 +2452,13 @@ block('quote-card')(
 )
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/quote-card/quote-card.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/list/list.bemhtml.js */
+block('list')(
+    tag()('ul'),
+    elem('item').tag()('li')
+)
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/list/list.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/tabs/tabs.bemhtml.js */
 block('tabs')(
     js()(true),
@@ -2988,6 +2918,114 @@ block('partner-card')(
 )
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/partner-card/partner-card.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/form-feedback/form-feedback.bemhtml.js */
+block('form-feedback')(
+
+    elem('info')(
+
+        content()(function() {
+            var ctx = this.ctx;
+            return ctx.info.map(item => {
+                return {
+                    elem : 'info-item',
+                    content : [
+                        {
+                            elem : 'info-title',
+                            content : item.title
+                        },
+                        {
+                            elem : 'info-content',
+                            content : item.content
+                        }
+                    ]
+                }
+            })
+        })
+
+    ),
+
+    elem('info-item').mix()({
+        block : 'row',
+        elem : 'col',
+        elemMods : { sw : 4 }
+    })
+)
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/form-feedback/form-feedback.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/common.blocks/page/page.bemhtml.js */
+block('page')(
+
+    wrap()(function() {
+        var ctx = this.ctx;
+        this._nonceCsp = ctx.nonce;
+
+        return [
+            ctx.doctype || '<!DOCTYPE html>',
+            {
+                tag : 'html',
+                cls : 'ua_js_no',
+                content : [
+                    {
+                        elem : 'head',
+                        content : [
+                            { tag : 'meta', attrs : { charset : 'utf-8' } },
+                            ctx.uaCompatible === false? '' : {
+                                tag : 'meta',
+                                attrs : {
+                                    'http-equiv' : 'X-UA-Compatible',
+                                    content : ctx.uaCompatible || 'IE=edge'
+                                }
+                            },
+                            { tag : 'title', content : ctx.title },
+                            { block : 'ua', attrs : { nonce : ctx.nonce } },
+                            ctx.head,
+                            ctx.styles,
+                            ctx.favicon? { elem : 'favicon', url : ctx.favicon } : ''
+                        ]
+                    },
+                    ctx
+                ]
+            }
+        ];
+    }),
+
+    tag()('body'),
+
+    content()(function() {
+        return [
+            applyNext(),
+            this.ctx.scripts
+        ];
+    }),
+
+    elem('head')(
+        bem()(false),
+        tag()('head')
+    ),
+
+    elem('meta')(
+        bem()(false),
+        tag()('meta')
+    ),
+
+    elem('link')(
+        bem()(false),
+        tag()('link')
+    ),
+
+    elem('favicon')(
+        bem()(false),
+        tag()('link'),
+        attrs()(function() { return { rel : 'shortcut icon', href : this.ctx.url }; })
+    )
+
+);
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/common.blocks/page/page.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/page/page.bemhtml.js */
+block('page').js()(true)
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/page/page.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/radio/_type/radio_type_button.bemhtml.js */
 block('radio').mod('type', 'button')(
     content()(function() {
@@ -3056,7 +3094,7 @@ block('slider')(
                 content : {
                     block : 'image',
                     mix : { block : 'slider', elem : 'avatar' },
-                    src : person.imgUrl,
+                    url : person.imgUrl,
                     alt : person.name
                 },
             },
