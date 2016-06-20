@@ -23,7 +23,7 @@ block('slider')(
                 content : {
                     block : 'image',
                     mix : { block : 'slider', elem : 'avatar' },
-                    src : person.imgUrl,
+                    url : person.imgUrl,
                     alt : person.name
                 },
             },

@@ -1,5 +1,6 @@
 ({
-    shouldDeps : [
-        'variables'
+    mustDeps : [
+        'variables',
+        'mq'
     ]
 })

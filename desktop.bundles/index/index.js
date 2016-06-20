@@ -417,25 +417,6 @@ else {
 
 })(typeof window !== 'undefined' ? window : global);
 
-/* begin: ../../blocks/page/page.browser.js */
-/**
- * @module page
- */
-
-modules.define('page', ['i-bem__dom', 'jquery'], function(provide, BEMDOM, $) {
-
-/**
- * @exports
- * @class sections-menu
- * @bem
- */
-provide(BEMDOM.decl(this.name,  /** @lends tabs.prototype */{
-
-}));
-
-});
-
-/* end: ../../blocks/page/page.browser.js */
 /* begin: ../../libs/bem-core/common.blocks/i-bem/__dom/i-bem__dom.js */
 /**
  * @module i-bem__dom
@@ -15371,38 +15352,26 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
 
                 this._button = this.findBlockOn(this.elem('button'), 'button');
 
-                this._form.validate()
-                    .then(function(st) {
-                        if (self._form.checkFields(st)) {
-                            self._button.delMod('disabled')
-                        } else {
-                            self._button.setMod('disabled')
-                        }
-                    })
-
-                //this._form.getFields()[1].setValidationMessage('required', 'Ololo!');
-                //this._form.getFields()[0].setValidationMessages({
-                //    required : 'FUCK!'
-                //});
-
-                //this._form.getFields()[2].setMod('disabled');
-                //this._form.getFields()[0].setStatus('invalid');
-
-                // You can bind to other form events
-
-                // this._form.on('focus', function(e, data) {
-                //     console.log('focused form', data);
-                // });
             }
         }
     },
 
     _onSubmit: function(e, val) {
-        console.log('form submit');
-        //this._form.validate()
-            //.then(function(status) {
-                //console.log(status)
-            //});
+        this._form.validate()
+            .then(function(st) {
+                if (self._form.checkFields(st)) {
+                    $.ajax({
+                        url : '/mipt/application.php',
+                        method : 'POST',
+                        headers : {
+                            'HTTP_X_REQUESTED_WITH' : 'xmlhttprequest',
+                        },
+                        data : val
+                    });
+                } else {
+                    self._button.setMod('disabled');
+                }
+            })
     },
 
     _onChange: function(e, val) {
@@ -17831,6 +17800,25 @@ provide(BEMDOM.decl(this.name, {
 });
 
 /* end: ../../blocks/google-maps-bg/google-maps-bg.browser.js */
+/* begin: ../../blocks/page/page.browser.js */
+/**
+ * @module page
+ */
+
+modules.define('page', ['i-bem__dom', 'jquery'], function(provide, BEMDOM, $) {
+
+/**
+ * @exports
+ * @class sections-menu
+ * @bem
+ */
+provide(BEMDOM.decl(this.name,  /** @lends tabs.prototype */{
+
+}));
+
+});
+
+/* end: ../../blocks/page/page.browser.js */
 /* begin: ../../libs/bem-core/common.blocks/i-bem/__dom/_init/i-bem__dom_init_auto.js */
 /**
  * Auto initialization on DOM ready

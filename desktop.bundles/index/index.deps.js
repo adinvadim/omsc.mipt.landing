@@ -1,6 +1,9 @@
 exports.deps = [
     {
-        "block": "page"
+        "block": "variables"
+    },
+    {
+        "block": "mq"
     },
     {
         "block": "i-bem",
@@ -65,9 +68,6 @@ exports.deps = [
         "elem": "js"
     },
     {
-        "block": "variables"
-    },
-    {
         "block": "page",
         "elem": "meta"
     },
@@ -90,8 +90,17 @@ exports.deps = [
         "block": "row"
     },
     {
+        "block": "row",
+        "elem": "col"
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "sw"
+    },
+    {
         "block": "header",
-        "elem": "menu-row"
+        "elem": "content"
     },
     {
         "block": "sections-menu"
@@ -167,9 +176,6 @@ exports.deps = [
         "elem": "menu-item"
     },
     {
-        "block": "social"
-    },
-    {
         "block": "logo"
     },
     {
@@ -182,15 +188,6 @@ exports.deps = [
     {
         "block": "header",
         "elem": "logo"
-    },
-    {
-        "block": "row",
-        "elem": "col"
-    },
-    {
-        "block": "row",
-        "elem": "col",
-        "mod": "sw"
     },
     {
         "block": "title"
@@ -252,6 +249,25 @@ exports.deps = [
         "elem": "button"
     },
     {
+        "block": "row",
+        "mod": "sar"
+    },
+    {
+        "block": "row",
+        "mod": "sar",
+        "val": true
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "sw",
+        "val": 12
+    },
+    {
+        "block": "header",
+        "elem": "note"
+    },
+    {
         "block": "section-title"
     },
     {
@@ -289,13 +305,12 @@ exports.deps = [
     {
         "block": "row",
         "elem": "col",
-        "mod": "sw",
-        "val": 4
+        "mod": "lw"
     },
     {
         "block": "row",
         "elem": "col",
-        "mod": "so"
+        "mod": "lo"
     },
     {
         "block": "quote-card"
@@ -303,8 +318,15 @@ exports.deps = [
     {
         "block": "row",
         "elem": "col",
-        "mod": "sw",
+        "mod": "lw",
         "val": 7
+    },
+    {
+        "block": "list"
+    },
+    {
+        "block": "list",
+        "elem": "item"
     },
     {
         "block": "section",
@@ -323,12 +345,6 @@ exports.deps = [
         "block": "row",
         "mod": "sac",
         "val": true
-    },
-    {
-        "block": "row",
-        "elem": "col",
-        "mod": "sw",
-        "val": 12
     },
     {
         "block": "section",
@@ -414,7 +430,12 @@ exports.deps = [
     {
         "block": "row",
         "elem": "col",
-        "mod": "sw",
+        "mod": "mw"
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "lw",
         "val": 3
     },
     {
@@ -453,8 +474,20 @@ exports.deps = [
         "elem": "person"
     },
     {
+        "block": "row",
+        "elem": "col",
+        "mod": "mw",
+        "val": 5
+    },
+    {
         "block": "slider",
         "elem": "content"
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "mw",
+        "val": 7
     },
     {
         "block": "slider",
@@ -648,6 +681,12 @@ exports.deps = [
         "block": "accordion"
     },
     {
+        "block": "row",
+        "elem": "col",
+        "mod": "mw",
+        "val": 4
+    },
+    {
         "block": "partner-card"
     },
     {
@@ -657,6 +696,37 @@ exports.deps = [
     },
     {
         "block": "google-maps-bg"
+    },
+    {
+        "block": "form-feedback"
+    },
+    {
+        "block": "form-feedback",
+        "elem": "inner"
+    },
+    {
+        "block": "form-feedback",
+        "elem": "header"
+    },
+    {
+        "block": "form-filed"
+    },
+    {
+        "block": "form-filed",
+        "mod": "type"
+    },
+    {
+        "block": "form-filed",
+        "mod": "type",
+        "val": "input"
+    },
+    {
+        "block": "form-feedback",
+        "elem": "footer"
+    },
+    {
+        "block": "form-feedback",
+        "elem": "info"
     },
     {
         "block": "section",
@@ -679,6 +749,9 @@ exports.deps = [
         "elem": "copyright"
     },
     {
+        "block": "page"
+    },
+    {
         "block": "i-bem",
         "elem": "dom",
         "mod": "init",
@@ -688,6 +761,12 @@ exports.deps = [
         "block": "loader",
         "mod": "type",
         "val": "js"
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "sw",
+        "val": 10
     },
     {
         "block": "jquery",
@@ -711,12 +790,6 @@ exports.deps = [
         "elem": "menu-item",
         "mod": "active",
         "val": true
-    },
-    {
-        "block": "row",
-        "elem": "col",
-        "mod": "sw",
-        "val": 10
     },
     {
         "block": "button",
@@ -746,7 +819,13 @@ exports.deps = [
     {
         "block": "row",
         "elem": "col",
-        "mod": "so",
+        "mod": "lw",
+        "val": 4
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "lo",
         "val": 1
     },
     {
@@ -789,6 +868,12 @@ exports.deps = [
         "elem": "box",
         "mod": "selected",
         "val": true
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "mw",
+        "val": 6
     },
     {
         "block": "slider"

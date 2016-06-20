@@ -1,17 +1,23 @@
 .input {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid;
     font-size: 18px;
     line-height: 22px;
     display: inline-block;
     width: 100%;
+    color: inherit;
 
     &_invalid {
         border-color : red;
         color : red;
 
-        &::placeholder {
-            color: red;
+
+        .input__control {
+            &::placeholder
+            {
+                color: red;
+            }
         }
+
     }
     &__box {
         display: inline-block;
@@ -21,6 +27,7 @@
         display: inline-block;
         font: inherit;
         line-height: inherit;
+        color : inherit;
 
         position: relative;
 
@@ -59,7 +66,7 @@
         &::-moz-placeholder
         {
             opacity: 1;
-            color: #999;
+            color: inherit;
         }
 
         &::-ms-clear
@@ -73,7 +80,7 @@
         }
 
         &::placeholder {
-            color: black;
+            color: inherit;
         }
     }
 }

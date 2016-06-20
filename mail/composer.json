@@ -1,0 +1,13 @@
+{
+    "name": "mipt/omsc",
+    "require": {
+        "phpmailer/phpmailer": "^5.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anna Manaenkova",
+            "email": "anna.manaenkova@phystech.edu"
+        }
+    ]
+}
