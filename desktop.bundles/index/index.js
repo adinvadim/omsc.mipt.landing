@@ -12994,12 +12994,48 @@ provide({
 });
 
 /* end: ../../libs/bem-core/common.blocks/events/events.vanilla.js */
+/* begin: ../../blocks/header/header.browser.js */
+
+/**
+ * @module page
+ */
+
+modules.define('header', ['i-bem__dom', 'jquery'], function(provide, BEMDOM, $) {
+
+/**
+ * @exports
+ * @class sections-menu
+ * @bem
+ */
+provide(BEMDOM.decl(this.name,  /** @lends tabs.prototype */{
+
+    onSetMod : {
+        'js' : {
+            'inited' : function() {
+                this.bindTo('main-button', 'click', this._onMainButtonClick.bind(this))
+            }
+        }
+    },
+
+    _onMainButtonClick: function(e) {
+        var section = 4
+        var section = $('.section[data-id=' + section +']');
+        $('html, body')
+            .stop()
+            .animate({ scrollTop : section.offset().top }, 1000);
+    }
+
+}));
+
+});
+
+/* end: ../../blocks/header/header.browser.js */
 /* begin: ../../blocks/sections-menu/sections-menu.browser.js */
 /**
  * @module sections-menu
  */
 
-modules.define('sections-menu', ['i-bem__dom', 'jquery', 'page'], function(provide, BEMDOM, $, Page) {
+modules.define('sections-menu', ['i-bem__dom', 'jquery'], function(provide, BEMDOM, $, Page) {
 
 /**
  * @exports
@@ -17862,25 +17898,6 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
 });
 
 /* end: ../../blocks/form-feedback/form-feedback.browser.js */
-/* begin: ../../blocks/page/page.browser.js */
-/**
- * @module page
- */
-
-modules.define('page', ['i-bem__dom', 'jquery'], function(provide, BEMDOM, $) {
-
-/**
- * @exports
- * @class sections-menu
- * @bem
- */
-provide(BEMDOM.decl(this.name,  /** @lends tabs.prototype */{
-
-}));
-
-});
-
-/* end: ../../blocks/page/page.browser.js */
 /* begin: ../../libs/bem-core/common.blocks/i-bem/__dom/_init/i-bem__dom_init_auto.js */
 /**
  * Auto initialization on DOM ready

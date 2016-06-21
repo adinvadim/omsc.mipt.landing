@@ -248,7 +248,7 @@ exports.deps = [
     },
     {
         "block": "header",
-        "elem": "button"
+        "elem": "main-button"
     },
     {
         "block": "row",

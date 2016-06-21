@@ -224,7 +224,7 @@ exports.blocks = [
         "name": "header",
         "elems": [
             {
-                "name": "button"
+                "name": "main-button"
             }
         ]
     },
