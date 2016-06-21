@@ -724,7 +724,7 @@ module.exports = {
                                     content : { block : 'input', placeholder : 'Имя' }
                                 },
                                 {
-                                    block : 'form-filed',
+                                    block : 'form-field',
                                     mods : { type : 'input' },
                                     name : 'email',
                                     content : { block : 'input', placeholder : 'E-mail' },

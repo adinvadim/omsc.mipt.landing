@@ -709,18 +709,6 @@ exports.deps = [
         "elem": "header"
     },
     {
-        "block": "form-filed"
-    },
-    {
-        "block": "form-filed",
-        "mod": "type"
-    },
-    {
-        "block": "form-filed",
-        "mod": "type",
-        "val": "input"
-    },
-    {
         "block": "form-feedback",
         "elem": "footer"
     },

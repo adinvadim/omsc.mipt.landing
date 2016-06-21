@@ -822,22 +822,6 @@ exports.blocks = [
         ]
     },
     {
-        "name": "form-filed"
-    },
-    {
-        "name": "form-filed",
-        "mods": [
-            {
-                "name": "type",
-                "vals": [
-                    {
-                        "name": "input"
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "name": "form-feedback",
         "elems": [
             {

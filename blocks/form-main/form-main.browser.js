@@ -25,6 +25,7 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
     },
 
     _onSubmit: function(e, val) {
+        var self = this;
         this._form.validate()
             .then(function(st) {
                 if (self._form.checkFields(st)) {
