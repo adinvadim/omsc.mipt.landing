@@ -25,6 +25,10 @@
     }
 
     &__footer {
+        display: flex;
+        flex-flow: wrap column;
+        align-items: flex-end;
         margin-top: 20px;
+        margin-bottom: 20px;
     }
 }

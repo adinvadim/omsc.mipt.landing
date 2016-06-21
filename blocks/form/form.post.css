@@ -1,7 +1,6 @@
 .form {
     &__message {
         visibility: hidden;
-        height: 30px;
         &_error {
             visibility: initial;
             color: red;
