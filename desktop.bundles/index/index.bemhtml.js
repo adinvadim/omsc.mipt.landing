@@ -2070,6 +2070,10 @@ block('section').mod('type', 'main')(
 )
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/section/_type/section_type_main.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/header/header.bemhtml.js */
+block('header').js()(true)
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/header/header.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/sections-menu/sections-menu.bemhtml.js */
 block('sections-menu')(
 

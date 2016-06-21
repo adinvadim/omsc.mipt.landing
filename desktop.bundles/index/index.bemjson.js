@@ -78,7 +78,7 @@ module.exports = {
                                 {
                                     block : 'button',
                                     mods : { view : 'second', size : 'l' },
-                                    mix : { block : 'header', elem : 'button' },
+                                    mix : { block : 'header', elem : 'main-button' },
                                     content : 'Подать документы'
                                 },
 

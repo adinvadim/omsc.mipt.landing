@@ -2,7 +2,7 @@
  * @module sections-menu
  */
 
-modules.define('sections-menu', ['i-bem__dom', 'jquery', 'page'], function(provide, BEMDOM, $, Page) {
+modules.define('sections-menu', ['i-bem__dom', 'jquery'], function(provide, BEMDOM, $, Page) {
 
 /**
  * @exports
