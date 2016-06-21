@@ -40,6 +40,7 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                     self._button.setMod('disabled');
                 }
             })
+    },
 
 
     _onChange: function(e, val) {

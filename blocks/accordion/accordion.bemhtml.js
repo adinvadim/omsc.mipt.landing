@@ -3,7 +3,6 @@ block('accordion')(
 
     content()(function() {
         var ctx = this.ctx;
-        console.log(ctx);
         return ctx.options.map(item => {
             return {
                 elem : 'item',

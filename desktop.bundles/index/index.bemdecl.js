@@ -66,6 +66,24 @@ exports.blocks = [
                         "name": "sw",
                         "vals": [
                             {
+                                "name": 12
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "row",
+        "elems": [
+            {
+                "name": "col",
+                "mods": [
+                    {
+                        "name": "lw",
+                        "vals": [
+                            {
                                 "name": 10
                             }
                         ]
@@ -155,9 +173,6 @@ exports.blocks = [
         ]
     },
     {
-        "name": "title"
-    },
-    {
         "name": "header",
         "elems": [
             {
@@ -221,24 +236,6 @@ exports.blocks = [
                 "vals": [
                     {
                         "name": true
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "row",
-        "elems": [
-            {
-                "name": "col",
-                "mods": [
-                    {
-                        "name": "sw",
-                        "vals": [
-                            {
-                                "name": 12
-                            }
-                        ]
                     }
                 ]
             }
@@ -351,6 +348,9 @@ exports.blocks = [
                 ]
             }
         ]
+    },
+    {
+        "name": "title"
     },
     {
         "name": "section",

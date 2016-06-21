@@ -16,7 +16,6 @@ provide(BEMDOM.decl(this.name, {
             'inited' : function() {
                 this._current = this.findElem('item', 'active', true);
                 this.bindTo('title', 'click', function(e) {
-                    console.log('click on title');
                     var item = $(e.currentTarget).parents(this.buildSelector('item'));
                     this.setMod(item, 'active', true);
                 }, this);
