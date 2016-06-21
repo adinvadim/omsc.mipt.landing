@@ -29,7 +29,7 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
             .then(function(st) {
                 if (self._form.checkFields(st)) {
                     $.ajax({
-                        url : '/mipt/application.php',
+                        url : '/mail/application.php',
                         method : 'POST',
                         headers : {
                             'HTTP_X_REQUESTED_WITH' : 'xmlhttprequest',
