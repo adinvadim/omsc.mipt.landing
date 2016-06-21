@@ -75,24 +75,6 @@ exports.blocks = [
         ]
     },
     {
-        "name": "row",
-        "elems": [
-            {
-                "name": "col",
-                "mods": [
-                    {
-                        "name": "lw",
-                        "vals": [
-                            {
-                                "name": 10
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "name": "header",
         "elems": [
             {

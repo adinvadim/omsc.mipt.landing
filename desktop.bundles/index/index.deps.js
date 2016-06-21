@@ -99,11 +99,6 @@ exports.deps = [
         "mod": "sw"
     },
     {
-        "block": "row",
-        "elem": "col",
-        "mod": "lw"
-    },
-    {
         "block": "header",
         "elem": "content"
     },
@@ -304,8 +299,7 @@ exports.deps = [
     {
         "block": "row",
         "elem": "col",
-        "mod": "lw",
-        "val": 4
+        "mod": "lw"
     },
     {
         "block": "row",
@@ -755,12 +749,6 @@ exports.deps = [
         "val": 12
     },
     {
-        "block": "row",
-        "elem": "col",
-        "mod": "lw",
-        "val": 10
-    },
-    {
         "block": "jquery",
         "elem": "event",
         "mod": "type",
@@ -807,6 +795,12 @@ exports.deps = [
         "block": "icon",
         "mod": "type",
         "val": "attach"
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "lw",
+        "val": 4
     },
     {
         "block": "row",

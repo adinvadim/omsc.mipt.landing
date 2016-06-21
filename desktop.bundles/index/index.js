@@ -15493,6 +15493,7 @@ provide(BEMDOM.decl(this.name, /** @lends form.prototype */{
      */
     _onSubmit : function(e) {
         e.preventDefault();
+        console.log('submit');
         this.emit('submit', this.getVal());
     },
     /**
