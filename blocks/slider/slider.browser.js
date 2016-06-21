@@ -14,7 +14,7 @@ provide(BEMDOM.decl(this.name,
                     pagination : this.buildSelector('pagination'),
                     paginationClickable : true,
                     speed : 1000,
-                    autoplay : 2500,
+                    //autoplay : 2500,
                     effect : 'fade',
                     nextButton : '.swiper-button-next',
                     prevButton : '.swiper-button-prev'

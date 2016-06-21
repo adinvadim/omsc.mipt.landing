@@ -2708,10 +2708,6 @@ block('course-card')(
 )
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/course-card/course-card.bemhtml.js */
-/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/steps/steps.bemhtml.js */
-block('steps').js()(true);
-
-/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/steps/steps.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/form-main/form-main.bemhtml.js */
 block('form-main').js()(true);
 

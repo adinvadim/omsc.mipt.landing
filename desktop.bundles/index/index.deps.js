@@ -498,44 +498,6 @@ exports.deps = [
         "elem": "prev-button"
     },
     {
-        "block": "steps"
-    },
-    {
-        "block": "steps",
-        "elem": "step"
-    },
-    {
-        "block": "steps",
-        "elem": "content"
-    },
-    {
-        "block": "steps",
-        "elem": "footer"
-    },
-    {
-        "block": "button",
-        "mod": "view",
-        "val": "plain"
-    },
-    {
-        "block": "button",
-        "mod": "size",
-        "val": "m"
-    },
-    {
-        "block": "steps",
-        "elem": "prev-button"
-    },
-    {
-        "block": "button",
-        "mod": "view",
-        "val": "main"
-    },
-    {
-        "block": "steps",
-        "elem": "next-button"
-    },
-    {
         "block": "form-main"
     },
     {
@@ -673,8 +635,27 @@ exports.deps = [
     },
     {
         "block": "button",
+        "mod": "view",
+        "val": "plain"
+    },
+    {
+        "block": "button",
         "mod": "size",
         "val": "s"
+    },
+    {
+        "block": "form-main",
+        "elem": "footer"
+    },
+    {
+        "block": "button",
+        "mod": "view",
+        "val": "main"
+    },
+    {
+        "block": "button",
+        "mod": "size",
+        "val": "m"
     },
     {
         "block": "button",

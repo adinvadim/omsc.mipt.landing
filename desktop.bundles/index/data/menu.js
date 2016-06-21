@@ -6,7 +6,7 @@ module.exports = [{
     name : 'Программа',
     sectionId : 2
 }, {
-    name : 'Преподователи',
+    name : 'Преподаватели',
     sectionId : 3
 }, {
     name : 'Как поступить',
