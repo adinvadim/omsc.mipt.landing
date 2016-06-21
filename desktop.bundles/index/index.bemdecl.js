@@ -356,22 +356,7 @@ exports.blocks = [
         ]
     },
     {
-        "name": "row",
-        "elems": [
-            {
-                "name": "col",
-                "mods": [
-                    {
-                        "name": "mw",
-                        "vals": [
-                            {
-                                "name": 6
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
+        "name": "course-card"
     },
     {
         "name": "row",
@@ -380,7 +365,7 @@ exports.blocks = [
                 "name": "col",
                 "mods": [
                     {
-                        "name": "lw",
+                        "name": "sw",
                         "vals": [
                             {
                                 "name": 3
@@ -390,9 +375,6 @@ exports.blocks = [
                 ]
             }
         ]
-    },
-    {
-        "name": "course-card"
     },
     {
         "name": "section",
@@ -443,46 +425,10 @@ exports.blocks = [
         ]
     },
     {
-        "name": "row",
-        "elems": [
-            {
-                "name": "col",
-                "mods": [
-                    {
-                        "name": "mw",
-                        "vals": [
-                            {
-                                "name": 5
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "name": "slider",
         "elems": [
             {
                 "name": "content"
-            }
-        ]
-    },
-    {
-        "name": "row",
-        "elems": [
-            {
-                "name": "col",
-                "mods": [
-                    {
-                        "name": "mw",
-                        "vals": [
-                            {
-                                "name": 7
-                            }
-                        ]
-                    }
-                ]
             }
         ]
     },
@@ -699,6 +645,24 @@ exports.blocks = [
                         "vals": [
                             {
                                 "name": 4
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "row",
+        "elems": [
+            {
+                "name": "col",
+                "mods": [
+                    {
+                        "name": "lw",
+                        "vals": [
+                            {
+                                "name": 3
                             }
                         ]
                     }

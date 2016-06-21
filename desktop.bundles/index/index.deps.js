@@ -422,18 +422,13 @@ exports.deps = [
         "val": "courses"
     },
     {
-        "block": "row",
-        "elem": "col",
-        "mod": "mw"
-    },
-    {
-        "block": "row",
-        "elem": "col",
-        "mod": "lw",
-        "val": 3
-    },
-    {
         "block": "course-card"
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "sw",
+        "val": 3
     },
     {
         "block": "section",
@@ -468,20 +463,8 @@ exports.deps = [
         "elem": "person"
     },
     {
-        "block": "row",
-        "elem": "col",
-        "mod": "mw",
-        "val": 5
-    },
-    {
         "block": "slider",
         "elem": "content"
-    },
-    {
-        "block": "row",
-        "elem": "col",
-        "mod": "mw",
-        "val": 7
     },
     {
         "block": "slider",
@@ -632,8 +615,13 @@ exports.deps = [
     {
         "block": "row",
         "elem": "col",
-        "mod": "mw",
-        "val": 4
+        "mod": "mw"
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "lw",
+        "val": 3
     },
     {
         "block": "partner-card"
@@ -811,12 +799,6 @@ exports.deps = [
         "val": true
     },
     {
-        "block": "row",
-        "elem": "col",
-        "mod": "mw",
-        "val": 6
-    },
-    {
         "block": "slider"
     },
     {
@@ -848,5 +830,11 @@ exports.deps = [
         "block": "validation",
         "mod": "email",
         "val": true
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "mw",
+        "val": 4
     }
 ];

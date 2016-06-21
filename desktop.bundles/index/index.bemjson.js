@@ -255,13 +255,13 @@ module.exports = {
                                     title : 'Философия науки'
                                 }].map(item => {
                                     return {
-                                        block : 'row',
-                                        elem : 'col',
-                                        elemMods : { sw : 12, mw : 6, lw : 3 },
-                                        content : {
-                                            block : 'course-card',
-                                            title : item.title,
-                                            imgUrl : item.imgUrl
+                                        block : 'course-card',
+                                        title : item.title,
+                                        imgUrl : item.imgUrl,
+                                        mix : {
+                                            block : 'row',
+                                            elem : 'col',
+                                            elemMods : { sw : 3 },
                                         }
                                     }
                                 })
@@ -280,13 +280,13 @@ module.exports = {
                                     imgUrl : './images/th_veroyatnostey.jpg'
                                 }].map(item => {
                                     return {
-                                        block : 'row',
-                                        elem : 'col',
-                                        elemMods : { sw : 12, mw : 6, lw : 3 },
-                                        content : {
-                                            block : 'course-card',
-                                            title : item.title,
-                                            imgUrl : item.imgUrl
+                                        block : 'course-card',
+                                        title : item.title,
+                                        imgUrl : item.imgUrl,
+                                        mix : {
+                                            block : 'row',
+                                            elem : 'col',
+                                            elemMods : {  sw : 3 },
                                         }
                                     }
                                 })
@@ -294,6 +294,7 @@ module.exports = {
                             {
                                 title : 'Прикладные курсы',
                                 checked : true,
+                                mix : { block : 'row', mods : { sac : true } },
                                 content : [{
                                     imgUrl : './images/th_games.jpg',
                                     title : 'Теория игр'
@@ -308,19 +309,20 @@ module.exports = {
                                     title : 'Лигвистика Интернета'
                                 }].map(item => {
                                     return {
-                                        block : 'row',
-                                        elem : 'col',
-                                        elemMods : { sw : 12, mw : 6, lw : 3 },
-                                        content : {
-                                            block : 'course-card',
-                                            imgUrl : item.imgUrl,
-                                            title : item.title
+                                        block : 'course-card',
+                                        title : item.title,
+                                        imgUrl : item.imgUrl,
+                                        mix : {
+                                            block : 'row',
+                                            elem : 'col',
+                                            elemMods : {  sw : 3 },
                                         }
                                     }
                                 }),
                             },
                             {
                                 title : 'Специализированные курсы',
+                                mix : { block : 'row', mods : { sac : true } },
                                 content : [{
                                     imgUrl : './images/th_random_graph.jpg',
                                     title : 'Теория случайных графов',
@@ -336,13 +338,13 @@ module.exports = {
 
                                 }].map(item => {
                                     return {
-                                        block : 'row',
-                                        elem : 'col',
-                                        elemMods : { sw : 12, mw : 6, lw : 3 },
-                                        content : {
-                                            block : 'course-card',
-                                            title : item.title,
-                                            imgUrl : item.imgUrl
+                                        block : 'course-card',
+                                        title : item.title,
+                                        imgUrl : item.imgUrl,
+                                        mix : {
+                                            block : 'row',
+                                            elem : 'col',
+                                            elemMods : {  sw : 3 },
                                         }
                                     }
                                 })
@@ -385,13 +387,13 @@ module.exports = {
                                             block : 'slider',
                                             elem : 'person',
                                             person : item.person,
-                                            mix : { block : 'row', elem : 'col', elemMods :  { sw : 12, mw : 5, lw : 4} }
+                                            mix : { block : 'row', elem : 'col', elemMods :  { sw : 12,  lw : 4} }
                                         },
                                         {
                                             block : 'slider',
                                             elem : 'content',
                                             content : item.text,
-                                            mix : { block : 'row', elem : 'col', elemMods : { sw : 12, mw : 7, lo : 1 } }
+                                            mix : { block : 'row', elem : 'col', elemMods : { sw : 12, lo : 1 } }
                                         }
                                     ]
                                 }
