@@ -26,7 +26,7 @@
 
     &__next-button {
         background: url(./images/slider-arrows.png) no-repeat;
-        background-position-x: -33px;
+        background-position: -33px;
         width: 31px;
         height: 51px;
     }
