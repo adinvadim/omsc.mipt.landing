@@ -18,6 +18,8 @@
 		];
 
 		$mailer = new PHPMailer();
+        // $mailer->isSMTP();
+        // $mailer->SMTPAuth = false;
 		$mailer->CharSet = 'UTF-8';
 		$mailer->setFrom($email, $name);
 		foreach ($config[ 'to' ] as $address)

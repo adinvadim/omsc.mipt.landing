@@ -16,6 +16,7 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                 this._form = this.findBlockInside('form');
 
                 this._form.on('submit', this._onSubmit.bind(this));
+                this._form.on('change', this._onChange.bind(this));
 
                 this._button = this.findBlockOn(this.elem('button'), 'button');
 
@@ -29,13 +30,34 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
             .then(function(st) {
                 if (self._form.checkFields(st)) {
                     $.ajax({
-                        url : '/mipt/application.php',
+                        url : '/mail/application.php',
                         method : 'POST',
                         headers : {
                             'HTTP_X_REQUESTED_WITH' : 'xmlhttprequest',
                         },
                         data : val
-                    });
+                    }).then(
+                        function(result) {
+                            self._form.elem('message').text('Ваш запрос успешно отправлен');
+                            self._form.setMod(self._form.elem('message'), 'success')
+                        },
+                        function(error) {
+                            self._form.elem('message').text('Ошибка при отправке запроса');
+                            self._form.setMod(self._form.elem('message'), 'error');
+                            console.warn(error);
+                        })
+                } else {
+                    self._button.setMod('disabled');
+                }
+            })
+    },
+
+    _onChange: function(e, val) {
+        var self = this;
+        this._form.validate()
+            .then(function(st) {
+                if (self._form.checkFields(st)) {
+                    self._button.delMod('disabled');
                 } else {
                     self._button.setMod('disabled');
                 }

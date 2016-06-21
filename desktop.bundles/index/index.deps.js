@@ -99,11 +99,6 @@ exports.deps = [
         "mod": "sw"
     },
     {
-        "block": "row",
-        "elem": "col",
-        "mod": "lw"
-    },
-    {
         "block": "header",
         "elem": "content"
     },
@@ -304,13 +299,7 @@ exports.deps = [
     {
         "block": "row",
         "elem": "col",
-        "mod": "lw",
-        "val": 4
-    },
-    {
-        "block": "row",
-        "elem": "col",
-        "mod": "lo"
+        "mod": "lw"
     },
     {
         "block": "quote-card"
@@ -320,6 +309,11 @@ exports.deps = [
         "elem": "col",
         "mod": "lw",
         "val": 7
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "lo"
     },
     {
         "block": "list"
@@ -498,6 +492,17 @@ exports.deps = [
         "elem": "prev-button"
     },
     {
+        "block": "steps"
+    },
+    {
+        "block": "steps",
+        "elem": "step"
+    },
+    {
+        "block": "steps",
+        "elem": "content"
+    },
+    {
         "block": "form-main"
     },
     {
@@ -593,45 +598,16 @@ exports.deps = [
         "mod": "email"
     },
     {
+        "block": "steps",
+        "elem": "footer"
+    },
+    {
+        "block": "form",
+        "elem": "message"
+    },
+    {
         "block": "form-main",
-        "elem": "attach"
-    },
-    {
-        "block": "form-field",
-        "mod": "type",
-        "val": "attach"
-    },
-    {
-        "block": "i-bem",
-        "elem": "i18n"
-    },
-    {
-        "block": "attach",
-        "elem": "button"
-    },
-    {
-        "block": "attach",
-        "elem": "control"
-    },
-    {
-        "block": "attach",
-        "elem": "no-file"
-    },
-    {
-        "block": "attach",
-        "elem": "file"
-    },
-    {
-        "block": "attach",
-        "elem": "text"
-    },
-    {
-        "block": "attach",
-        "elem": "clear"
-    },
-    {
-        "block": "strings",
-        "elem": "escape"
+        "elem": "message"
     },
     {
         "block": "button",
@@ -641,21 +617,16 @@ exports.deps = [
     {
         "block": "button",
         "mod": "size",
-        "val": "s"
+        "val": "m"
     },
     {
-        "block": "form-main",
-        "elem": "footer"
+        "block": "steps",
+        "elem": "prev-button"
     },
     {
         "block": "button",
         "mod": "view",
         "val": "main"
-    },
-    {
-        "block": "button",
-        "mod": "size",
-        "val": "m"
     },
     {
         "block": "button",
@@ -665,6 +636,10 @@ exports.deps = [
         "block": "button",
         "mod": "type",
         "val": "submit"
+    },
+    {
+        "block": "steps",
+        "elem": "next-button"
     },
     {
         "block": "form-main",
@@ -712,6 +687,10 @@ exports.deps = [
     },
     {
         "block": "form-feedback",
+        "elem": "message"
+    },
+    {
+        "block": "form-feedback",
         "elem": "info"
     },
     {
@@ -753,12 +732,6 @@ exports.deps = [
         "elem": "col",
         "mod": "sw",
         "val": 12
-    },
-    {
-        "block": "row",
-        "elem": "col",
-        "mod": "lw",
-        "val": 10
     },
     {
         "block": "jquery",
@@ -807,6 +780,12 @@ exports.deps = [
         "block": "icon",
         "mod": "type",
         "val": "attach"
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "lw",
+        "val": 4
     },
     {
         "block": "row",
@@ -892,27 +871,6 @@ exports.deps = [
     {
         "block": "validation",
         "mod": "email",
-        "val": true
-    },
-    {
-        "block": "attach"
-    },
-    {
-        "block": "attach",
-        "mod": "invalid"
-    },
-    {
-        "block": "attach",
-        "mod": "dirty"
-    },
-    {
-        "block": "attach",
-        "mod": "invalid",
-        "val": true
-    },
-    {
-        "block": "attach",
-        "mod": "dirty",
         "val": true
     }
 ];

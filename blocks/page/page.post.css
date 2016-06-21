@@ -1,11 +1,13 @@
 @font-face {
     font-family: 'Franklin Gothic Book';
-    src: url(./fonts/FranklinGothicBookC.woff);
+    /*src: url(./fonts/FranklinGothicBookC.woff);*/
+    src: url(./fonts/FranklinGothicBookC.otf);
 }
 
 @font-face {
     font-family: 'Franklin Gothic Medium';
-    src: url(./fonts/FranklinGothicMediumC.woff);
+    /*src: url(./fonts/FranklinGothicMediumC.woff);*/
+    src: url(./fonts/FranklinGothicMediumC.otf);
 }
 
 .page {

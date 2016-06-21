@@ -12,9 +12,12 @@
     &__avatar-wrapper {
         height: 132px;
         width: 132px;
+        min-width: 132px;
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 50%;
+        overflow: hidden;
     }
 
     &__avatar {
