@@ -253,24 +253,6 @@ exports.blocks = [
         ]
     },
     {
-        "name": "row",
-        "elems": [
-            {
-                "name": "col",
-                "mods": [
-                    {
-                        "name": "lo",
-                        "vals": [
-                            {
-                                "name": 1
-                            }
-                        ]
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "name": "quote-card"
     },
     {
@@ -284,6 +266,24 @@ exports.blocks = [
                         "vals": [
                             {
                                 "name": 7
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "row",
+        "elems": [
+            {
+                "name": "col",
+                "mods": [
+                    {
+                        "name": "lo",
+                        "vals": [
+                            {
+                                "name": 1
                             }
                         ]
                     }

@@ -119,7 +119,7 @@ module.exports = {
                         icon : 'about'
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 12 , lw : 4, lo : 1 },
+                        elemMods : { sw : 12 , lw : 4},
                         content : {
                             block : 'quote-card',
                             content : `«Сейчас — как раз
@@ -132,7 +132,7 @@ module.exports = {
 
                     }, {
                         elem : 'col',
-                        elemMods : { sw: 12, lw : 7 },
+                        elemMods : { sw: 12, lw : 7, lo : 1  },
                         content : [
                             {
                                 tag : 'p',
@@ -156,10 +156,10 @@ module.exports = {
                         icon : 'originality'
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 12, lw : 4, lo : 1}
+                        elemMods : { sw : 12, lw : 4}
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 12, lw : 7 },
+                        elemMods : { sw : 12, lw : 7, lo : 1 },
                         content : [
                             {
                                 block : 'list',
@@ -181,10 +181,10 @@ module.exports = {
                         icon : 'diplom'
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 12, lw : 4, lo : 1}
+                        elemMods : { sw : 12, lw : 4}
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 12, lw : 7 },
+                        elemMods : { sw : 12, lw : 7, lo : 1 },
                         content : {
                             tag : 'p',
                             content : [
@@ -206,10 +206,10 @@ module.exports = {
                         icon : 'employment'
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 12, lw : 4, lo : 1}
+                        elemMods : { sw : 12, lw : 4}
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 12, lw : 7 },
+                        elemMods : { sw : 12, lw : 7, lo : 1 },
                         content : {
                             tag : 'p',
                             content : `Студенты МФТИ, чаще всего, трудоустраиваются уже в процессе обучения.
@@ -277,7 +277,7 @@ module.exports = {
                                     imgUrl : './images/th_graphs.jpg'
                                 }, {
                                     title : 'Теория вероятностей',
-                                    imgUrl : './images/th_veroyatnostey.png'
+                                    imgUrl : './images/th_veroyatnostey.jpg'
                                 }].map(item => {
                                     return {
                                         block : 'row',
@@ -385,13 +385,13 @@ module.exports = {
                                             block : 'slider',
                                             elem : 'person',
                                             person : item.person,
-                                            mix : { block : 'row', elem : 'col', elemMods :  { sw : 12, mw : 5, lw : 4, lo : 1} }
+                                            mix : { block : 'row', elem : 'col', elemMods :  { sw : 12, mw : 5, lw : 4} }
                                         },
                                         {
                                             block : 'slider',
                                             elem : 'content',
                                             content : item.text,
-                                            mix : { block : 'row', elem : 'col', elemMods : { sw : 12, mw : 7 } }
+                                            mix : { block : 'row', elem : 'col', elemMods : { sw : 12, mw : 7, lo : 1 } }
                                         }
                                     ]
                                 }
@@ -424,10 +424,10 @@ module.exports = {
                         icon : 'how-to'
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 12, lw : 4, lo : 1 }
+                        elemMods : { sw : 12, lw : 4}
                     }, {
                         elem : 'col',
-                        elemMods : { sw : 12, lw : 7 },
+                        elemMods : { sw : 12, lw : 7, lo : 1  },
                         content : [{
                             block : 'list',
                             content : [
@@ -629,10 +629,10 @@ module.exports = {
                     icon : 'employment'
                 }, {
                     elem : 'col',
-                    elemMods : { sw : 12, lw : 4, lo : 1}
+                    elemMods : { sw : 12, lw : 4}
                 }, {
                     elem : 'col',
-                    elemMods : { sw : 12, lw : 7 },
+                    elemMods : { sw : 12, lw : 7, lo : 1 },
                     content : {
                         block : 'accordion',
                         options : data.faq

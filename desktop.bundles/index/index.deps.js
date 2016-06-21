@@ -302,11 +302,6 @@ exports.deps = [
         "mod": "lw"
     },
     {
-        "block": "row",
-        "elem": "col",
-        "mod": "lo"
-    },
-    {
         "block": "quote-card"
     },
     {
@@ -314,6 +309,11 @@ exports.deps = [
         "elem": "col",
         "mod": "lw",
         "val": 7
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "lo"
     },
     {
         "block": "list"
