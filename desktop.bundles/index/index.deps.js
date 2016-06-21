@@ -492,17 +492,6 @@ exports.deps = [
         "elem": "prev-button"
     },
     {
-        "block": "steps"
-    },
-    {
-        "block": "steps",
-        "elem": "step"
-    },
-    {
-        "block": "steps",
-        "elem": "content"
-    },
-    {
         "block": "form-main"
     },
     {
@@ -598,7 +587,7 @@ exports.deps = [
         "mod": "email"
     },
     {
-        "block": "steps",
+        "block": "form-main",
         "elem": "footer"
     },
     {
@@ -612,21 +601,12 @@ exports.deps = [
     {
         "block": "button",
         "mod": "view",
-        "val": "plain"
+        "val": "main"
     },
     {
         "block": "button",
         "mod": "size",
         "val": "m"
-    },
-    {
-        "block": "steps",
-        "elem": "prev-button"
-    },
-    {
-        "block": "button",
-        "mod": "view",
-        "val": "main"
     },
     {
         "block": "button",
@@ -636,10 +616,6 @@ exports.deps = [
         "block": "button",
         "mod": "type",
         "val": "submit"
-    },
-    {
-        "block": "steps",
-        "elem": "next-button"
     },
     {
         "block": "form-main",

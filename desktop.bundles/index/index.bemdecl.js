@@ -519,25 +519,6 @@ exports.blocks = [
         ]
     },
     {
-        "name": "steps"
-    },
-    {
-        "name": "steps",
-        "elems": [
-            {
-                "name": "step"
-            }
-        ]
-    },
-    {
-        "name": "steps",
-        "elems": [
-            {
-                "name": "content"
-            }
-        ]
-    },
-    {
         "name": "form-main"
     },
     {
@@ -605,7 +586,7 @@ exports.blocks = [
         ]
     },
     {
-        "name": "steps",
+        "name": "form-main",
         "elems": [
             {
                 "name": "footer"
@@ -635,7 +616,7 @@ exports.blocks = [
                 "name": "view",
                 "vals": [
                     {
-                        "name": "plain"
+                        "name": "main"
                     }
                 ]
             }
@@ -649,27 +630,6 @@ exports.blocks = [
                 "vals": [
                     {
                         "name": "m"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "steps",
-        "elems": [
-            {
-                "name": "prev-button"
-            }
-        ]
-    },
-    {
-        "name": "button",
-        "mods": [
-            {
-                "name": "view",
-                "vals": [
-                    {
-                        "name": "main"
                     }
                 ]
             }
@@ -698,14 +658,6 @@ exports.blocks = [
                         "name": true
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "name": "steps",
-        "elems": [
-            {
-                "name": "next-button"
             }
         ]
     },
