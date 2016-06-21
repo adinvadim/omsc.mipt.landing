@@ -498,44 +498,6 @@ exports.deps = [
         "elem": "prev-button"
     },
     {
-        "block": "steps"
-    },
-    {
-        "block": "steps",
-        "elem": "step"
-    },
-    {
-        "block": "steps",
-        "elem": "content"
-    },
-    {
-        "block": "steps",
-        "elem": "footer"
-    },
-    {
-        "block": "button",
-        "mod": "view",
-        "val": "plain"
-    },
-    {
-        "block": "button",
-        "mod": "size",
-        "val": "m"
-    },
-    {
-        "block": "steps",
-        "elem": "prev-button"
-    },
-    {
-        "block": "button",
-        "mod": "view",
-        "val": "main"
-    },
-    {
-        "block": "steps",
-        "elem": "next-button"
-    },
-    {
         "block": "form-main"
     },
     {
@@ -614,6 +576,23 @@ exports.deps = [
         "elem": "combo"
     },
     {
+        "block": "form-field",
+        "mod": "validate"
+    },
+    {
+        "block": "form-field",
+        "mod": "validate",
+        "val": "email"
+    },
+    {
+        "block": "form-field",
+        "mod": "has-validation"
+    },
+    {
+        "block": "validation",
+        "mod": "email"
+    },
+    {
         "block": "form-main",
         "elem": "attach"
     },
@@ -656,8 +635,27 @@ exports.deps = [
     },
     {
         "block": "button",
+        "mod": "view",
+        "val": "plain"
+    },
+    {
+        "block": "button",
         "mod": "size",
         "val": "s"
+    },
+    {
+        "block": "form-main",
+        "elem": "footer"
+    },
+    {
+        "block": "button",
+        "mod": "view",
+        "val": "main"
+    },
+    {
+        "block": "button",
+        "mod": "size",
+        "val": "m"
     },
     {
         "block": "button",
@@ -707,18 +705,6 @@ exports.deps = [
     {
         "block": "form-feedback",
         "elem": "header"
-    },
-    {
-        "block": "form-filed"
-    },
-    {
-        "block": "form-filed",
-        "mod": "type"
-    },
-    {
-        "block": "form-filed",
-        "mod": "type",
-        "val": "input"
     },
     {
         "block": "form-feedback",
@@ -901,6 +887,11 @@ exports.deps = [
     {
         "block": "validation",
         "mod": "required",
+        "val": true
+    },
+    {
+        "block": "validation",
+        "mod": "email",
         "val": true
     },
     {

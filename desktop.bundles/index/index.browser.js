@@ -15329,42 +15329,6 @@ provide(Swiper);
 })
 
 /* end: ../../blocks/swiper/swiper.browser.js */
-/* begin: ../../blocks/steps/steps.browser.js */
-/**
- * @module steps
- */
-
-modules.define('steps', ['i-bem__dom', 'jquery'], function(provide, BEMDOM, $) {
-
-/**
- * @exports
- * @class steps
- * @bem
- */
-provide(BEMDOM.decl(this.name,  /** @lends tabs.prototype */{
-    onSetMod : {
-        'js' : {
-            'inited' : function() {
-                this._tabs = this.findBlockInside('tabs');
-                this.bindTo('next-button', 'click', this._onNextButtonClick.bind(this));
-                this.bindTo('prev-button', 'click', this._onPrevButtonClick.bind(this));
-            }
-        }
-    },
-
-    _onNextButtonClick: function(e) {
-        this._tabs.changeTab(parseInt(this._tabs.getActive()) + 1);
-    },
-
-    _onPrevButtonClick: function(e) {
-        this._tabs.changeTab(parseInt(this._tabs.getActive()) - 1);
-    }
-
-}));
-
-});
-
-/* end: ../../blocks/steps/steps.browser.js */
 /* begin: ../../blocks/form-main/form-main.browser.js */
 /**
  * @module form-main
@@ -15384,7 +15348,6 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                 this._form = this.findBlockInside('form');
 
                 this._form.on('submit', this._onSubmit.bind(this));
-                this._form.on('change', this._onChange.bind(this));
 
                 this._button = this.findBlockOn(this.elem('button'), 'button');
 
@@ -15393,6 +15356,7 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
     },
 
     _onSubmit: function(e, val) {
+        var self = this;
         this._form.validate()
             .then(function(st) {
                 if (self._form.checkFields(st)) {
@@ -15404,18 +15368,6 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                         },
                         data : val
                     });
-                } else {
-                    self._button.setMod('disabled');
-                }
-            })
-    },
-
-    _onChange: function(e, val) {
-        var self = this;
-        this._form.validate()
-            .then(function(st) {
-                if (self._form.checkFields(st)) {
-                    self._button.delMod('disabled');
                 } else {
                     self._button.setMod('disabled');
                 }
@@ -17651,6 +17603,64 @@ provide(function(field) {
 });
 
 /* end: ../../libs/bem-forms/common.blocks/validation/_required/validation_required.browser.js */
+/* begin: ../../libs/bem-forms/common.blocks/form-field/_validate/form-field_validate_email.browser.js */
+/**
+ * @module form-field
+ */
+modules.define('form-field',
+    ['validation_email', 'objects'],
+    function(provide, validateEmail, objects, FormField) {
+/**
+ * E-mail form-field validation
+ * @exports
+ * @class form-field
+ * @bem
+ */
+FormField.decl({ modName : 'validate', modVal : 'email' }, /** @lends form-field.prototype */{
+
+    onSetMod : {
+        'js' : {
+            'inited' : function() {
+                this.__base.apply(this, arguments);
+
+                this.params.email && this.setValidationMessages({
+                    email : this.params.email.message
+                });
+
+                this.getValidator().push(validateEmail(this));
+            }
+        }
+    }
+
+});
+
+provide(FormField);
+
+});
+
+/* end: ../../libs/bem-forms/common.blocks/form-field/_validate/form-field_validate_email.browser.js */
+/* begin: ../../libs/bem-forms/common.blocks/validation/_email/validation_email.browser.js */
+/**
+ * @module validation_email
+ */
+modules.define('validation_email',
+    function(provide) {
+
+var DEFAULT_MESSAGE = 'Field requires email inside',
+    EMAIL_RE = /^([0-9a-zA-Z]*[-._+])*[0-9a-zA-Z]+@[0-9a-zA-Z]+([-.][0-9a-zA-Z]+)*([0-9a-zA-Z]*[.])[a-zA-Z]{2,6}$/;
+
+provide(function(field) {
+    return function(val) {
+        return !val || EMAIL_RE.test(val)? null : {
+            field : field.getName() || field.getId(),
+            message : field.getValidationMessage('email') || DEFAULT_MESSAGE
+        };
+    };
+});
+
+});
+
+/* end: ../../libs/bem-forms/common.blocks/validation/_email/validation_email.browser.js */
 /* begin: ../../libs/bem-forms/common.blocks/form-field/_type/form-field_type_attach.browser.js */
 /**
  * @module form-field
@@ -17854,7 +17864,6 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                 this._form = this.findBlockInside('form');
 
                 this._form.on('submit', this._onSubmit.bind(this));
-                this._form.on('change', this._onChange.bind(this));
 
                 this._button = this.findBlockOn(this.elem('button'), 'button');
 
@@ -17863,6 +17872,7 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
     },
 
     _onSubmit: function(e, val) {
+        var self = this;
         this._form.validate()
             .then(function(st) {
                 if (self._form.checkFields(st)) {
@@ -17874,19 +17884,6 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                         },
                         data : val
                     });
-                } else {
-                    self._button.setMod('disabled');
-                }
-            })
-    },
-
-
-    _onChange: function(e, val) {
-        var self = this;
-        this._form.validate()
-            .then(function(st) {
-                if (self._form.checkFields(st)) {
-                    self._button.delMod('disabled');
                 } else {
                     self._button.setMod('disabled');
                 }
@@ -18106,7 +18103,7 @@ provide(BEMDOM.decl(this.name,
                     pagination : this.buildSelector('pagination'),
                     paginationClickable : true,
                     speed : 1000,
-                    autoplay : 2500,
+                    //autoplay : 2500,
                     effect : 'fade',
                     nextButton : '.swiper-button-next',
                     prevButton : '.swiper-button-prev'

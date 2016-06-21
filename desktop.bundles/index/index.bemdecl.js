@@ -321,9 +321,6 @@ exports.blocks = [
         ]
     },
     {
-        "name": "link"
-    },
-    {
         "name": "section",
         "mods": [
             {
@@ -540,99 +537,7 @@ exports.blocks = [
         ]
     },
     {
-        "name": "steps"
-    },
-    {
-        "name": "steps",
-        "elems": [
-            {
-                "name": "step"
-            }
-        ]
-    },
-    {
-        "name": "steps",
-        "elems": [
-            {
-                "name": "content"
-            }
-        ]
-    },
-    {
-        "name": "steps",
-        "elems": [
-            {
-                "name": "footer"
-            }
-        ]
-    },
-    {
-        "name": "button",
-        "mods": [
-            {
-                "name": "view",
-                "vals": [
-                    {
-                        "name": "plain"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "button",
-        "mods": [
-            {
-                "name": "size",
-                "vals": [
-                    {
-                        "name": "m"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "button",
-        "mods": [
-            {
-                "name": "disabled",
-                "vals": [
-                    {
-                        "name": true
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "steps",
-        "elems": [
-            {
-                "name": "prev-button"
-            }
-        ]
-    },
-    {
-        "name": "button",
-        "mods": [
-            {
-                "name": "view",
-                "vals": [
-                    {
-                        "name": "main"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "steps",
-        "elems": [
-            {
-                "name": "next-button"
-            }
-        ]
+        "name": "link"
     },
     {
         "name": "form-main"
@@ -689,6 +594,19 @@ exports.blocks = [
         ]
     },
     {
+        "name": "form-field",
+        "mods": [
+            {
+                "name": "validate",
+                "vals": [
+                    {
+                        "name": "email"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "form-main",
         "elems": [
             {
@@ -716,6 +634,19 @@ exports.blocks = [
         "name": "button",
         "mods": [
             {
+                "name": "view",
+                "vals": [
+                    {
+                        "name": "plain"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "button",
+        "mods": [
+            {
                 "name": "size",
                 "vals": [
                     {
@@ -727,6 +658,40 @@ exports.blocks = [
     },
     {
         "name": "icon"
+    },
+    {
+        "name": "form-main",
+        "elems": [
+            {
+                "name": "footer"
+            }
+        ]
+    },
+    {
+        "name": "button",
+        "mods": [
+            {
+                "name": "view",
+                "vals": [
+                    {
+                        "name": "main"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "button",
+        "mods": [
+            {
+                "name": "size",
+                "vals": [
+                    {
+                        "name": "m"
+                    }
+                ]
+            }
+        ]
     },
     {
         "name": "button",
@@ -818,22 +783,6 @@ exports.blocks = [
         "elems": [
             {
                 "name": "header"
-            }
-        ]
-    },
-    {
-        "name": "form-filed"
-    },
-    {
-        "name": "form-filed",
-        "mods": [
-            {
-                "name": "type",
-                "vals": [
-                    {
-                        "name": "input"
-                    }
-                ]
             }
         ]
     },
