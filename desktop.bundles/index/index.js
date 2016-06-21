@@ -17652,6 +17652,64 @@ provide(function(field) {
 });
 
 /* end: ../../libs/bem-forms/common.blocks/validation/_required/validation_required.browser.js */
+/* begin: ../../libs/bem-forms/common.blocks/form-field/_validate/form-field_validate_email.browser.js */
+/**
+ * @module form-field
+ */
+modules.define('form-field',
+    ['validation_email', 'objects'],
+    function(provide, validateEmail, objects, FormField) {
+/**
+ * E-mail form-field validation
+ * @exports
+ * @class form-field
+ * @bem
+ */
+FormField.decl({ modName : 'validate', modVal : 'email' }, /** @lends form-field.prototype */{
+
+    onSetMod : {
+        'js' : {
+            'inited' : function() {
+                this.__base.apply(this, arguments);
+
+                this.params.email && this.setValidationMessages({
+                    email : this.params.email.message
+                });
+
+                this.getValidator().push(validateEmail(this));
+            }
+        }
+    }
+
+});
+
+provide(FormField);
+
+});
+
+/* end: ../../libs/bem-forms/common.blocks/form-field/_validate/form-field_validate_email.browser.js */
+/* begin: ../../libs/bem-forms/common.blocks/validation/_email/validation_email.browser.js */
+/**
+ * @module validation_email
+ */
+modules.define('validation_email',
+    function(provide) {
+
+var DEFAULT_MESSAGE = 'Field requires email inside',
+    EMAIL_RE = /^([0-9a-zA-Z]*[-._+])*[0-9a-zA-Z]+@[0-9a-zA-Z]+([-.][0-9a-zA-Z]+)*([0-9a-zA-Z]*[.])[a-zA-Z]{2,6}$/;
+
+provide(function(field) {
+    return function(val) {
+        return !val || EMAIL_RE.test(val)? null : {
+            field : field.getName() || field.getId(),
+            message : field.getValidationMessage('email') || DEFAULT_MESSAGE
+        };
+    };
+});
+
+});
+
+/* end: ../../libs/bem-forms/common.blocks/validation/_email/validation_email.browser.js */
 /* begin: ../../libs/bem-forms/common.blocks/form-field/_type/form-field_type_attach.browser.js */
 /**
  * @module form-field

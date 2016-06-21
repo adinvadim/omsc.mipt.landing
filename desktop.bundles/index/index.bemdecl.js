@@ -689,6 +689,19 @@ exports.blocks = [
         ]
     },
     {
+        "name": "form-field",
+        "mods": [
+            {
+                "name": "validate",
+                "vals": [
+                    {
+                        "name": "email"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "form-main",
         "elems": [
             {

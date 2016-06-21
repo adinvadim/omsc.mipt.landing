@@ -509,7 +509,7 @@ module.exports = {
                                                         {
                                                             block : 'form-field',
                                                             mix : { block : 'form-main', elem : 'form-field' },
-                                                            mods : { type : 'input' },
+                                                            mods : { type : 'input', required : true },
                                                             name : 'secondname',
                                                             content : {
                                                                 block : 'input',
@@ -532,7 +532,7 @@ module.exports = {
                                                                 block : 'form-field',
                                                                 mix : { block : 'form-main', elem : 'form-field' },
                                                                 name : 'phone',
-                                                                mods : { type : 'input' },
+                                                                mods : { type : 'input', required : true },
                                                                 content : {
                                                                     block : 'input',
                                                                     placeholder : 'Телефон'
@@ -541,7 +541,7 @@ module.exports = {
                                                                 block : 'form-field',
                                                                 mix : { block : 'form-main', elem : 'form-field' },
                                                                 name : 'email',
-                                                                mods : { type : 'input', required : true },
+                                                                mods : { type : 'input', required : true, validate : 'email' },
                                                                 content : {
                                                                     block : 'input',
                                                                     placeholder : "E-mail"
@@ -553,7 +553,7 @@ module.exports = {
                                                             elem : 'attach',
                                                             content : {
                                                                 block : 'form-field',
-                                                                mods : { type : 'attach'},
+                                                                mods : { type : 'attach', required : true },
                                                                 name : 'file',
                                                                 content : [
                                                                     'Эссе на  тему: «Зачем я хочу обучаться по этой программе».',
@@ -719,19 +719,19 @@ module.exports = {
                                 },
                                 {
                                     block : 'form-field',
-                                    mods : { type : 'input' },
+                                    mods : { type : 'input', required : true },
                                     name : 'name',
                                     content : { block : 'input', placeholder : 'Имя' }
                                 },
                                 {
                                     block : 'form-field',
-                                    mods : { type : 'input' },
+                                    mods : { type : 'input', required : true },
                                     name : 'email',
                                     content : { block : 'input', placeholder : 'E-mail' },
                                 },
                                 {
                                     block : 'form-field',
-                                    mods : { type : 'input' },
+                                    mods : { type : 'input', required : true },
                                     name : 'message',
                                     content : { block : 'input', placeholder : 'Сообщение'}
                                 },

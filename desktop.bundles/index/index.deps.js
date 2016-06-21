@@ -614,6 +614,23 @@ exports.deps = [
         "elem": "combo"
     },
     {
+        "block": "form-field",
+        "mod": "validate"
+    },
+    {
+        "block": "form-field",
+        "mod": "validate",
+        "val": "email"
+    },
+    {
+        "block": "form-field",
+        "mod": "has-validation"
+    },
+    {
+        "block": "validation",
+        "mod": "email"
+    },
+    {
         "block": "form-main",
         "elem": "attach"
     },
@@ -889,6 +906,11 @@ exports.deps = [
     {
         "block": "validation",
         "mod": "required",
+        "val": true
+    },
+    {
+        "block": "validation",
+        "mod": "email",
         "val": true
     },
     {
