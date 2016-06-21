@@ -444,144 +444,173 @@ module.exports = {
                             tag : 'p',
                             content : 'Чтобы принять участие в конкурсе на поступление в рамках данной экспериментальной программы, вам необходимо:'
                         }, {
-                            block : 'list',
-                            content : [
-                                { content : 'Заполнить заявку ' },
-                                { content : ['Подать заявление ', { block : 'link', url : 'https://pk.mipt.ru/apply/', content: 'на обучение в магистратуре МФТИ.'}] },
-                                { content : [
-                                    'Сдать вступительные экзамены по математике и информатике. Вступительные испытания по математике проводятся во вторник, по информатике - в четверг согласно ',
-                                    { block : 'link', url : 'https://pk.mipt.ru/master/timetable/', content : 'графику'},
-                                    '. С программой экзаменов вы можете ознакомиться ',
-                                    { block : 'link', url : 'https://pk.mipt.ru/master/exams/', content : 'тут'}
-                                ]}
-                            ].map(item => {
-                                return {
-                                    elem : 'item',
-                                    content : item.content
-                                }
-                            })
-                        }, {
-                            tag : 'p',
-                            content : 'Более подробную инструкцию вы получите в ответ на заполненную заявку.'
-                        }, {
-                            block : 'form-main',
+                            block : 'steps',
                             content : {
-                                block : 'form',
-                                content : [
+                                block : 'tabs',
+                                tabs : [
+                                {
+                                    title : '1 шаг',
+                                    checked : true,
+                                    mix : { block : 'steps', elem : 'step' },
+                                    content : [
                                     {
-                                        block : 'form-field',
-                                        mix : { block : 'form-main', elem : 'form-field'},
-                                        mods : { type : 'input', required : true },
-                                        name : 'lastname',
-                                        content : {
-                                            block : 'input',
-                                            placeholder : 'Фамилия'
-                                        }
-                                    },
-                                    {
-                                        block : 'form-field',
-                                        mix : { block : 'form-main', elem : 'form-field' },
-                                        mods : { type : 'input', required : true },
-                                        name : 'firstname',
-                                        content : {
-                                            block : 'input',
-                                            placeholder : 'Имя'
-                                        }
-                                    },
-                                    {
-                                        block : 'form-field',
-                                        mix : { block : 'form-main', elem : 'form-field' },
-                                        mods : { type : 'input', required : true },
-                                        name : 'secondname',
-                                        content : {
-                                            block : 'input',
-                                            placeholder : 'Отечество'
-                                        }
-                                    },
-                                    {
-                                        block : 'form-main',
-                                        elem : 'combo',
-                                        content : [{
-                                            block : 'form-field',
-                                            mix : { block : 'form-main', elem : 'form-field' },
-                                            name : 'birthdate',
-                                            mods : { type : 'input', required : true },
-                                            content : {
-                                                block : 'input',
-                                                placeholder : 'Дата рождения'
-                                            }
-                                        }, {
-                                            block : 'form-field',
-                                            mix : { block : 'form-main', elem : 'form-field' },
-                                            name : 'phone',
-                                            mods : { type : 'input', required : true },
-                                            content : {
-                                                block : 'input',
-                                                placeholder : 'Телефон'
-                                            }
-                                        }, {
-                                            block : 'form-field',
-                                            mix : { block : 'form-main', elem : 'form-field' },
-                                            name : 'email',
-                                            mods : { type : 'input', required : true, validate : 'email' },
-                                            content : {
-                                                block : 'input',
-                                                placeholder : "E-mail"
-                                            }
-                                        }]
-                                    },
-                                    {
-                                        block : 'form-main',
-                                        elem : 'attach',
-                                        content : {
-                                            block : 'form-field',
-                                            mods : { type : 'attach', required : true },
-                                            name : 'file',
-                                            content : [
-                                                'Эссе на  тему: «Зачем я хочу обучаться по этой программе».',
-                                                {
-                                                    tag: 'br'
-                                                },
-                                                'Не более 1-й страницы А4.',
-                                                {
-                                                    block : 'attach',
-                                                    button :{
-                                                        block : 'button',
-                                                        mods : { view : 'plain', size : 's' },
-                                                        content : [
-                                                            {
-                                                                block : 'icon',
-                                                                type : 'attach'
-                                                            },
-                                                            {
-                                                                tag: 'span',
-                                                                content: 'Загрузить файл'
-                                                            }
-                                                        ]
-                                                    }
-                                                }
-                                            ]
-                                        }
-                                    },
-
-                                    {
-                                        block : 'form-main',
-                                        elem : 'footer',
+                                        tag : 'p',
+                                        content : 'Заполнить форму для участия в конкурсе.После заполнения вы получите электронное письмо с дополнительными инструкциями и разъяснениями. Форма заявки:'
+                                    }, {
+                                        block : 'steps',
+                                        elem : 'content',
                                         content : [
                                             {
-                                                block : 'button',
-                                                mods : {
-                                                    view : 'main',
-                                                    size : 'm',
-                                                    type : 'submit',
-                                                },
-                                                mix : [
-                                                    { block : 'form-main', elem : 'button' }
-                                                ],
-                                                content : 'Отправить'
+                                                block : 'form-main',
+                                                content : {
+                                                    block : 'form',
+                                                    content : [
+                                                        {
+                                                            block : 'form-field',
+                                                            mix : { block : 'form-main', elem : 'form-field'},
+                                                            mods : { type : 'input', required : true },
+                                                            name : 'lastname',
+                                                            content : {
+                                                                block : 'input',
+                                                                placeholder : 'Фамилия'
+                                                            }
+                                                        },
+                                                        {
+                                                            block : 'form-field',
+                                                            mix : { block : 'form-main', elem : 'form-field' },
+                                                            mods : { type : 'input', required : true },
+                                                            name : 'firstname',
+                                                            content : {
+                                                                block : 'input',
+                                                                placeholder : 'Имя'
+                                                            }
+                                                        },
+                                                        {
+                                                            block : 'form-field',
+                                                            mix : { block : 'form-main', elem : 'form-field' },
+                                                            mods : { type : 'input', required : true },
+                                                            name : 'secondname',
+                                                            content : {
+                                                                block : 'input',
+                                                                placeholder : 'Отечество'
+                                                            }
+                                                        },
+                                                        {
+                                                            block : 'form-main',
+                                                            elem : 'combo',
+                                                            content : [{
+                                                                block : 'form-field',
+                                                                mix : { block : 'form-main', elem : 'form-field' },
+                                                                name : 'birthdate',
+                                                                mods : { type : 'input', required : true },
+                                                                content : {
+                                                                    block : 'input',
+                                                                    placeholder : 'Дата рождения'
+                                                                }
+                                                            }, {
+                                                                block : 'form-field',
+                                                                mix : { block : 'form-main', elem : 'form-field' },
+                                                                name : 'phone',
+                                                                mods : { type : 'input', required : true },
+                                                                content : {
+                                                                    block : 'input',
+                                                                    placeholder : 'Телефон'
+                                                                }
+                                                            }, {
+                                                                block : 'form-field',
+                                                                mix : { block : 'form-main', elem : 'form-field' },
+                                                                name : 'email',
+                                                                mods : { type : 'input', required : true, validate : 'email' },
+                                                                content : {
+                                                                    block : 'input',
+                                                                    placeholder : "E-mail"
+                                                                }
+                                                            }]
+                                                        },
+                                                        {
+                                                            block : 'steps',
+                                                            elem : 'footer',
+                                                            content : [
+                                                                {
+                                                                    block : 'form',
+                                                                    elem : 'message',
+                                                                    mix : { block : 'form-main', elem : 'message'},
+                                                                    content : ''
+                                                                },
+                                                                {
+                                                                    block : 'button',
+                                                                    mods : { view : 'plain', size : 'm'},
+                                                                    mix : { block : 'steps', elem : 'prev-button' },
+                                                                    content : 'Назад'
+                                                                },
+                                                                {
+                                                                    block : 'button',
+                                                                    mods : {
+                                                                        view : 'main',
+                                                                        size : 'm',
+                                                                        type : 'submit',
+                                                                        disabled : true
+                                                                    },
+                                                                    mix : [
+                                                                        { block : 'steps', elem : 'next-button' },
+                                                                        { block : 'form-main', elem : 'button' }
+                                                                    ],
+                                                                    content : 'Далее'
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
                                             }
                                         ]
-                                    }
+                                    }]
+                                },
+                                {
+                                    title : '2 шаг',
+                                    mix : { block : 'steps', elem : 'step' },
+                                    content : [{
+                                        block : 'steps',
+                                        elem : 'content',
+                                        content : ['Подать заявление ', { block : 'link', url : 'https://pk.mipt.ru/apply/', content: 'на обучение в магистратуре МФТИ.'}]
+                                    }, {
+                                        block : 'steps',
+                                        elem : 'footer',
+                                        content : [{
+                                            block : 'button',
+                                            mods : { view : 'plain', size : 'm'},
+                                            mix : { block : 'steps', elem : 'prev-button' },
+                                            content : 'Назад'
+                                        }, {
+                                            block : 'button',
+                                            mods : { view : 'main', size : 'm'},
+                                            mix : { block : 'steps', elem : 'next-button' },
+                                            content : 'Далее'
+                                        }]
+                                    }]
+                                },
+                                {
+                                    title : '3 шаг',
+                                    mix : { block : 'steps', elem : 'step' },
+                                    content : [{
+                                        block : 'steps',
+                                        elem : 'content',
+                                        content : [
+                                            'Сдать вступительные экзамены по математике и информатике. Вступительные испытания по математике проводятся во вторник, по информатике - в четверг согласно ',
+                                            { block : 'link', url : 'https://pk.mipt.ru/master/timetable/', content : 'графику'},
+                                            '. С программой экзаменов вы можете ознакомиться ',
+                                            { block : 'link', url : 'https://pk.mipt.ru/master/exams/', content : 'тут'}
+                                        ]
+                                    }, {
+                                        block : 'steps',
+                                        elem : 'footer',
+                                        content : {
+                                            block : 'button',
+                                            mods : { view : 'plain', size : 'm'},
+                                            mix : { block : 'steps', elem : 'prev-button' },
+                                            content : 'Назад'
+                                        }
+                                    }]
+                                }
                                 ]
                             }
                         } ]
@@ -684,6 +713,11 @@ module.exports = {
                                     block : 'form-feedback',
                                     elem : 'footer',
                                     content : [{
+                                        block : 'form',
+                                        elem : 'message',
+                                        mix : { block : 'form-feedback', elem : 'message'},
+                                        content : ''
+                                    }, {
                                         block : 'button',
                                         mods : { view : 'second', size : 'm', type : 'submit' },
                                         content : 'Отправить'

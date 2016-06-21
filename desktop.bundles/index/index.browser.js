@@ -15329,6 +15329,42 @@ provide(Swiper);
 })
 
 /* end: ../../blocks/swiper/swiper.browser.js */
+/* begin: ../../blocks/steps/steps.browser.js */
+/**
+ * @module steps
+ */
+
+modules.define('steps', ['i-bem__dom', 'jquery'], function(provide, BEMDOM, $) {
+
+/**
+ * @exports
+ * @class steps
+ * @bem
+ */
+provide(BEMDOM.decl(this.name,  /** @lends tabs.prototype */{
+    onSetMod : {
+        'js' : {
+            'inited' : function() {
+                this._tabs = this.findBlockInside('tabs');
+                this.bindTo('next-button', 'click', this._onNextButtonClick.bind(this));
+                this.bindTo('prev-button', 'click', this._onPrevButtonClick.bind(this));
+            }
+        }
+    },
+
+    _onNextButtonClick: function(e) {
+        this._tabs.changeTab(parseInt(this._tabs.getActive()) + 1);
+    },
+
+    _onPrevButtonClick: function(e) {
+        this._tabs.changeTab(parseInt(this._tabs.getActive()) - 1);
+    }
+
+}));
+
+});
+
+/* end: ../../blocks/steps/steps.browser.js */
 /* begin: ../../blocks/form-main/form-main.browser.js */
 /**
  * @module form-main
@@ -15348,6 +15384,7 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                 this._form = this.findBlockInside('form');
 
                 this._form.on('submit', this._onSubmit.bind(this));
+                this._form.on('change', this._onChange.bind(this));
 
                 this._button = this.findBlockOn(this.elem('button'), 'button');
 
@@ -15367,7 +15404,28 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                             'HTTP_X_REQUESTED_WITH' : 'xmlhttprequest',
                         },
                         data : val
-                    });
+                    }).then(
+                        function(result) {
+                            self._form.elem('message').text('Ваш запрос успешно отправлен');
+                            self._form.setMod(self._form.elem('message'), 'success')
+                        },
+                        function(error) {
+                            self._form.elem('message').text('Ошибка при отправке запроса');
+                            self._form.setMod(self._form.elem('message'), 'error');
+                            console.warn(error);
+                        })
+                } else {
+                    self._button.setMod('disabled');
+                }
+            })
+    },
+
+    _onChange: function(e, val) {
+        var self = this;
+        this._form.validate()
+            .then(function(st) {
+                if (self._form.checkFields(st)) {
+                    self._button.delMod('disabled');
                 } else {
                     self._button.setMod('disabled');
                 }
@@ -17661,91 +17719,6 @@ provide(function(field) {
 });
 
 /* end: ../../libs/bem-forms/common.blocks/validation/_email/validation_email.browser.js */
-/* begin: ../../libs/bem-forms/common.blocks/form-field/_type/form-field_type_attach.browser.js */
-/**
- * @module form-field
- */
-modules.define('form-field',
-    function(provide, FormField) {
-/**
- * Attach field
- *
- * @exports
- * @class form-field
- * @bem
- */
-FormField.decl({ block : this.name, modName : 'type', modVal : 'attach' }, {}, /** @lends form-field_type_attach */{
-
-    live : function() {
-        var ptp = this.prototype;
-
-        this.__base();
-        this
-            .liveInitOnBlockInsideEvent('change', 'attach', ptp._onControlChange)
-            .liveInitOnBlockInsideEvent({ modName : 'focused', modVal : true }, 'attach', ptp._onControlFocus)
-            .liveInitOnBlockInsideEvent({ modName : 'focused', modVal : '' }, 'attach', ptp._onControlBlur);
-    }
-});
-
-provide(FormField);
-
-});
-
-/* end: ../../libs/bem-forms/common.blocks/form-field/_type/form-field_type_attach.browser.js */
-/* begin: ../../libs/bem-core/common.blocks/strings/__escape/strings__escape.vanilla.js */
-/**
- * @module strings__escape
- * @description A set of string escaping functions
- */
-
-modules.define('strings__escape', function(provide) {
-
-var symbols = {
-        '"' : '&quot;',
-        '\'' : '&apos;',
-        '&' : '&amp;',
-        '<' : '&lt;',
-        '>' : '&gt;'
-    },
-    mapSymbol = function(s) {
-        return symbols[s] || s;
-    },
-    buildEscape = function(regexp) {
-        regexp = new RegExp(regexp, 'g');
-        return function(str) {
-            return ('' + str).replace(regexp, mapSymbol);
-        };
-    };
-
-provide(/** @exports */{
-    /**
-     * Escape string to use in XML
-     * @type Function
-     * @param {String} str
-     * @returns {String}
-     */
-    xml : buildEscape('[&<>]'),
-
-    /**
-     * Escape string to use in HTML
-     * @type Function
-     * @param {String} str
-     * @returns {String}
-     */
-    html : buildEscape('[&<>]'),
-
-    /**
-     * Escape string to use in attributes
-     * @type Function
-     * @param {String} str
-     * @returns {String}
-     */
-    attr : buildEscape('["\'&<>]')
-});
-
-});
-
-/* end: ../../libs/bem-core/common.blocks/strings/__escape/strings__escape.vanilla.js */
 /* begin: ../../blocks/accordion/accordion.browser.js */
 
 modules.define('accordion', ['i-bem__dom', 'jquery'], function(provide, BEMDOM, $) {
@@ -17883,7 +17856,16 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                             'HTTP_X_REQUESTED_WITH' : 'xmlhttprequest',
                         },
                         data : val
-                    });
+                    }).then(
+                        function(result) {
+                            self._form.elem('message').text('Ваш запрос успешно отправлен');
+                            self._form.setMod(self._form.elem('message'), 'success')
+                        },
+                        function(error) {
+                            self._form.elem('message').text('Ошибка при отправке запроса');
+                            self._form.setMod(self._form.elem('message'), 'error');
+                            console.warn(error);
+                        })
                 } else {
                     self._button.setMod('disabled');
                 }
@@ -18116,116 +18098,3 @@ provide(BEMDOM.decl(this.name,
 });
 
 /* end: ../../blocks/slider/slider.browser.js */
-/* begin: ../../libs/bem-components/common.blocks/attach/attach.js */
-/**
- * @module attach
- */
-
-modules.define(
-    'attach',
-    ['i-bem__dom', 'i-bem__internal', 'control', 'jquery', 'strings__escape'],
-    function(provide, BEMDOM, INTERNAL, Control, $, escape) {
-
-/**
- * @exports
- * @class attach
- * @augments control
- * @bem
- */
-provide(BEMDOM.decl({ block : this.name, baseBlock : Control }, /** @lends attach.prototype */{
-    onSetMod : {
-        'disabled' : function(modName, modVal) {
-            this.__base.apply(this, arguments);
-            this._getButton().setMod(modName, modVal);
-        }
-    },
-
-    /**
-     * Clear control value
-     * @param {Object} [data] additional data
-     * @returns {attach} this
-     */
-    clear : function(data) {
-        if(!this.getVal()) return this;
-        return this._clear(data);
-    },
-
-    _clear : function(data) {
-        var control = this.elem('control'),
-            name = control.attr('name'),
-            tabIndex = control.attr('tabindex');
-
-        BEMDOM.replace(
-            control,
-            '<input' +
-                ' class="' + control.attr('class') + '"' +
-                ' type="file"' +
-                (name? ' name="' + name + '"' : '') +
-                (tabIndex? ' tabindex="' + tabIndex + '"' : '') +
-            '/>');
-
-        BEMDOM.destruct(this.elem('file'));
-
-        this.domElem.append(this.elem('no-file')); // use append because only detached before
-
-        return this
-            .dropElemCache('control file')
-            ._emitChange(data);
-    },
-
-    _onClearClick : function() {
-        this.clear({ source : 'clear' });
-    },
-
-    _onChange : function() {
-        this.elem('no-file').detach();
-        this.getVal()?
-            this
-                ._updateFileElem()
-                ._emitChange() :
-            this._clear();
-    },
-
-    _emitChange : function(data) {
-        return this.emit('change', data);
-    },
-
-    _updateFileElem : function() {
-        var fileName = extractFileNameFromPath(this.getVal());
-
-        this.elem('file').length && BEMDOM.destruct(this.elem('file'));
-
-        BEMDOM.append(
-            this.domElem,
-            '<span class="' +
-                this.__self.buildClass('file') + '">' +
-                '<span class="' +
-                    this.__self.buildClass('text') + '">' +
-                    escape.html(fileName) +
-                '</span>' +
-                '<span class="' + this.__self.buildClass('clear') + '"/>' +
-            '</span>');
-
-        return this.dropElemCache('file');
-    },
-
-    _getButton : function() {
-        return this.findBlockInside('button');
-    }
-}, /** @lends attach */{
-    live : function() {
-        this
-            .liveBindTo('clear', 'pointerclick', this.prototype._onClearClick)
-            .liveBindTo('control', 'change', this.prototype._onChange);
-
-        return this.__base.apply(this, arguments);
-    }
-}));
-
-function extractFileNameFromPath(path) {
-    return path.split('\\').pop(); // we need this only in windows
-}
-
-});
-
-/* end: ../../libs/bem-components/common.blocks/attach/attach.js */

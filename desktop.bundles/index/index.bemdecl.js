@@ -519,7 +519,23 @@ exports.blocks = [
         ]
     },
     {
-        "name": "link"
+        "name": "steps"
+    },
+    {
+        "name": "steps",
+        "elems": [
+            {
+                "name": "step"
+            }
+        ]
+    },
+    {
+        "name": "steps",
+        "elems": [
+            {
+                "name": "content"
+            }
+        ]
     },
     {
         "name": "form-main"
@@ -589,28 +605,28 @@ exports.blocks = [
         ]
     },
     {
+        "name": "steps",
+        "elems": [
+            {
+                "name": "footer"
+            }
+        ]
+    },
+    {
+        "name": "form",
+        "elems": [
+            {
+                "name": "message"
+            }
+        ]
+    },
+    {
         "name": "form-main",
         "elems": [
             {
-                "name": "attach"
+                "name": "message"
             }
         ]
-    },
-    {
-        "name": "form-field",
-        "mods": [
-            {
-                "name": "type",
-                "vals": [
-                    {
-                        "name": "attach"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "attach"
     },
     {
         "name": "button",
@@ -632,20 +648,17 @@ exports.blocks = [
                 "name": "size",
                 "vals": [
                     {
-                        "name": "s"
+                        "name": "m"
                     }
                 ]
             }
         ]
     },
     {
-        "name": "icon"
-    },
-    {
-        "name": "form-main",
+        "name": "steps",
         "elems": [
             {
-                "name": "footer"
+                "name": "prev-button"
             }
         ]
     },
@@ -666,19 +679,6 @@ exports.blocks = [
         "name": "button",
         "mods": [
             {
-                "name": "size",
-                "vals": [
-                    {
-                        "name": "m"
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "button",
-        "mods": [
-            {
                 "name": "type",
                 "vals": [
                     {
@@ -689,12 +689,36 @@ exports.blocks = [
         ]
     },
     {
+        "name": "button",
+        "mods": [
+            {
+                "name": "disabled",
+                "vals": [
+                    {
+                        "name": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "steps",
+        "elems": [
+            {
+                "name": "next-button"
+            }
+        ]
+    },
+    {
         "name": "form-main",
         "elems": [
             {
                 "name": "button"
             }
         ]
+    },
+    {
+        "name": "link"
     },
     {
         "name": "section",
@@ -773,6 +797,14 @@ exports.blocks = [
         "elems": [
             {
                 "name": "footer"
+            }
+        ]
+    },
+    {
+        "name": "form-feedback",
+        "elems": [
+            {
+                "name": "message"
             }
         ]
     },
