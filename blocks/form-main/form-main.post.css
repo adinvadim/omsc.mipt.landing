@@ -8,6 +8,10 @@
         margin-top: 50px;
     }
 
+    &__message {
+        margin-bottom: 20px;
+    }
+
     &__combo {
         display: flex;
 

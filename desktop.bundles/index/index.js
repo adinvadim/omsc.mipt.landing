@@ -15406,11 +15406,11 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                         data : val
                     }).then(
                         function(result) {
-                            self._form.elem('message').text('Ваш запрос успешно отправлен');
+                            self._form.elem('message').text('Ваш запрос успешно отправлен.');
                             self._form.setMod(self._form.elem('message'), 'success')
                         },
                         function(error) {
-                            self._form.elem('message').text('Ошибка при отправке запроса');
+                            self._form.elem('message').text('Ошибка при отправке запроса.');
                             self._form.setMod(self._form.elem('message'), 'error');
                             console.warn(error);
                         })
@@ -17858,11 +17858,11 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                         data : val
                     }).then(
                         function(result) {
-                            self._form.elem('message').text('Ваш запрос успешно отправлен');
+                            self._form.elem('message').text('Ваш запрос успешно отправлен.');
                             self._form.setMod(self._form.elem('message'), 'success')
                         },
                         function(error) {
-                            self._form.elem('message').text('Ошибка при отправке запроса');
+                            self._form.elem('message').text('Ошибка при отправке запроса.');
                             self._form.setMod(self._form.elem('message'), 'error');
                             console.warn(error);
                         })

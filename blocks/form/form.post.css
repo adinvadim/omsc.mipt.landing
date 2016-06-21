@@ -8,7 +8,7 @@
         }
         &_success {
             visibility: initial;
-            color: green;
+            color: #6CCE42;
         }
     }
 }
