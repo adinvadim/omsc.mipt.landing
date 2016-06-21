@@ -68,8 +68,8 @@ module.exports = function(config) {
 
             // css
             [techs.postcss, {
-                comments : true,
-                sourcemap : true,
+                comments : isDev,
+                sourcemap : isDev,
                 //source : '?.css',
                 plugins : postcssPlugins,
                 target: '?.min.css',
@@ -114,8 +114,7 @@ module.exports = function(config) {
             }],
 
             // borschik
-            [techs.borschik, { source: '?.js', target: '?.min.js', minify: isProd }],
-            //[techs.borschik, { source: '?.css', target: '?.min.css', minify: isProd }]
+            [techs.borschik, { source: '?.js', target: '?.min.js', minify: !isDev }],
         ]);
 
         nodeConfig.addTargets([/* '?.bemtree.js', */ '?.html', '?.min.css', '?.min.js']);

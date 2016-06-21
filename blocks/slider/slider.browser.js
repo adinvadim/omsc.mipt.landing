@@ -19,7 +19,6 @@ provide(BEMDOM.decl(this.name,
                     nextButton : '.swiper-button-next',
                     prevButton : '.swiper-button-prev'
                 });
-                console.log(this._swiper);
             }
         }
     }

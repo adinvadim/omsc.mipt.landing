@@ -17719,7 +17719,6 @@ provide(BEMDOM.decl(this.name, {
             'inited' : function() {
                 this._current = this.findElem('item', 'active', true);
                 this.bindTo('title', 'click', function(e) {
-                    console.log('click on title');
                     var item = $(e.currentTarget).parents(this.buildSelector('item'));
                     this.setMod(item, 'active', true);
                 }, this);
@@ -17800,6 +17799,69 @@ provide(BEMDOM.decl(this.name, {
 });
 
 /* end: ../../blocks/google-maps-bg/google-maps-bg.browser.js */
+/* begin: ../../blocks/form-feedback/form-feedback.browser.js */
+/**
+ * @module form-main
+ */
+modules.define('form-feedback',
+    ['i-bem__dom'],
+    function(provide, BEMDOM) {
+/**
+ * form-main block
+ */
+provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
+
+    onSetMod : {
+        'js' : {
+            'inited' : function() {
+                var self = this;
+                this._form = this.findBlockInside('form');
+
+                this._form.on('submit', this._onSubmit.bind(this));
+                this._form.on('change', this._onChange.bind(this));
+
+                this._button = this.findBlockOn(this.elem('button'), 'button');
+
+            }
+        }
+    },
+
+    _onSubmit: function(e, val) {
+        this._form.validate()
+            .then(function(st) {
+                if (self._form.checkFields(st)) {
+                    $.ajax({
+                        url : '/mipt/message.php',
+                        method : 'POST',
+                        headers : {
+                            'HTTP_X_REQUESTED_WITH' : 'xmlhttprequest',
+                        },
+                        data : val
+                    });
+                } else {
+                    self._button.setMod('disabled');
+                }
+            })
+    },
+
+
+    _onChange: function(e, val) {
+        var self = this;
+        this._form.validate()
+            .then(function(st) {
+                if (self._form.checkFields(st)) {
+                    self._button.delMod('disabled');
+                } else {
+                    self._button.setMod('disabled');
+                }
+            })
+    }
+
+}));
+
+});
+
+/* end: ../../blocks/form-feedback/form-feedback.browser.js */
 /* begin: ../../blocks/page/page.browser.js */
 /**
  * @module page
@@ -18032,7 +18094,6 @@ provide(BEMDOM.decl(this.name,
                     nextButton : '.swiper-button-next',
                     prevButton : '.swiper-button-prev'
                 });
-                console.log(this._swiper);
             }
         }
     }

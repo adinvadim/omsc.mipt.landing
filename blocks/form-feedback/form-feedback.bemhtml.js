@@ -1,7 +1,7 @@
 block('form-feedback')(
 
     js()(true),
-    
+
     elem('info')(
 
         content()(function() {
@@ -23,11 +23,12 @@ block('form-feedback')(
             })
         })
 
+    ),
 
 
     elem('info-item').mix()({
         block : 'row',
         elem : 'col',
-        elemMods : { sw : 4 }
+        elemMods : { sw: 12, lw : 4 }
     })
 )

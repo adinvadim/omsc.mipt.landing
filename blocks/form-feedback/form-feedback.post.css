@@ -28,6 +28,11 @@
     &__info {
         display: flex;
         margin-top: 30px;
+        flex-flow: row wrap;
+    }
+
+    &__info-item {
+        margin-bottom: 20px;
     }
 
     &__info-title {

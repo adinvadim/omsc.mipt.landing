@@ -8,8 +8,8 @@ var data = {
 
 module.exports = {
     block : 'page',
-     title : 'Title of the page',
-     favicon : '/favicon.ico',
+     title : 'Эксклюзивный образовательный проект МФТИ: онлайн-магистратура “Современная комбинаторика”',
+     favicon : './favicon.ico',
      head : [
          { elem : 'meta', attrs : { name : 'description', content : '' } },
          { elem : 'meta', attrs : { name : 'viewport', content : 'width=device-width, initial-scale=1' } },
@@ -30,7 +30,7 @@ module.exports = {
                         block : 'row',
                         content : {
                             elem : 'col',
-                            elemMods : { sw : 10 },
+                            elemMods : { sw : 12, lw : 10 },
                             mix : { block : 'header', elem : 'content' },
                             content : [
                                 {
@@ -59,9 +59,8 @@ module.exports = {
                                     }
                                 },
                                 {
-                                    block : 'title',
-                                    level : 1,
-                                    mix : { block : 'header', elem : 'title' },
+                                    block : 'header',
+                                    elem : 'title',
                                     content : 'Онлайн-магистратура по современной комбинаторике'
                                 },
                                 {
@@ -168,7 +167,7 @@ module.exports = {
                                     return {
                                         elem : 'item',
                                         content : item
-                                    }
+                                    };
                                 })
                             }
                         ]
@@ -249,10 +248,10 @@ module.exports = {
                                 title : 'Общие курсы',
                                 mix : { block : 'row', mods : { sac : true } },
                                 content : [{
-                                    imgUrl : '',
+                                    imgUrl : './images/english_for_math.png',
                                     title : 'Английский язык для математиков'
                                 }, {
-                                    imgUrl : '',
+                                    imgUrl : './images/philosophiya_nauki.jpg',
                                     title : 'Филосовия науки'
                                 }].map(item => {
                                     return {
@@ -271,11 +270,14 @@ module.exports = {
                                 title : 'Вводные курсы',
                                 mix : { block : 'row', mods : { sac : true } },
                                 content : [{
-                                    title : 'Комбинаторика'
+                                    title : 'Комбинаторика',
+                                    imgUrl : './images/cobminatorika.jpg'
                                 }, {
-                                    title : 'Теория графов'
+                                    title : 'Теория графов',
+                                    imgUrl : './images/th_graphs.jpg'
                                 }, {
-                                    title : 'Теория вероятностей'
+                                    title : 'Теория вероятностей',
+                                    imgUrl : './images/th_veroyatnostey.png'
                                 }].map(item => {
                                     return {
                                         block : 'row',
@@ -320,6 +322,7 @@ module.exports = {
                             {
                                 title : 'Специализированные курсы',
                                 content : [{
+                                    imgUrl : './images/th_random_graph.jpg',
                                     title : 'Теория случайных графов',
                                 }, {
                                     title : 'Аддитивная комбинаторика',
@@ -329,7 +332,7 @@ module.exports = {
                                     imgUrl : './images/dop_glavi.jpg'
                                 }, {
                                     title : 'Углубленный курс теории графов',
-                                    imgUrl : './images/seniour_th_graph.jpg'
+                                    imgUrl : './images/senior_th_graph.jpg'
 
                                 }].map(item => {
                                     return {

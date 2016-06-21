@@ -2294,17 +2294,6 @@ block('image')(
 );
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/image/image.bemhtml.js */
-/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/title/title.bemhtml.js */
-block('title')(
-
-    match((_, json) => json.level).def()(function() {
-        this.mods = this.mods || {};
-        this.mods.level = this.ctx.level;
-        return applyNext();
-    })
-)
-
-/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/title/title.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/button/button.bemhtml.js */
 block('button')(
     def()(function() {
@@ -2400,6 +2389,17 @@ block('section-title')(
 )
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/section-title/section-title.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/title/title.bemhtml.js */
+block('title')(
+
+    match((_, json) => json.level).def()(function() {
+        this.mods = this.mods || {};
+        this.mods.level = this.ctx.level;
+        return applyNext();
+    })
+)
+
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/title/title.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/icon/icon.bemhtml.js */
 block('icon')(
     tag()('span'),
@@ -2874,7 +2874,6 @@ block('accordion')(
 
     content()(function() {
         var ctx = this.ctx;
-        console.log(ctx);
         return ctx.options.map(item => {
             return {
                 elem : 'item',
@@ -2921,6 +2920,8 @@ block('partner-card')(
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/form-feedback/form-feedback.bemhtml.js */
 block('form-feedback')(
 
+    js()(true),
+
     elem('info')(
 
         content()(function() {
@@ -2944,10 +2945,11 @@ block('form-feedback')(
 
     ),
 
+
     elem('info-item').mix()({
         block : 'row',
         elem : 'col',
-        elemMods : { sw : 4 }
+        elemMods : { sw: 12, lw : 4 }
     })
 )
 

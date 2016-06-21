@@ -99,6 +99,11 @@ exports.deps = [
         "mod": "sw"
     },
     {
+        "block": "row",
+        "elem": "col",
+        "mod": "lw"
+    },
+    {
         "block": "header",
         "elem": "content"
     },
@@ -190,9 +195,6 @@ exports.deps = [
         "elem": "logo"
     },
     {
-        "block": "title"
-    },
-    {
         "block": "header",
         "elem": "title"
     },
@@ -258,17 +260,14 @@ exports.deps = [
         "val": true
     },
     {
-        "block": "row",
-        "elem": "col",
-        "mod": "sw",
-        "val": 12
-    },
-    {
         "block": "header",
         "elem": "note"
     },
     {
         "block": "section-title"
+    },
+    {
+        "block": "title"
     },
     {
         "block": "icon"
@@ -305,7 +304,8 @@ exports.deps = [
     {
         "block": "row",
         "elem": "col",
-        "mod": "lw"
+        "mod": "lw",
+        "val": 4
     },
     {
         "block": "row",
@@ -766,6 +766,12 @@ exports.deps = [
         "block": "row",
         "elem": "col",
         "mod": "sw",
+        "val": 12
+    },
+    {
+        "block": "row",
+        "elem": "col",
+        "mod": "lw",
         "val": 10
     },
     {
@@ -815,12 +821,6 @@ exports.deps = [
         "block": "icon",
         "mod": "type",
         "val": "attach"
-    },
-    {
-        "block": "row",
-        "elem": "col",
-        "mod": "lw",
-        "val": 4
     },
     {
         "block": "row",
