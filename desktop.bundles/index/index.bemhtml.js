@@ -2456,13 +2456,6 @@ block('quote-card')(
 )
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/quote-card/quote-card.bemhtml.js */
-/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/list/list.bemhtml.js */
-block('list')(
-    tag()('ul'),
-    elem('item').tag()('li')
-)
-
-/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/list/list.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/tabs/tabs.bemhtml.js */
 block('tabs')(
     js()(true),
@@ -2818,31 +2811,13 @@ block('input').elem('control')(
 );
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/input/__control/input__control.bemhtml.js */
-/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/accordion/accordion.bemhtml.js */
-block('accordion')(
-    js()(true),
-
-    content()(function() {
-        var ctx = this.ctx;
-        return ctx.options.map(item => {
-            return {
-                elem : 'item',
-                content : [
-                    {
-                        elem : 'title',
-                        content : item.title
-                    },
-                    {
-                        elem : 'content',
-                        content : item.content
-                    }
-                ]
-            }
-        })
-    })
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/list/list.bemhtml.js */
+block('list')(
+    tag()('ul'),
+    elem('item').tag()('li')
 )
 
-/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/accordion/accordion.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/list/list.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/partner-card/partner-card.bemhtml.js */
 block('partner-card')(
 

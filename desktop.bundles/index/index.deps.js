@@ -246,19 +246,6 @@ exports.deps = [
         "elem": "main-button"
     },
     {
-        "block": "row",
-        "mod": "sar"
-    },
-    {
-        "block": "row",
-        "mod": "sar",
-        "val": true
-    },
-    {
-        "block": "header",
-        "elem": "note"
-    },
-    {
         "block": "section-title"
     },
     {
@@ -314,13 +301,6 @@ exports.deps = [
         "block": "row",
         "elem": "col",
         "mod": "lo"
-    },
-    {
-        "block": "list"
-    },
-    {
-        "block": "list",
-        "elem": "item"
     },
     {
         "block": "section",
@@ -610,7 +590,29 @@ exports.deps = [
         "val": "faq"
     },
     {
-        "block": "accordion"
+        "block": "faq"
+    },
+    {
+        "block": "faq",
+        "elem": "item"
+    },
+    {
+        "block": "faq",
+        "elem": "question"
+    },
+    {
+        "block": "faq",
+        "elem": "answer"
+    },
+    {
+        "block": "list"
+    },
+    {
+        "block": "list",
+        "elem": "item"
+    },
+    {
+        "block": "partner-card"
     },
     {
         "block": "row",
@@ -622,9 +624,6 @@ exports.deps = [
         "elem": "col",
         "mod": "lw",
         "val": 3
-    },
-    {
-        "block": "partner-card"
     },
     {
         "block": "section",

@@ -1,0 +1,13 @@
+.faq {
+    &__item {
+        margin-bottom: 30px;
+    }
+    &__question {
+        font-size: 25px;
+        margin-bottom: 10px;
+    }
+
+    &__answer {
+        
+    }
+}

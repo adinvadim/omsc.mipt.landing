@@ -8,7 +8,7 @@ var data = {
 
 module.exports = {
     block : 'page',
-     title : 'Эксклюзивный образовательный проект МФТИ: онлайн-магистратура “Современная комбинаторика”',
+     title : 'Онлайн-магистратура по современной комбинаторике',
      favicon : './favicon.ico',
      head : [
          { elem : 'meta', attrs : { name : 'description', content : '' } },
@@ -66,14 +66,7 @@ module.exports = {
                                 {
                                     block : 'text',
                                     mix : { block : 'header', elem : 'text' },
-                                    content : [
-                                        `Первый в России образовательный онлайн-проект
-                                        с получением диплома государственного образца от лучшего технического ВУЗа страны `,
-                                        {
-                                            tag : 'sup',
-                                            content : '*'
-                                        }
-                                    ]
+                                    content : `Первая дистанционная программа от одного из лучших вузов страны.`,
                                 },
                                 {
                                     block : 'button',
@@ -85,25 +78,6 @@ module.exports = {
                             ]
                         }
                     }, /* row end */
-                    {
-                        block : 'row',
-                        mods : { sar : true },
-                        content : {
-                            elem : 'col',
-                            elemMods : { sw : 12 },
-                            content : {
-                                block : 'header',
-                                elem : 'note',
-                                content : [
-                                    {
-                                        tag : 'sup',
-                                        content : '*'
-                                    },
-                                     '- по версии RAEX (Эксперт РА)'
-                                ]
-                            }
-                        }
-                    }
                 ],
 
             }
@@ -160,17 +134,8 @@ module.exports = {
                     }, {
                         elem : 'col',
                         elemMods : { sw : 12, lw : 7, lo : 1 },
-                        content : [
-                            {
-                                block : 'list',
-                                content : data.originality.map(item => {
-                                    return {
-                                        elem : 'item',
-                                        content : item.content
-                                    };
-                                })
-                            }
-                        ]
+                        content : data.originality
+
                     }]
                 }, /* row end */
                 {
@@ -193,7 +158,7 @@ module.exports = {
                                     tag : 'b',
                                     content : 'диплом МФТИ государственного образца '
                                 },
-                                'после успешной защиты квалификационной работы магистра'
+                                'после успешной защиты квалификационной работы магистра.'
                             ]
                         }
                     }]
@@ -393,7 +358,7 @@ module.exports = {
                                             block : 'slider',
                                             elem : 'content',
                                             content : item.text,
-                                            mix : { block : 'row', elem : 'col', elemMods : { sw : 12, lo : 1 } }
+                                            mix : { block : 'row', elem : 'col', elemMods : { sw : 12, lw: 7, lo : 1 } }
                                         }
                                     ]
                                 }
@@ -430,21 +395,33 @@ module.exports = {
                     }, {
                         elem : 'col',
                         elemMods : { sw : 12, lw : 7, lo : 1  },
-                        content : [{
-                            block : 'list',
+                        content : [
+                        {
+                            tag : 'p',
                             content : [
-                                'Подача документов осуществляется с 20 июня 2016 по 10 августа 2016',
-                                'По итогам экзаменов и собеседований будут отобраны 10 студентов. ',
-                                'Обучение на программе ведется на платной основе, но есть возможность получить грант наобучение.',
-                            ].map(item => {
-                                return {
-                                    elem : 'item',
-                                    content : item
-                                }
-                            })
+                                'Подача документов осуществляется с ',
+                                { tag : 'b', content : '20 июня 2016', },
+                                ' по ',
+                                { tag : 'b', content : '10 августа 2016' },
+                            ]
+                        },
+                        {
+                            tag : 'p',
+                            content : [
+                                'По итогам экзаменов и собеседований будут отобраны ',
+                                { tag : 'b', content : '10 студентов. ' }
+                            ]
+                        },
+                        {
+                            tag : 'p',
+                            content : [
+                                'Обучение по программе ведется на платной основе, но есть возможность получить ',
+                                { tag : 'b', content : 'грант'},
+                                ' на обучение.'
+                            ]
                         }, {
                             tag : 'p',
-                            content : 'Чтобы принять участие в конкурсе на поступление в рамках данной экспериментальной программы, вам необходимо:'
+                            content : 'Для участия в конкурсе на поступление в рамках данной экспериментальной программы, вам необходимо:'
                         }, {
                             tag : 'p',
                             content : [
@@ -551,19 +528,13 @@ module.exports = {
                             content : [
                                 { tag : 'b', content : 'Шаг 2. ', },
                                 { block : 'link', url : 'https://pk.mipt.ru/apply/', content: 'Подать заявление '},
-                                ' на обучение в магистратуре МФТИ. Вы также можете ознакомиться ',
-                                { block : 'link', url : 'https://pk.mipt.ru/master/applying/МФТИ', content : 'с порядком поступления'},
-                                ' в магистратуру.',
+                                ' на обучение в магистратуре МФТИ.'
                             ]
                         }, {
                             tag : 'p',
                             content : [
                                 { tag : 'b', content : 'Шаг 3. ' },
-                                'Сдать вступительные экзамены по математике и информатике. Вступительные испытания по математике проводятся во вторник, по информатике - в четверг согласно ',
-                                { block : 'link', url : 'https://pk.mipt.ru/master/timetable/', content : 'графику'},
-                                '. С программой экзаменов вы можете ознакомиться ',
-                                { block : 'link', url : 'https://pk.mipt.ru/master/exams/', content : 'тут'},
-                                '.'
+                                'Сдать экзамены и пройти собеседование. Все подробности вы получите в ответном письме после заполнения формы из Шага 1.',
                             ]
                         }]
                     }]
@@ -586,8 +557,22 @@ module.exports = {
                     elem : 'col',
                     elemMods : { sw : 12, lw : 7, lo : 1 },
                     content : {
-                        block : 'accordion',
-                        options : data.faq
+                        block : 'faq',
+                        content : data.faq.map(item => {
+                            return {
+                                elem : 'item',
+                                content : [
+                                    {
+                                        elem : 'question',
+                                        content : item.title
+                                    },
+                                    {
+                                        elem : 'answer',
+                                        content : item.content
+                                    }
+                                ]
+                            }
+                        })
                     }
                 }]
             }
@@ -611,13 +596,10 @@ module.exports = {
                     },
                     data.partners.map(item => {
                         return {
-                            elem : 'col',
-                            elemMods : { sw : 12, mw : 4, lw : 3 },
-                            content : {
-                                block : 'partner-card',
-                                title : item.title,
-                                imgUrl : item.imgUrl
-                            }
+                            block : 'partner-card',
+                            title : item.title,
+                            imgUrl : item.imgUrl,
+                            mix : { block : 'row', elem : 'col', elemMods : { sw : 12, mw : 4, lw : 3 } }
                         }
                     })
                 ]
@@ -641,7 +623,7 @@ module.exports = {
                                 {
                                     block : 'form-feedback',
                                     elem : 'header',
-                                    content : 'Если у Вас появился вопрос или пожелание, напишите нам.'
+                                    content : 'Если у вас появился вопрос или пожелание, отправьте его с помощью формы или свяжитесь с нами.'
                                 },
                                 {
                                     block : 'form-field',

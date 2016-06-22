@@ -211,27 +211,6 @@ exports.blocks = [
         ]
     },
     {
-        "name": "row",
-        "mods": [
-            {
-                "name": "sar",
-                "vals": [
-                    {
-                        "name": true
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        "name": "header",
-        "elems": [
-            {
-                "name": "note"
-            }
-        ]
-    },
-    {
         "name": "section-title"
     },
     {
@@ -288,17 +267,6 @@ exports.blocks = [
                         ]
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "name": "list"
-    },
-    {
-        "name": "list",
-        "elems": [
-            {
-                "name": "item"
             }
         ]
     },
@@ -632,7 +600,45 @@ exports.blocks = [
         ]
     },
     {
-        "name": "accordion"
+        "name": "faq"
+    },
+    {
+        "name": "faq",
+        "elems": [
+            {
+                "name": "item"
+            }
+        ]
+    },
+    {
+        "name": "faq",
+        "elems": [
+            {
+                "name": "question"
+            }
+        ]
+    },
+    {
+        "name": "faq",
+        "elems": [
+            {
+                "name": "answer"
+            }
+        ]
+    },
+    {
+        "name": "list"
+    },
+    {
+        "name": "list",
+        "elems": [
+            {
+                "name": "item"
+            }
+        ]
+    },
+    {
+        "name": "partner-card"
     },
     {
         "name": "row",
@@ -669,9 +675,6 @@ exports.blocks = [
                 ]
             }
         ]
-    },
-    {
-        "name": "partner-card"
     },
     {
         "name": "section",

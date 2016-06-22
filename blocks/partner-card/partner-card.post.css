@@ -8,6 +8,16 @@
     margin-left: auto;
     margin-right: auto;
 
+    &:last-of-type {
+        margin-right: 30px;
+    }
+
+    &__title {
+        min-height: 150px;
+        display: flex;
+        align-items: center;
+    }
+
     &__img-wrapper {
         width: 120px;
         margin-top: 10px;
