@@ -5,18 +5,27 @@
         border-bottom: 1px solid;
         display: flex;
         margin: 0 auto;
+        overflow: hidden;
     }
 
     &__tab {
-        text-transform: uppercase;
-        font-size: 13px;
+        font-size: 12px;
         width: 100%;
         cursor: pointer;
         text-align: center;
+        @media (--medium) {
+            text-transform: uppercase;
+            font-size: 13px;
+
+            &.radio_checked {
+                font-size: 18px;
+            }
+
+        }
 
         &.radio_checked {
-            font-size: 18px;
             border-bottom: 3px solid;
+
         }
 
         .radio__control {

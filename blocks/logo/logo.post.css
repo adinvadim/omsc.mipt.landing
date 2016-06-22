@@ -5,3 +5,7 @@
         max-width: 100%;
     }
 }
+
+@media (--large) {
+    width: 230px;
+}

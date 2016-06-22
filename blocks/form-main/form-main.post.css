@@ -14,6 +14,11 @@
 
     &__combo {
         display: flex;
+        flex-direction: column;
+
+        @media (--medium) {
+            flex-direction: row;
+        }
 
         .form-main__form-field {
             margin-right: 18px;

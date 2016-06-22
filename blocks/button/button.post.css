@@ -10,6 +10,8 @@
     color: var(--color-main);
     cursor: pointer;
     z-index: 1;
+    padding-left: 15px;
+    padding-right: 15px;
 
     &:hover:after {
         content: '';
@@ -24,9 +26,9 @@
     }
 
     &_size_l {
-        height: 70px;
-        line-height: 70px;
-        min-width: 300px;
+        height: 50px;
+        line-height: 50px;
+        min-width: 180px;
     }
 
     &_size_m {
@@ -74,4 +76,15 @@
             }
         }
     }
+}
+
+@media (--large) {
+    .button {
+        &_size_l {
+            height: 70px;
+            line-height: 70px;
+            min-width: 300px;
+        }
+    }
+
 }

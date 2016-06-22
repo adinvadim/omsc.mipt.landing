@@ -1,7 +1,12 @@
 .header {
     color: white;
-    min-height: 100vh;
     box-sizing: border-box;
+    min-width: 300px;
+
+    &__text {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 
     &__content {
         display: flex;
@@ -9,29 +14,41 @@
         align-items: flex-start;
         justify-content: space-between;
         min-height: 90vh;
+        padding-bottom: 20px;
     }
 
     &__title {
         font-size: 30px;
         line-height: 35px;
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+
     }
 
     &__menu {
+        width: 100%;
         display: flex;
-        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        flex-flow: wrap row;
+        margin-top: 10px;
+        overflow-y: visible;
     }
 
 
     &__menu-item {
 
-        text-transform: uppercase;
         cursor: pointer;
-        padding-top: 40px;
-        padding-bottom: 20px;
-        margin-right: 40px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: calc(100% / 3);
+        font-size: 15px;
+        text-align: center;
+        box-sizing: border-box;
 
         &:hover {
             color: var(--color-second);
+            background: rgba(#fff, 0.3);
         }
 
         &:first-of-type {
@@ -40,10 +57,50 @@
 
     }
 
+    &__main-button {
+        margin-top: 15px;
+    }
+
+
     &__note {
         font-size: 12px;
     }
 
+}
+
+
+@media (--medium) {
+    .header {
+        min-height: 100vh;
+
+
+        &__menu-item {
+            text-transform: uppercase;
+            width: auto;
+            font-size: inherit;
+            padding: 10px;
+        }
+    }
+}
+
+@media (--semi-large) {
+    .header {
+        &__title {
+            font-size: 55px;
+            line-height: 65px;
+        }
+
+        &__text {
+            font-size: 30px;
+        }
+
+        &__menu-item {
+            text-transform: uppercase;
+            width: auto;
+            font-size: inherit;
+            padding: 10px;
+        }
+    }
 }
 
 @media (--large) {
@@ -52,12 +109,13 @@
         &__menu {
             display: flex;
             flex-direction: row;
+            margin-top: 0;
+            margin-left: 0;
+            margin-right: 0;
+            justify-content: initial;
         }
 
-        &__title {
-            font-size: 55px;
-            line-height: 65px;
-        }
+
 
         &__menu-item {
             display: inline-block;
@@ -67,6 +125,8 @@
             color: white;
             text-align: center;
             margin-right: 60px;
+            padding-bottom: 20px;
+            margin-right: 40px;
 
             &:last-of-type {
                 margin-right: 0;
@@ -74,6 +134,7 @@
 
             &:hover {
                 border-top: 3px solid var(--color-second);
+                background: none;
             }
         }
 

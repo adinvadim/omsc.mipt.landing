@@ -1,5 +1,8 @@
 .section_type_maps {
+    padding: 0;
     min-height: 700px;
     box-sizing: border-box;
     position: relative;
+    overflow: hidden;
+    clear: both;
 }

@@ -1,10 +1,20 @@
 .slider {
     position: relative;
     overflow: hidden;
-    height: 390px;
+    min-height: 390px;
+    display: flex;
     &__slide {
-        background-color: #e4e4e4
+        background-color: #e4e4e4;
+        height: auto;
+        max-height: 100%;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
 
+    }
+
+    &__pagination {
+        display: none;
     }
 
     &__slide-content {
@@ -25,6 +35,16 @@
         overflow: hidden;
         background-color: #f8f8f8;
         margin-bottom: 20px;
+        margin-right: 35px;
+    }
+
+    &__content {
+        display: none;
+
+        @media (--medium) {
+                display: block;
+
+        }
     }
 
     &__avatar {
@@ -32,10 +52,20 @@
     }
 
     &__next-button {
-        background: url(./images/slider-arrows.png) no-repeat;
-        background-position: -33px;
-        width: 31px;
+        background: url(./images/slider-arrows.png) no-repeat 0 center;
+        background-size: 42px;
+        background-position: -21px;
+        width: 21px;
         height: 51px;
+        right: 5px;
+
+        @media (--medium) {
+            background-size: initial;
+            background-position: -33px;
+            width: 31px;
+            height: 51px;
+            right: 10px;
+        }
     }
 
     &__person {
@@ -45,7 +75,8 @@
     }
 
     &__person-info {
-        margin-left: 35px;
+        margin-bottom: 30px;
+        text-align: center;
     }
 
     &__person-name {
@@ -54,8 +85,17 @@
     }
 
     &__prev-button {
-        background: url(./images/slider-arrows.png) no-repeat;
-        width: 31px;
+        background: url(./images/slider-arrows.png) no-repeat 0 center;
+        background-size: 42px;
+        width: 21px;
         height: 51px;
+        right: 5px;
+
+        @media (--medium) {
+            background-size: initial;
+            width: 31px;
+            height: 51px;
+            left: 10px;
+        }
     }
 }
