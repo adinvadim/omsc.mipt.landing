@@ -11,7 +11,6 @@
 		$name = implode(' ', [ param('lastname'), param('firstname'), param('secondname') ]);
 		$phone = param('phone');
 		$birthdate = param('birthdate');
-		$msg = param('message');
 
 		if (isset( $_FILES[ 'file' ][ 'tmp_name' ] ) and $_FILES[ 'file' ][ 'error' ] == UPLOAD_ERR_OK)
 		{
@@ -24,7 +23,6 @@
 			'Почта'         => $email,
 			'Телефон'       => $phone,
 			'Дата рождения' => $birthdate,
-			'Cообщение'     => $msg
 		];
 
 		$mailer = new PHPMailer();
@@ -34,7 +32,7 @@
 			$mailer->addAddress($address);
 		$mailer->addReplyTo($email, $name);
 		$mailer->isHTML(true);
-		$mailer->Subject = 'Сообщение из OMSC';
+		$mailer->Subject = 'Заявка на участие в конкурсе OMSC';
 		$mailer->Body = getBody($fields);
 		$mailer->AltBody = getAltBody($fields);
 		if (isset( $file ))
