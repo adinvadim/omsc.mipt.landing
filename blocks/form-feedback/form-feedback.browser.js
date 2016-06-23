@@ -46,7 +46,8 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                             console.warn(error);
                         })
                 } else {
-                    self._button.setMod('disabled');
+                    self._form.elem('message').text('Для отправки заполните выделенные поля.')
+                    self._form.setMod(self._form.elem('message'), 'error');
                 }
             })
     }

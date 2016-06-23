@@ -589,19 +589,6 @@ exports.blocks = [
         ]
     },
     {
-        "name": "button",
-        "mods": [
-            {
-                "name": "disabled",
-                "vals": [
-                    {
-                        "name": true
-                    }
-                ]
-            }
-        ]
-    },
-    {
         "name": "form-main",
         "elems": [
             {

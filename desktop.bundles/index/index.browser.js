@@ -15348,7 +15348,7 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                 this._form = this.findBlockInside('form');
 
                 this._form.on('submit', this._onSubmit.bind(this));
-                this._form.on('change', this._onChange.bind(this));
+                //this._form.on('change', this._onChange.bind(this));
 
                 this._button = this.findBlockOn(this.elem('button'), 'button');
 
@@ -15358,6 +15358,7 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
 
     _onSubmit: function(e, val) {
         var self = this;
+        console.log(val);
         this._form.validate()
             .then(function(st) {
                 if (self._form.checkFields(st)) {
@@ -15379,22 +15380,23 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                             console.warn(error);
                         })
                 } else {
-                    self._button.setMod('disabled');
-                }
-            })
-    },
-
-    _onChange: function(e, val) {
-        var self = this;
-        this._form.validate()
-            .then(function(st) {
-                if (self._form.checkFields(st)) {
-                    self._button.delMod('disabled');
-                } else {
-                    self._button.setMod('disabled');
+                    self._form.elem('message').text('Для отправки заполните выделенные поля.')
+                    self._form.setMod(self._form.elem('message'), 'error');
                 }
             })
     }
+
+    //_onChange: function(e, val) {
+        //var self = this;
+        //this._form.validate()
+            //.then(function(st) {
+                //if (self._form.checkFields(st)) {
+                    //self._button.delMod('disabled');
+                //} else {
+                    //self._button.setMod('disabled');
+                //}
+            //})
+    //}
 
 }));
 
@@ -15515,7 +15517,6 @@ provide(BEMDOM.decl(this.name, /** @lends form.prototype */{
      */
     _onSubmit : function(e) {
         e.preventDefault();
-        console.log('submit');
         this.emit('submit', this.getVal());
     },
     /**
@@ -17615,7 +17616,8 @@ modules.define('validation_required',
 var DEFAULT_MESSAGE = 'Required field';
 provide(function(field) {
     return function(val) {
-        return val? null : {
+        console.log(typeof val, val, val ? 'not null' : 'null');
+        return (!!val) ? null : {
             field : field.getName() || field.getId(),
             message : field.getValidationMessage('required') || DEFAULT_MESSAGE
         };
@@ -17625,6 +17627,29 @@ provide(function(field) {
 });
 
 /* end: ../../libs/bem-forms/common.blocks/validation/_required/validation_required.browser.js */
+/* begin: ../../blocks/validation/_required/validation_required.browser.js */
+/**
+ * @module validation_required
+ */
+modules.define('validation_required',
+    function(provide) {
+
+var DEFAULT_MESSAGE = 'Required field';
+provide(function(field) {
+    return function(val) {
+        if ( val === "undefined") {
+            val = undefined;
+        }
+        return val ? null : {
+            field : field.getName() || field.getId(),
+            message : field.getValidationMessage('required') || DEFAULT_MESSAGE
+        };
+    };
+});
+
+});
+
+/* end: ../../blocks/validation/_required/validation_required.browser.js */
 /* begin: ../../blocks/input/_mask/input_mask.browser.js */
 modules.define(
     'input',
@@ -17636,11 +17661,22 @@ Input.decl({ block : this.name, modName : 'mask', modVal : true }, {
     onSetMod : {
         'js' : {
             'inited' : function() {
-                var mask = this.params['mask']
-                $(this.elem('control')).inputmask(mask);
+                var self = this;
+                var mask = this.params['mask'];
+                $(this.elem('control')).inputmask(mask, {
+                    oncomplete : function() {
+                        var val = self.elem('control').val();
+                        self.setVal(val);
+                    },
+                    onincomplete : function() {
+                        self.setVal('');
+                    }
+                });
+                this.setVal('');
 
             }
-        }
+        },
+
     },
 
 });
@@ -17653,7 +17689,10 @@ provide(Input);
 modules.define( 'jquery__inputmask', ['jquery'], function(provide, $) {
 
 window.jQuery = jQuery = $;
-/* borschik:include:../../libs/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js */
+
+/* borschik:include:../../libs/jquery.inputmask/dist/min/inputmask/inputmask.min.js */
+/* borschik:include:../../libs/jquery.inputmask/dist/min/inputmask/inputmask.date.extensions.min.js */
+/* borschik:include:../../libs/jquery.inputmask/dist/min/inputmask/jquery.inputmask.min.js */
 
 
 provide($);
@@ -17672,12 +17711,22 @@ Input.decl({ block : this.name, modName : 'mask', modVal : 'date' }, {
     onSetMod : {
         'js' : {
             'inited' : function() {
-                $(this.elem('control')).inputmask("d.m.y", { "placeholder": "дд.мм.гггг" });
+                var self = this;
+                $(this.elem('control')).inputmask("dd.mm.yyyy", {
+                    "placeholder": "дд.мм.гггг",
+                    oncomplete : function() {
+                        var val = self.elem('control').val();
+                        self.setVal(val);
+                    },
+                    onincomplete : function() {
+                        self.setVal('');
+                    }
+                });
+                this.setVal('');
 
             }
         }
     },
-
 });
 
 provide(Input);
@@ -17846,7 +17895,8 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                             console.warn(error);
                         })
                 } else {
-                    self._button.setMod('disabled');
+                    self._form.elem('message').text('Для отправки заполните выделенные поля.')
+                    self._form.setMod(self._form.elem('message'), 'error');
                 }
             })
     }

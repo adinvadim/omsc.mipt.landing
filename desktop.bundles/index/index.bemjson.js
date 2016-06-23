@@ -517,7 +517,6 @@ module.exports = {
                                                     view : 'main',
                                                     size : 'm',
                                                     type : 'submit',
-                                                    disabled : true
                                                 },
                                                 mix : [
                                                     { block : 'form-main', elem : 'button' }
