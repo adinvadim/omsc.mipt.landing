@@ -3,8 +3,13 @@
 	{
 		$headers = getallheaders();
 
-		return isset( $headers[ 'HTTP_X_REQUESTED_WITH' ] ) &&
-		( strtolower($headers[ 'HTTP_X_REQUESTED_WITH' ]) == 'xmlhttprequest' );
+		foreach ($headers as $key => $value)
+		{
+			if (strtolower($key) == 'http-x-requested-with' and strtolower($value) == 'xmlhttprequest')
+				return true;
+		}
+
+		return false;
 	}
 
 	function param ($name)
