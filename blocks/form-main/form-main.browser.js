@@ -34,7 +34,7 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                         url : '/mail/application.php',
                         method : 'POST',
                         headers : {
-                            'HTTP_X_REQUESTED_WITH' : 'xmlhttprequest',
+                            'HTTP-X-REQUESTED-WITH' : 'xmlhttprequest',
                         },
                         data : val
                     }).then(
