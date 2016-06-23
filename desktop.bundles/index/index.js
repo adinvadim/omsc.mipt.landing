@@ -15371,8 +15371,15 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                         data : val
                     }).then(
                         function(result) {
-                            self._form.elem('message').text('Ваш запрос успешно отправлен.');
-                            self._form.setMod(self._form.elem('message'), 'success')
+                            if (result === '1') {
+                                self._form.elem('message').text('Ваш запрос успешно отправлен.');
+                                self._form.setMod(self._form.elem('message'), 'success')
+                            } else {
+                                self._form.elem('message').text('Ошибка при отправке запроса.');
+                                self._form.setMod(self._form.elem('message'), 'error');
+                                console.warn(result);
+                            }
+
                         },
                         function(error) {
                             self._form.elem('message').text('Ошибка при отправке запроса.');
@@ -17616,8 +17623,7 @@ modules.define('validation_required',
 var DEFAULT_MESSAGE = 'Required field';
 provide(function(field) {
     return function(val) {
-        console.log(typeof val, val, val ? 'not null' : 'null');
-        return (!!val) ? null : {
+        return val? null : {
             field : field.getName() || field.getId(),
             message : field.getValidationMessage('required') || DEFAULT_MESSAGE
         };
@@ -17886,8 +17892,15 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                         data : val
                     }).then(
                         function(result) {
-                            self._form.elem('message').text('Ваш запрос успешно отправлен.');
-                            self._form.setMod(self._form.elem('message'), 'success')
+                            if (result === '1') {
+                                self._form.elem('message').text('Ваш запрос успешно отправлен.');
+                                self._form.setMod(self._form.elem('message'), 'success')
+                            } else {
+                                self._form.elem('message').text('Ошибка при отправке запроса.');
+                                self._form.setMod(self._form.elem('message'), 'error');
+                                console.warn(result);
+                            }
+
                         },
                         function(error) {
                             self._form.elem('message').text('Ошибка при отправке запроса.');

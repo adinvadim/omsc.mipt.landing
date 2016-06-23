@@ -37,8 +37,15 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                         data : val
                     }).then(
                         function(result) {
-                            self._form.elem('message').text('Ваш запрос успешно отправлен.');
-                            self._form.setMod(self._form.elem('message'), 'success')
+                            if (result === '1') {
+                                self._form.elem('message').text('Ваш запрос успешно отправлен.');
+                                self._form.setMod(self._form.elem('message'), 'success')
+                            } else {
+                                self._form.elem('message').text('Ошибка при отправке запроса.');
+                                self._form.setMod(self._form.elem('message'), 'error');
+                                console.warn(result);
+                            }
+
                         },
                         function(error) {
                             self._form.elem('message').text('Ошибка при отправке запроса.');
