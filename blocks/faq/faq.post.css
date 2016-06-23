@@ -5,6 +5,7 @@
     &__question {
         font-size: 25px;
         margin-bottom: 10px;
+        color : var(--color-main);
     }
 
     &__answer {

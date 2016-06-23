@@ -487,6 +487,32 @@ exports.blocks = [
         ]
     },
     {
+        "name": "input",
+        "mods": [
+            {
+                "name": "mask",
+                "vals": [
+                    {
+                        "name": "date"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "input",
+        "mods": [
+            {
+                "name": "mask",
+                "vals": [
+                    {
+                        "name": true
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "form-field",
         "mods": [
             {

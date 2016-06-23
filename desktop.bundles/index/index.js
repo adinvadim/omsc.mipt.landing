@@ -17625,6 +17625,65 @@ provide(function(field) {
 });
 
 /* end: ../../libs/bem-forms/common.blocks/validation/_required/validation_required.browser.js */
+/* begin: ../../blocks/input/_mask/input_mask.browser.js */
+modules.define(
+    'input',
+    ['i-bem__dom', 'jquery__inputmask'],
+    function(provide, BEMDOM, $, Input) {
+
+Input.decl({ block : this.name, modName : 'mask', modVal : true }, {
+
+    onSetMod : {
+        'js' : {
+            'inited' : function() {
+                var mask = this.params['mask']
+                $(this.elem('control')).inputmask(mask);
+
+            }
+        }
+    },
+
+});
+
+provide(Input);
+});
+
+/* end: ../../blocks/input/_mask/input_mask.browser.js */
+/* begin: ../../blocks/jquery/__inputmask/jquery__inputmask.browser.js */
+modules.define( 'jquery__inputmask', ['jquery'], function(provide, $) {
+
+window.jQuery = jQuery = $;
+/* borschik:include:../../libs/jquery.inputmask/dist/min/jquery.inputmask.bundle.min.js */
+
+
+provide($);
+
+})
+
+/* end: ../../blocks/jquery/__inputmask/jquery__inputmask.browser.js */
+/* begin: ../../blocks/input/_mask/input_mask_date.browser.js */
+modules.define(
+    'input',
+    ['i-bem__dom', 'jquery__inputmask'],
+    function(provide, BEMDOM, $, Input) {
+
+Input.decl({ block : this.name, modName : 'mask', modVal : 'date' }, {
+
+    onSetMod : {
+        'js' : {
+            'inited' : function() {
+                $(this.elem('control')).inputmask("d.m.y", { "placeholder": "дд.мм.гггг" });
+
+            }
+        }
+    },
+
+});
+
+provide(Input);
+});
+
+/* end: ../../blocks/input/_mask/input_mask_date.browser.js */
 /* begin: ../../libs/bem-forms/common.blocks/form-field/_validate/form-field_validate_email.browser.js */
 /**
  * @module form-field

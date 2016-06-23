@@ -533,6 +533,24 @@ exports.deps = [
         "elem": "combo"
     },
     {
+        "block": "input",
+        "mod": "mask"
+    },
+    {
+        "block": "jquery",
+        "elem": "inputmask"
+    },
+    {
+        "block": "input",
+        "mod": "mask",
+        "val": "date"
+    },
+    {
+        "block": "input",
+        "mod": "mask",
+        "val": true
+    },
+    {
         "block": "form-field",
         "mod": "validate"
     },

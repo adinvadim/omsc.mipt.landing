@@ -473,6 +473,7 @@ module.exports = {
                                             mods : { type : 'input', required : true },
                                             content : {
                                                 block : 'input',
+                                                mods: { mask : 'date' },
                                                 placeholder : 'Дата рождения'
                                             }
                                         }, {
@@ -482,7 +483,11 @@ module.exports = {
                                             mods : { type : 'input', required : true },
                                             content : {
                                                 block : 'input',
-                                                placeholder : 'Телефон'
+                                                placeholder : 'Телефон',
+                                                mods : { mask : true },
+                                                js : {
+                                                    mask : '+7(999)9999999'
+                                                }
                                             }
                                         }, {
                                             block : 'form-field',
