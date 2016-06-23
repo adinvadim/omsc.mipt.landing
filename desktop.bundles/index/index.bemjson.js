@@ -667,7 +667,7 @@ module.exports = {
                                             content : '141701, Московская облаcть, г. Долгопрудный, Институтский пер., 9',
                                         }, {
                                             title : 'Телефон:',
-                                            content : '+7 (499) 110 6703'
+                                            content : '+7 (499) 110 67 03'
                                         }, {
                                             title : 'E-mail:',
                                             content : 'omsc@phystech.edu'
