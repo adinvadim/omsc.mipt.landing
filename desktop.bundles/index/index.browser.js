@@ -15346,11 +15346,10 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
             'inited' : function() {
                 var self = this;
                 this._form = this.findBlockInside('form');
+                this._button = this.findBlockInside('button');
 
                 this._form.on('submit', this._onSubmit.bind(this));
-                //this._form.on('change', this._onChange.bind(this));
 
-                this._button = this.findBlockOn(this.elem('button'), 'button');
 
             }
         }
@@ -15358,7 +15357,6 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
 
     _onSubmit: function(e, val) {
         var self = this;
-        console.log(val);
         this._form.validate()
             .then(function(st) {
                 if (self._form.checkFields(st)) {
@@ -15374,6 +15372,14 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                             if (result === '1') {
                                 self._form.elem('message').text('Ваш запрос успешно отправлен.');
                                 self._form.setMod(self._form.elem('message'), 'success')
+
+                                ga('send', {
+                                  hitType: 'event',
+                                  eventCategory: 'Registration',
+                                  eventAction: 'Click',
+                                  eventLabel: 'main'
+                                });
+
                             } else {
                                 self._form.elem('message').text('Ошибка при отправке запроса.');
                                 self._form.setMod(self._form.elem('message'), 'error');
@@ -17870,10 +17876,10 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
             'inited' : function() {
                 var self = this;
                 this._form = this.findBlockInside('form');
+                this._button = this.findBlockInside('button');
 
                 this._form.on('submit', this._onSubmit.bind(this));
 
-                this._button = this.findBlockOn(this.elem('button'), 'button');
 
             }
         }
@@ -17895,6 +17901,14 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                         function(result) {
                             if (result === '1') {
                                 self._form.elem('message').text('Ваш запрос успешно отправлен.');
+
+                                ga('send', {
+                                  hitType: 'event',
+                                  eventCategory: 'Registration',
+                                  eventAction: 'Click',
+                                  eventLabel: 'second'
+                                });
+
                                 self._form.setMod(self._form.elem('message'), 'success')
                             } else {
                                 self._form.elem('message').text('Ошибка при отправке запроса.');

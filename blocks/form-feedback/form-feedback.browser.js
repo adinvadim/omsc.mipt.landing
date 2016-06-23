@@ -14,10 +14,10 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
             'inited' : function() {
                 var self = this;
                 this._form = this.findBlockInside('form');
+                this._button = this.findBlockInside('button');
 
                 this._form.on('submit', this._onSubmit.bind(this));
 
-                this._button = this.findBlockOn(this.elem('button'), 'button');
 
             }
         }
@@ -39,6 +39,14 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
                         function(result) {
                             if (result === '1') {
                                 self._form.elem('message').text('Ваш запрос успешно отправлен.');
+
+                                ga('send', {
+                                  hitType: 'event',
+                                  eventCategory: 'Registration',
+                                  eventAction: 'Click',
+                                  eventLabel: 'second'
+                                });
+
                                 self._form.setMod(self._form.elem('message'), 'success')
                             } else {
                                 self._form.elem('message').text('Ошибка при отправке запроса.');
