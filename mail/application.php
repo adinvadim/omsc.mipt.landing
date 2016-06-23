@@ -8,7 +8,10 @@
 	if (isAjax())
 	{
 		$email = param('email');
-		$name = implode(' ', [ param('lastname'), param('firstname'), param('secondname') ]);
+		$lastname = param('lastname');
+		$firstname = param('firstname');
+		$secondname = param('secondname');
+		$name = implode(' ', [ $lastname, $firstname, $secondname ]);
 		$phone = param('phone');
 		$birthdate = param('birthdate');
 
@@ -19,7 +22,9 @@
 		}
 
 		$fields = [
-			'Имя'           => $name,
+			'Фамилия'       => $lastname,
+			'Имя'           => $firstname,
+			'Отчество'      => $secondname,
 			'Почта'         => $email,
 			'Телефон'       => $phone,
 			'Дата рождения' => $birthdate,
