@@ -13,9 +13,11 @@
         width: 100%;
         cursor: pointer;
         text-align: center;
+        line-height: 15px;
         @media (--medium) {
             text-transform: uppercase;
             font-size: 13px;
+            line-height: 20px;
 
             &.radio_checked {
                 font-size: 18px;
