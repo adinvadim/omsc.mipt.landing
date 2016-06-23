@@ -10,7 +10,8 @@
     }
 
     &__image {
-        max-width: 100%;
+        width: 270px;
+        height: 170px;
     }
 
     &__image-wrapper {
@@ -25,5 +26,6 @@
     &__title {
         text-align: left;
         margin-top: 20px;
+        text-align: center;
     }
 }
