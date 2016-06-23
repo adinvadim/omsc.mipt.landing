@@ -1977,7 +1977,7 @@ var api = new BEMHTML({});
 /// ------ BEM-XJST User-code Start -----
 /// -------------------------------------
 api.compile(function(match, once, wrap, block, elem, mode, mod, elemMod, def, tag, attrs, cls, js, bem, mix, content, replace, extend, oninit, xjstOptions, local, applyCtx, applyNext, apply) {
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-core/common.blocks/ua/ua.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/common.blocks/ua/ua.bemhtml.js */
 block('ua')(
     tag()('script'),
     bem()(false),
@@ -1988,8 +1988,8 @@ block('ua')(
     ])
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-core/common.blocks/ua/ua.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-core/common.blocks/page/__css/page__css.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/common.blocks/ua/ua.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/common.blocks/page/__css/page__css.bemhtml.js */
 block('page').elem('css')(
     bem()(false),
     tag()('style'),
@@ -1999,8 +1999,8 @@ block('page').elem('css')(
     )
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-core/common.blocks/page/__css/page__css.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-core/desktop.blocks/page/__css/page__css.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/common.blocks/page/__css/page__css.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/desktop.blocks/page/__css/page__css.bemhtml.js */
 block('page').elem('css').match(function() {
     return this.ctx.hasOwnProperty('ie');
 })(
@@ -2026,8 +2026,8 @@ block('page').elem('css').match(function() {
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-core/desktop.blocks/page/__css/page__css.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-core/common.blocks/page/__js/page__js.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/desktop.blocks/page/__css/page__css.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/common.blocks/page/__js/page__js.bemhtml.js */
 block('page').elem('js')(
     bem()(false),
     tag()('script'),
@@ -2043,8 +2043,8 @@ block('page').elem('js')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-core/common.blocks/page/__js/page__js.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/section/section.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/common.blocks/page/__js/page__js.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/section/section.bemhtml.js */
 block('section')(
     attrs()(function() {
         var position = this.position - 1;
@@ -2055,8 +2055,8 @@ block('section')(
     })
 )
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/section/section.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/section/_type/section_type_main.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/section/section.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/section/_type/section_type_main.bemhtml.js */
 block('section').mod('type', 'main')(
     content()(function() {
         return [
@@ -2069,12 +2069,12 @@ block('section').mod('type', 'main')(
     })
 )
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/section/_type/section_type_main.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/header/header.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/section/_type/section_type_main.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/header/header.bemhtml.js */
 block('header').js()(true)
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/header/header.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/sections-menu/sections-menu.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/header/header.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/sections-menu/sections-menu.bemhtml.js */
 block('sections-menu')(
 
     mix()({ block : 'menu', js : true }),
@@ -2083,8 +2083,8 @@ block('sections-menu')(
 
 )
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/sections-menu/sections-menu.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/menu/menu.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/sections-menu/sections-menu.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/menu/menu.bemhtml.js */
 block('menu')(
     def()(function() {
         var ctx = this.ctx,
@@ -2143,8 +2143,8 @@ block('menu')(
         })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/menu/menu.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/menu-item/menu-item.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/menu/menu.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/menu-item/menu-item.bemhtml.js */
 block('menu-item')(
     def().match(function() { return this._menuMods; })(function() {
         var mods = this.mods;
@@ -2172,14 +2172,14 @@ block('menu-item')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/menu-item/menu-item.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/menu/_focused/menu_focused.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/menu-item/menu-item.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/menu/_focused/menu_focused.bemhtml.js */
 block('menu').mod('focused', true).js()(function() {
     return this.extend(applyNext(), { live : false });
 });
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/menu/_focused/menu_focused.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/menu/__group/menu__group.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/menu/_focused/menu_focused.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/menu/__group/menu__group.bemhtml.js */
 block('menu').elem('group')(
     attrs()({ role : 'group' }),
     match(function() { return typeof this.ctx.title !== 'undefined'; })(
@@ -2205,8 +2205,8 @@ block('menu').elem('group')(
     )
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/menu/__group/menu__group.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/link/link.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/menu/__group/menu__group.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/link/link.bemhtml.js */
 block('link')(
     def()(function() {
         var ctx = this.ctx;
@@ -2252,8 +2252,8 @@ block('link')(
         })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/link/link.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/logo/logo.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/link/link.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/logo/logo.bemhtml.js */
 block('logo')(
     content()(function(){
         return {
@@ -2273,8 +2273,8 @@ block('logo')(
     })
 )
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/logo/logo.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/image/image.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/logo/logo.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/image/image.bemhtml.js */
 block('image')(
     attrs()({ role : 'img' }),
 
@@ -2297,8 +2297,8 @@ block('image')(
     )
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/image/image.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/button/button.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/image/image.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/button/button.bemhtml.js */
 block('button')(
     def()(function() {
         var tag = apply('tag'),
@@ -2362,18 +2362,18 @@ block('button')(
     )
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/button/button.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/button/_focused/button_focused.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/button/button.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/button/_focused/button_focused.bemhtml.js */
 block('button').mod('focused', true).js()(function() {
     return this.extend(applyNext(), { live : false });
 });
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/button/_focused/button_focused.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/button/__text/button__text.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/button/_focused/button_focused.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/button/__text/button__text.bemhtml.js */
 block('button').elem('text').tag()('span');
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/button/__text/button__text.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/section-title/section-title.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/button/__text/button__text.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/section-title/section-title.bemhtml.js */
 block('section-title')(
     content()(function() {
         var ctx = this.ctx;
@@ -2392,8 +2392,8 @@ block('section-title')(
     })
 )
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/section-title/section-title.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/title/title.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/section-title/section-title.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/title/title.bemhtml.js */
 block('title')(
 
     match((_, json) => json.level).def()(function() {
@@ -2403,8 +2403,8 @@ block('title')(
     })
 )
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/title/title.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/icon/icon.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/title/title.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/icon/icon.bemhtml.js */
 block('icon')(
     tag()('span'),
     attrs()(function() {
@@ -2415,8 +2415,8 @@ block('icon')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/icon/icon.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/icon/icon.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/icon/icon.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/icon/icon.bemhtml.js */
 block('icon')(
 
     match(function() { return this.ctx.type })(
@@ -2428,8 +2428,8 @@ block('icon')(
     )
 )
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/icon/icon.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/quote-card/quote-card.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/icon/icon.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/quote-card/quote-card.bemhtml.js */
 block('quote-card')(
     content()(function() {
         var ctx = this.ctx;
@@ -2455,8 +2455,8 @@ block('quote-card')(
     })
 )
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/quote-card/quote-card.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/tabs/tabs.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/quote-card/quote-card.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/tabs/tabs.bemhtml.js */
 block('tabs')(
     js()(true),
 
@@ -2506,8 +2506,8 @@ block('tabs')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/tabs/tabs.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/radio-group/radio-group.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/tabs/tabs.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/radio-group/radio-group.bemhtml.js */
 block('radio-group')(
     tag()('span'),
 
@@ -2546,8 +2546,8 @@ block('radio-group')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/radio-group/radio-group.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-forms/common.blocks/radio-group/radio-group.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/radio-group/radio-group.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/radio-group/radio-group.bemhtml.js */
 block('radio-group')(
 
     match(function() { return this._form_field; }).def()(function() {
@@ -2560,8 +2560,8 @@ block('radio-group')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-forms/common.blocks/radio-group/radio-group.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/radio-group/radio-group.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/radio-group/radio-group.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/radio-group/radio-group.bemhtml.js */
 block('radio-group')(
     tag()('span'),
 
@@ -2601,8 +2601,8 @@ block('radio-group')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/radio-group/radio-group.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/radio/radio.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/radio-group/radio-group.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/radio/radio.bemhtml.js */
 block('radio')(
     tag()('label'),
     js()(true),
@@ -2627,8 +2627,8 @@ block('radio')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/radio/radio.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-forms/common.blocks/radio/radio.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/radio/radio.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/radio/radio.bemhtml.js */
 block('radio')(
 
     match(function() { return this._form_field; }).def()(function() {
@@ -2642,12 +2642,12 @@ block('radio')(
 
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-forms/common.blocks/radio/radio.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/radio/__box/radio__box.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/radio/radio.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/radio/__box/radio__box.bemhtml.js */
 block('radio').elem('box').tag()('span');
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/radio/__box/radio__box.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/radio/__control/radio__control.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/radio/__box/radio__box.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/radio/__control/radio__control.bemhtml.js */
 block('radio').elem('control')(
     tag()('input'),
 
@@ -2668,8 +2668,8 @@ block('radio').elem('control')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/radio/__control/radio__control.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/radio/__text/radio__text.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/radio/__control/radio__control.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/radio/__text/radio__text.bemhtml.js */
 block('radio').elem('text')(
     tag()('span'),
     attrs()(function() {
@@ -2677,8 +2677,8 @@ block('radio').elem('text')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/radio/__text/radio__text.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/course-card/course-card.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/radio/__text/radio__text.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/course-card/course-card.bemhtml.js */
 block('course-card')(
     content()(function() {
         var ctx = this.ctx;
@@ -2700,12 +2700,12 @@ block('course-card')(
     })
 )
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/course-card/course-card.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/form-main/form-main.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/course-card/course-card.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/form-main/form-main.bemhtml.js */
 block('form-main').js()(true);
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/form-main/form-main.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-forms/common.blocks/form/form.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/form-main/form-main.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/form/form.bemhtml.js */
 block('form')(
 
     tag()('form'),
@@ -2725,8 +2725,8 @@ block('form')(
 
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-forms/common.blocks/form/form.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-forms/common.blocks/form-field/form-field.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/form/form.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/form-field/form-field.bemhtml.js */
 block('form-field')(
 
     js()(true),
@@ -2749,8 +2749,8 @@ block('form-field')(
 
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-forms/common.blocks/form-field/form-field.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/input/input.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/form-field/form-field.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/input/input.bemhtml.js */
 block('input')(
     tag()('span'),
     js()(true),
@@ -2760,8 +2760,8 @@ block('input')(
     content()({ elem : 'box', content : { elem : 'control' } })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/input/input.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-forms/common.blocks/input/input.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/input/input.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/input/input.bemhtml.js */
 block('input')(
 
     match(function() { return this._form_field; }).mix()(function() {
@@ -2771,12 +2771,12 @@ block('input')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-forms/common.blocks/input/input.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/input/__box/input__box.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/input/input.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/input/__box/input__box.bemhtml.js */
 block('input').elem('box').tag()('span');
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/input/__box/input__box.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/input/__control/input__control.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/input/__box/input__box.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/input/__control/input__control.bemhtml.js */
 block('input').elem('control')(
     tag()('input'),
 
@@ -2798,8 +2798,8 @@ block('input').elem('control')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/input/__control/input__control.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-forms/common.blocks/input/__control/input__control.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/input/__control/input__control.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/input/__control/input__control.bemhtml.js */
 block('input').elem('control')(
 
     match(function() { return this._form_field; }).def()(function() {
@@ -2810,15 +2810,15 @@ block('input').elem('control')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-forms/common.blocks/input/__control/input__control.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/list/list.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-forms/common.blocks/input/__control/input__control.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/list/list.bemhtml.js */
 block('list')(
     tag()('ul'),
     elem('item').tag()('li')
 )
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/list/list.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/partner-card/partner-card.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/list/list.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/partner-card/partner-card.bemhtml.js */
 block('partner-card')(
 
     content()(function() {
@@ -2841,8 +2841,8 @@ block('partner-card')(
 
 )
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/partner-card/partner-card.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/form-feedback/form-feedback.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/partner-card/partner-card.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/form-feedback/form-feedback.bemhtml.js */
 block('form-feedback')(
 
     js()(true),
@@ -2878,8 +2878,8 @@ block('form-feedback')(
     })
 )
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/form-feedback/form-feedback.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-core/common.blocks/page/page.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/form-feedback/form-feedback.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/common.blocks/page/page.bemhtml.js */
 block('page')(
 
     wrap()(function() {
@@ -2948,12 +2948,12 @@ block('page')(
 
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-core/common.blocks/page/page.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/page/page.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-core/common.blocks/page/page.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/page/page.bemhtml.js */
 block('page').js()(true)
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/page/page.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/radio/_type/radio_type_button.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/page/page.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/radio/_type/radio_type_button.bemhtml.js */
 block('radio').mod('type', 'button')(
     content()(function() {
         var ctx = this.ctx,
@@ -2988,14 +2988,14 @@ block('radio').mod('type', 'button')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/radio/_type/radio_type_button.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/button/_togglable/button_togglable_radio.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/radio/_type/radio_type_button.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/button/_togglable/button_togglable_radio.bemhtml.js */
 block('button').mod('togglable', 'radio').attrs()(function() {
     return this.extend(applyNext(), { 'aria-pressed' : String(!!this.mods.checked) });
 });
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/libs/bem-components/common.blocks/button/_togglable/button_togglable_radio.bemhtml.js */
-/* begin: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/slider/slider.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/libs/bem-components/common.blocks/button/_togglable/button_togglable_radio.bemhtml.js */
+/* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/slider/slider.bemhtml.js */
 block('slider')(
 
     js()(true),
@@ -3042,7 +3042,7 @@ block('slider')(
     })
 );
 
-/* end: /Volumes/data/Developing/landings/omsc.mipt.landing/blocks/slider/slider.bemhtml.js */
+/* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/slider/slider.bemhtml.js */
 oninit(function(exports, context) {
     var BEMContext = exports.BEMContext || context.BEMContext;
     // Provides third-party libraries from different modular systems

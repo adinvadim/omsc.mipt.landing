@@ -17623,7 +17623,8 @@ modules.define('validation_required',
 var DEFAULT_MESSAGE = 'Required field';
 provide(function(field) {
     return function(val) {
-        return val? null : {
+        console.log(typeof val, val, val ? 'not null' : 'null');
+        return (!!val) ? null : {
             field : field.getName() || field.getId(),
             message : field.getValidationMessage('required') || DEFAULT_MESSAGE
         };
