@@ -1,7 +1,7 @@
 .partner-card {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
     margin-bottom: 30px;
     max-width: 250px;
