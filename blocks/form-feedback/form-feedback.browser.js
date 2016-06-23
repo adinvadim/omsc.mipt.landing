@@ -42,7 +42,7 @@ provide(BEMDOM.decl(this.name, /** @lends app.prototype */{
 
                                 ga('send', {
                                   hitType: 'event',
-                                  eventCategory: 'Registration',
+                                  eventCategory: 'callback',
                                   eventAction: 'Click',
                                   eventLabel: 'second'
                                 });
