@@ -11,7 +11,7 @@ module.exports = {
      title : 'Онлайн-магистратура по современной комбинаторике',
      favicon : './favicon.ico',
      head : [
-         { elem : 'meta', attrs : { name : 'description', content : 'description Первая в России онлайн-магистратура по современной комбинаторике – уникальная возможность получить фундаментальные знания по математике и диплом МФТИ гособразца.' } },
+         { elem : 'meta', attrs : { name : 'description', content : 'Первая в России онлайн-магистратура по современной комбинаторике – уникальная возможность получить фундаментальные знания по математике и диплом МФТИ гособразца.' } },
          { elem : 'meta', attrs : { name : 'viewport', content : 'width=device-width, initial-scale=1' } },
          { elem : 'css', url : 'index.min.css' }
      ],
