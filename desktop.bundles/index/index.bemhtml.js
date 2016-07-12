@@ -2071,7 +2071,9 @@ block('section').mod('type', 'main')(
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/section/_type/section_type_main.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/header/header.bemhtml.js */
-block('header').js()(true)
+block('header').js()(true);
+
+block('header').elem('title').tag()('h1');
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/header/header.bemhtml.js */
 /* begin: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/sections-menu/sections-menu.bemhtml.js */
@@ -2400,7 +2402,9 @@ block('title')(
         this.mods = this.mods || {};
         this.mods.level = this.ctx.level;
         return applyNext();
-    })
+    }),
+
+    mod('level', 2).tag()('h2')
 )
 
 /* end: /Users/adinvadim/sandbox/_liot.mipt/lendings/mipt/blocks/title/title.bemhtml.js */
