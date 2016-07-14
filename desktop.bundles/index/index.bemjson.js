@@ -488,9 +488,9 @@ module.exports = {
                                             content : {
                                                 block : 'input',
                                                 placeholder : 'Телефон',
-                                                mods : { mask : true },
+                                                mods : { mask : true},
                                                 js : {
-                                                    mask : '+7(999)9999999'
+                                                    mask : 'phone'
                                                 }
                                             }
                                         }, {
