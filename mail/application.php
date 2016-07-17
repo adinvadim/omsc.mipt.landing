@@ -2,6 +2,7 @@
 	include __DIR__ . '/vendor/autoload.php';
 	include __DIR__ . '/mail.php';
 	$config = require __DIR__ . '/config.php';
+	include __DIR__ . '/cell.php';
 
 	$result = 0;
 
@@ -117,6 +118,18 @@ EOT;
 С уважением, онлайн-магистратура МФТИ
 EOT;
 		$umailer->send();
+
+		$cell = new GoogleCell();
+		$cell->insertRow([
+			$lastname,
+			$firstname,
+			$secondname,
+			$email,
+			$phone,
+			$birthdate,
+			'',
+			date('Y-m-d H:i:s')
+		]);
 	}
 
 	echo $result;
