@@ -1,6 +1,6 @@
 <?php
 	include __DIR__ . '/vendor/autoload.php';
-	$config = require __DIR__ . '/config.php';
+	$config = require_once __DIR__ . '/config.php';
 
 	putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $config[ 'google' ][ 'auth_json' ]);
 
@@ -10,10 +10,12 @@
 		private $_sheetName;
 		private $_service;
 
-		public function __construct ($spreadsheetID, $sheetName)
+		public function __construct ()
 		{
-			$this->_spreadsheetID = $spreadsheetID;
-			$this->_sheetName = $sheetName;
+			global $config;
+
+			$this->_spreadsheetID = $config[ 'google' ][ 'spreadsheet' ];
+			$this->_sheetName = $config[ 'google' ][ 'sheet' ];
 		}
 
 		/**
@@ -67,5 +69,3 @@
 			return null;
 		}
 	}
-
-	$cell = new GoogleCell($config[ 'google' ][ 'spreadsheet' ], $config[ 'google' ][ 'sheet' ]);
