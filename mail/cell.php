@@ -1,6 +1,6 @@
 <?php
 	include __DIR__ . '/vendor/autoload.php';
-	$config = require_once __DIR__ . '/config.php';
+	$config = require __DIR__ . '/config.php';
 
 	putenv('GOOGLE_APPLICATION_CREDENTIALS=' . $config[ 'google' ][ 'auth_json' ]);
 
