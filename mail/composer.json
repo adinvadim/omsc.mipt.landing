@@ -1,7 +1,8 @@
 {
     "name": "mipt/omsc",
     "require": {
-        "phpmailer/phpmailer": "^5.2"
+        "phpmailer/phpmailer": "^5.2",
+        "google/apiclient": "^2.0"
     },
     "license": "MIT",
     "authors": [

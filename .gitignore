@@ -17,3 +17,4 @@ mail/data
 mail/vendor
 mail/composer.lock
 mail/config.php
+google.json
