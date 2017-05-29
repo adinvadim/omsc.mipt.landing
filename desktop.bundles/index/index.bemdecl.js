@@ -597,9 +597,6 @@ exports.blocks = [
         ]
     },
     {
-        "name": "link"
-    },
-    {
         "name": "section",
         "mods": [
             {
@@ -649,6 +646,9 @@ exports.blocks = [
                 "name": "item"
             }
         ]
+    },
+    {
+        "name": "link"
     },
     {
         "name": "partner-card"

@@ -17629,8 +17629,7 @@ modules.define('validation_required',
 var DEFAULT_MESSAGE = 'Required field';
 provide(function(field) {
     return function(val) {
-        console.log(typeof val, val, val ? 'not null' : 'null');
-        return (!!val) ? null : {
+        return val? null : {
             field : field.getName() || field.getId(),
             message : field.getValidationMessage('required') || DEFAULT_MESSAGE
         };
@@ -18209,4 +18208,4 @@ var BEMHTML;
 );
         global['BEMHTML'] = BEMHTML;
     }
-})(typeof window !== "undefined" ? window : global || this);
+})(typeof window !== "undefined" ? window : typeof global !== "undefined" ? global : this);
